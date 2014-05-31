@@ -1,0 +1,17 @@
+def needed_pods
+  pod 'FlipTheSwitch', :path => '../'
+
+  pod 'Specta'
+  pod 'Expecta'
+  pod 'OCMockito'
+end
+
+target 'FlipTheSwitchSpec-iOS' do
+  platform :ios, :deployment_target => 5.0
+  needed_pods
+end
+
+target 'FlipTheSwitchSpec-Mac' do
+  platform :osx, :deployment_target => 10.7
+  needed_pods
+end

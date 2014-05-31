@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13A20D72CD1E4E3DACB19302 /* libPods-FlipTheSwitchSpec-Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC66316DAF9423DA99C4191 /* libPods-FlipTheSwitchSpec-Mac.a */; };
+		5B87AFEE193A80F20082F7A1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B87AFED193A80F20082F7A1 /* XCTest.framework */; };
+		5B87AFF0193A80F20082F7A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B87AFEF193A80F20082F7A1 /* Foundation.framework */; };
+		5B87AFF2193A80F20082F7A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B87AFF1193A80F20082F7A1 /* UIKit.framework */; };
+		5B9DCEAC193A869B00C63F9F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B87AFED193A80F20082F7A1 /* XCTest.framework */; };
+		EB1183C1939E44AB9E511CA6 /* libPods-FlipTheSwitchSpec-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F51A578171940B290050356 /* libPods-FlipTheSwitchSpec-iOS.a */; };
+		F803238AA8E0E1976F0F95DC /* FlipTheSwitchSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F80322BF56E8D76FB9736847 /* FlipTheSwitchSpec.m */; };
+		F80325D46C885BC440A30C43 /* FlipTheSwitchSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F80322BF56E8D76FB9736847 /* FlipTheSwitchSpec.m */; };
+		F803272CB8A5B38D4757608E /* GcovTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = F8032394DDE5CCE6C76898E9 /* GcovTestObserver.m */; };
+		F80329FE8A8EF57B776A9FDE /* GcovTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = F8032394DDE5CCE6C76898E9 /* GcovTestObserver.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5B87AFEA193A80F20082F7A1 /* FlipTheSwitchSpec-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FlipTheSwitchSpec-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B87AFED193A80F20082F7A1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5B87AFEF193A80F20082F7A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5B87AFF1193A80F20082F7A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		5B9DCEAB193A869B00C63F9F /* FlipTheSwitchSpec-Mac.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FlipTheSwitchSpec-Mac.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F51A578171940B290050356 /* libPods-FlipTheSwitchSpec-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlipTheSwitchSpec-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B5491E544614A10BEAC9D47 /* Pods-FlipTheSwitchSpec-Mac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTheSwitchSpec-Mac.xcconfig"; path = "Pods/Pods-FlipTheSwitchSpec-Mac.xcconfig"; sourceTree = "<group>"; };
+		8FC66316DAF9423DA99C4191 /* libPods-FlipTheSwitchSpec-Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlipTheSwitchSpec-Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF8E94075C5A480F893ECEE0 /* Pods-FlipTheSwitchSpec-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTheSwitchSpec-iOS.xcconfig"; path = "Pods/Pods-FlipTheSwitchSpec-iOS.xcconfig"; sourceTree = "<group>"; };
+		F80321987A56E7AF3BFF5FD9 /* FlipTheSwitchSpec-iOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlipTheSwitchSpec-iOS-Prefix.pch"; sourceTree = "<group>"; };
+		F80322339C8E3439D05DCB0E /* GcovTestObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GcovTestObserver.h; sourceTree = "<group>"; };
+		F80322BF56E8D76FB9736847 /* FlipTheSwitchSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipTheSwitchSpec.m; sourceTree = "<group>"; };
+		F8032394DDE5CCE6C76898E9 /* GcovTestObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GcovTestObserver.m; sourceTree = "<group>"; };
+		F80325C7A88C24081CF78461 /* FlipTheSwitchSpec-iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "FlipTheSwitchSpec-iOS-Info.plist"; sourceTree = "<group>"; };
+		F80326FF993EEA2C7572BD21 /* FlipTheSwitchSpec-Mac-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlipTheSwitchSpec-Mac-Prefix.pch"; sourceTree = "<group>"; };
+		F80329E46696FF0EDC73C684 /* FlipTheSwitchSpec-Mac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "FlipTheSwitchSpec-Mac-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B87AFE7193A80F20082F7A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B87AFEE193A80F20082F7A1 /* XCTest.framework in Frameworks */,
+				5B87AFF2193A80F20082F7A1 /* UIKit.framework in Frameworks */,
+				5B87AFF0193A80F20082F7A1 /* Foundation.framework in Frameworks */,
+				EB1183C1939E44AB9E511CA6 /* libPods-FlipTheSwitchSpec-iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9DCEA8193A869B00C63F9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B9DCEAC193A869B00C63F9F /* XCTest.framework in Frameworks */,
+				13A20D72CD1E4E3DACB19302 /* libPods-FlipTheSwitchSpec-Mac.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B87AFDF193A80980082F7A1 = {
+			isa = PBXGroup;
+			children = (
+				5B87AFF3193A80F20082F7A1 /* FlipTheSwitchSpec-iOS */,
+				5B9DCEAD193A869B00C63F9F /* FlipTheSwitchSpec-Mac */,
+				5B87AFEC193A80F20082F7A1 /* Frameworks */,
+				5B87AFEB193A80F20082F7A1 /* Products */,
+				7B5491E544614A10BEAC9D47 /* Pods-FlipTheSwitchSpec-Mac.xcconfig */,
+				CF8E94075C5A480F893ECEE0 /* Pods-FlipTheSwitchSpec-iOS.xcconfig */,
+				F80326AA2A755B0873B15852 /* Spec */,
+			);
+			sourceTree = "<group>";
+		};
+		5B87AFEB193A80F20082F7A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B87AFEA193A80F20082F7A1 /* FlipTheSwitchSpec-iOS.xctest */,
+				5B9DCEAB193A869B00C63F9F /* FlipTheSwitchSpec-Mac.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B87AFEC193A80F20082F7A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B87AFED193A80F20082F7A1 /* XCTest.framework */,
+				5B87AFEF193A80F20082F7A1 /* Foundation.framework */,
+				5B87AFF1193A80F20082F7A1 /* UIKit.framework */,
+				8FC66316DAF9423DA99C4191 /* libPods-FlipTheSwitchSpec-Mac.a */,
+				5F51A578171940B290050356 /* libPods-FlipTheSwitchSpec-iOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B87AFF3193A80F20082F7A1 /* FlipTheSwitchSpec-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F80321987A56E7AF3BFF5FD9 /* FlipTheSwitchSpec-iOS-Prefix.pch */,
+				F80325C7A88C24081CF78461 /* FlipTheSwitchSpec-iOS-Info.plist */,
+			);
+			path = "FlipTheSwitchSpec-iOS";
+			sourceTree = "<group>";
+		};
+		5B9DCEAD193A869B00C63F9F /* FlipTheSwitchSpec-Mac */ = {
+			isa = PBXGroup;
+			children = (
+				F80326FF993EEA2C7572BD21 /* FlipTheSwitchSpec-Mac-Prefix.pch */,
+				F80329E46696FF0EDC73C684 /* FlipTheSwitchSpec-Mac-Info.plist */,
+			);
+			path = "FlipTheSwitchSpec-Mac";
+			sourceTree = "<group>";
+		};
+		F803205E2BED616EF1088A54 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F803251307A9DD1CC9561985 /* FlipTheSwitch */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F80322747F4E4DC74EC73A3A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F80322339C8E3439D05DCB0E /* GcovTestObserver.h */,
+				F8032394DDE5CCE6C76898E9 /* GcovTestObserver.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F803251307A9DD1CC9561985 /* FlipTheSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				F80322BF56E8D76FB9736847 /* FlipTheSwitchSpec.m */,
+			);
+			path = FlipTheSwitch;
+			sourceTree = "<group>";
+		};
+		F80326AA2A755B0873B15852 /* Spec */ = {
+			isa = PBXGroup;
+			children = (
+				F803205E2BED616EF1088A54 /* Classes */,
+				F80322747F4E4DC74EC73A3A /* Helpers */,
+			);
+			path = Spec;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B87AFE9193A80F20082F7A1 /* FlipTheSwitchSpec-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B87AFFC193A80F20082F7A1 /* Build configuration list for PBXNativeTarget "FlipTheSwitchSpec-iOS" */;
+			buildPhases = (
+				C67EE0388E8341CCB8C5BACC /* Check Pods Manifest.lock */,
+				5B87AFE6193A80F20082F7A1 /* Sources */,
+				5B87AFE7193A80F20082F7A1 /* Frameworks */,
+				5B87AFE8193A80F20082F7A1 /* Resources */,
+				B9D09C9694D0440FA36F295C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FlipTheSwitchSpec-iOS";
+			productName = "FlipTheSwitchSpec-iOS";
+			productReference = 5B87AFEA193A80F20082F7A1 /* FlipTheSwitchSpec-iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5B9DCEAA193A869B00C63F9F /* FlipTheSwitchSpec-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B9DCEB6193A869B00C63F9F /* Build configuration list for PBXNativeTarget "FlipTheSwitchSpec-Mac" */;
+			buildPhases = (
+				0A024D68C1934EDFBD07860A /* Check Pods Manifest.lock */,
+				5B9DCEA7193A869B00C63F9F /* Sources */,
+				5B9DCEA8193A869B00C63F9F /* Frameworks */,
+				5B9DCEA9193A869B00C63F9F /* Resources */,
+				6A9CA4829E96429EA19B7DBF /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FlipTheSwitchSpec-Mac";
+			productName = "FlipTheSwitchSpec-Mac";
+			productReference = 5B9DCEAB193A869B00C63F9F /* FlipTheSwitchSpec-Mac.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B87AFE0193A80980082F7A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 5B87AFE3193A80980082F7A1 /* Build configuration list for PBXProject "FlipTheSwitchSpec" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5B87AFDF193A80980082F7A1;
+			productRefGroup = 5B87AFEB193A80F20082F7A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B87AFE9193A80F20082F7A1 /* FlipTheSwitchSpec-iOS */,
+				5B9DCEAA193A869B00C63F9F /* FlipTheSwitchSpec-Mac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B87AFE8193A80F20082F7A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9DCEA9193A869B00C63F9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A024D68C1934EDFBD07860A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6A9CA4829E96429EA19B7DBF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-FlipTheSwitchSpec-Mac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9D09C9694D0440FA36F295C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-FlipTheSwitchSpec-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C67EE0388E8341CCB8C5BACC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B87AFE6193A80F20082F7A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F803272CB8A5B38D4757608E /* GcovTestObserver.m in Sources */,
+				F80325D46C885BC440A30C43 /* FlipTheSwitchSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9DCEA7193A869B00C63F9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F803238AA8E0E1976F0F95DC /* FlipTheSwitchSpec.m in Sources */,
+				F80329FE8A8EF57B776A9FDE /* GcovTestObserver.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5B87AFE4193A80980082F7A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+			};
+			name = Debug;
+		};
+		5B87AFE5193A80980082F7A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+			};
+			name = Release;
+		};
+		5B87AFFD193A80F20082F7A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF8E94075C5A480F893ECEE0 /* Pods-FlipTheSwitchSpec-iOS.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlipTheSwitchSpec-iOS/FlipTheSwitchSpec-iOS-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "FlipTheSwitchSpec-iOS/FlipTheSwitchSpec-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5B87AFFE193A80F20082F7A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF8E94075C5A480F893ECEE0 /* Pods-FlipTheSwitchSpec-iOS.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlipTheSwitchSpec-iOS/FlipTheSwitchSpec-iOS-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "FlipTheSwitchSpec-iOS/FlipTheSwitchSpec-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		5B9DCEB7193A869B00C63F9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B5491E544614A10BEAC9D47 /* Pods-FlipTheSwitchSpec-Mac.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlipTheSwitchSpec-Mac/FlipTheSwitchSpec-Mac-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "FlipTheSwitchSpec-Mac/FlipTheSwitchSpec-Mac-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5B9DCEB8193A869B00C63F9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B5491E544614A10BEAC9D47 /* Pods-FlipTheSwitchSpec-Mac.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlipTheSwitchSpec-Mac/FlipTheSwitchSpec-Mac-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "FlipTheSwitchSpec-Mac/FlipTheSwitchSpec-Mac-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B87AFE3193A80980082F7A1 /* Build configuration list for PBXProject "FlipTheSwitchSpec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B87AFE4193A80980082F7A1 /* Debug */,
+				5B87AFE5193A80980082F7A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B87AFFC193A80F20082F7A1 /* Build configuration list for PBXNativeTarget "FlipTheSwitchSpec-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B87AFFD193A80F20082F7A1 /* Debug */,
+				5B87AFFE193A80F20082F7A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B9DCEB6193A869B00C63F9F /* Build configuration list for PBXNativeTarget "FlipTheSwitchSpec-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B9DCEB7193A869B00C63F9F /* Debug */,
+				5B9DCEB8193A869B00C63F9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B87AFE0193A80980082F7A1 /* Project object */;
+}

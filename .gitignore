@@ -15,8 +15,11 @@
 #########################
 
 #####
-# Cocoapods
+# Coveralls
+.coveralls.yml
 
+#####
+# Cocoapods
 Pods/
 
 #####
@@ -30,7 +33,7 @@ profile
 
 ####
 # Xcode temporary files that should never be committed
-#
+# 
 # NB: NIB/XIB files still exist even on Storyboard projects, so we want this...
 
 *~.nib
@@ -117,6 +120,7 @@ xcuserdata
 #         xcschememanagement.plist
 #
 #
+*.xcworkspace
 
 ####
 # Xcode 4 - Deprecated classes
