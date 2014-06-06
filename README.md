@@ -37,6 +37,21 @@ The features can be enabled/disabled at runtime:
 
 All enabled features will persist between app loads through `NSUserDefaults`.
 
+The features can defaulted to enabled/disabled via a plist file `Features.plist`:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>plist_enabled_feature</key>
+    <true/>
+    <key>plist_disabled_feature</key>
+    <false/>
+</dict>
+</plist>
+```
+
 ## How to install
 
 Add `pod "FlipTheSwitch"` to your Podfile
