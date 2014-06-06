@@ -24,6 +24,10 @@ SpecBegin(FlipTheSwitch)
         [userDefaults synchronize];
     });
 
+    it(@"is a singleton", ^{
+        expect([FlipTheSwitch sharedInstance]).to.beIdenticalTo([FlipTheSwitch sharedInstance]);
+    });
+
     context(@"when feature is NOT set", ^{
         it(@"is disabled", ^{
             expect([subject isFeatureEnabled:feature]).to.beFalsy();
