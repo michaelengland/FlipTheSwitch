@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'FlipTheSwitch'
-  s.version = '0.1.0'
+  s.version = '0.2.0'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.summary = 'A simple library to help enabling/disabling features on iOS/Mac applications.'
 
