@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		35D6E35AEAC9473FAAAB5BE5 /* libPods-Colors-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7C4D132FE24A06ACC52E5F /* libPods-Colors-iOS.a */; };
+		5B20701A194237BF00D07667 /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = F80321679CBE499FFA387688 /* Features.plist */; };
 		5B909898193A235E004C12B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B909897193A235E004C12B3 /* Foundation.framework */; };
 		5B90989C193A235E004C12B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B90989B193A235E004C12B3 /* UIKit.framework */; };
 		5B9098A4193A235E004C12B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9098A3193A235E004C12B3 /* main.m */; };
 		5B9098AB193A235E004C12B3 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9098A9193A235E004C12B3 /* Main_iPhone.storyboard */; };
-		5B9098AE193A235E004C12B3 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9098AC193A235E004C12B3 /* Main_iPad.storyboard */; };
 		5B9098B1193A235E004C12B3 /* ViewControlleriOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9098B0193A235E004C12B3 /* ViewControlleriOS.m */; };
 		5B9098B3193A235E004C12B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9098B2193A235E004C12B3 /* Images.xcassets */; };
 		F803204E3B632B5F0E19014F /* AppDelegateiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = F803243E8A66F29C3EA37B65 /* AppDelegateiOS.m */; };
@@ -26,12 +26,11 @@
 		5B9098A3193A235E004C12B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5B9098A5193A235E004C12B3 /* Colors-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colors-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		5B9098AA193A235E004C12B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		5B9098AD193A235E004C12B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		5B9098AF193A235E004C12B3 /* ViewControlleriOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControlleriOS.h; sourceTree = "<group>"; };
 		5B9098B0193A235E004C12B3 /* ViewControlleriOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControlleriOS.m; sourceTree = "<group>"; };
 		5B9098B2193A235E004C12B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5F7C4D132FE24A06ACC52E5F /* libPods-Colors-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Colors-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B602E3647659443F832629DF /* Pods-Colors-Mac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colors-Mac.xcconfig"; path = "Pods/Pods-Colors-Mac.xcconfig"; sourceTree = "<group>"; };
+		F80321679CBE499FFA387688 /* Features.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Features.plist; sourceTree = "<group>"; };
 		F803243E8A66F29C3EA37B65 /* AppDelegateiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateiOS.m; sourceTree = "<group>"; };
 		F8032F89446610853BDFF019 /* AppDelegateiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateiOS.h; sourceTree = "<group>"; };
 		FA266F5E1A3E46478CDB53E6 /* Pods-Colors-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colors-iOS.xcconfig"; path = "Pods/Pods-Colors-iOS.xcconfig"; sourceTree = "<group>"; };
@@ -57,7 +56,6 @@
 				5B90989D193A235E004C12B3 /* Colors-iOS */,
 				5B909896193A235E004C12B3 /* Frameworks */,
 				5B909895193A235E004C12B3 /* Products */,
-				B602E3647659443F832629DF /* Pods-Colors-Mac.xcconfig */,
 				FA266F5E1A3E46478CDB53E6 /* Pods-Colors-iOS.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -84,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				5B9098A9193A235E004C12B3 /* Main_iPhone.storyboard */,
-				5B9098AC193A235E004C12B3 /* Main_iPad.storyboard */,
 				5B9098AF193A235E004C12B3 /* ViewControlleriOS.h */,
 				5B9098B0193A235E004C12B3 /* ViewControlleriOS.m */,
 				5B9098B2193A235E004C12B3 /* Images.xcassets */,
@@ -101,6 +98,7 @@
 				5B90989F193A235E004C12B3 /* Colors-iOS-Info.plist */,
 				5B9098A3193A235E004C12B3 /* main.m */,
 				5B9098A5193A235E004C12B3 /* Colors-iOS-Prefix.pch */,
+				F80321679CBE499FFA387688 /* Features.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -159,7 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B9098AE193A235E004C12B3 /* Main_iPad.storyboard in Resources */,
+				5B20701A194237BF00D07667 /* Features.plist in Resources */,
 				5B9098B3193A235E004C12B3 /* Images.xcassets in Resources */,
 				5B9098AB193A235E004C12B3 /* Main_iPhone.storyboard in Resources */,
 			);
@@ -220,14 +218,6 @@
 				5B9098AA193A235E004C12B3 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		5B9098AC193A235E004C12B3 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B9098AD193A235E004C12B3 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -315,6 +305,7 @@
 				GCC_PREFIX_HEADER = "Colors-iOS/Colors-iOS-Prefix.pch";
 				INFOPLIST_FILE = "Colors-iOS/Colors-iOS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -329,6 +320,7 @@
 				GCC_PREFIX_HEADER = "Colors-iOS/Colors-iOS-Prefix.pch";
 				INFOPLIST_FILE = "Colors-iOS/Colors-iOS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

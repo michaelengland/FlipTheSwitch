@@ -3,10 +3,14 @@
 #import "FlipTheSwitch.h"
 
 static NSString *const kRedColorFeature = @"red_color";
+static NSString *const kPurpleColorFeature = @"purple_color";
 
 @interface ViewControlleriOS ()
-@property (nonatomic, weak) IBOutlet UILabel *colorInfoTextView;
-@property (nonatomic, weak) IBOutlet UIButton *colorChangeButton;
+@property (nonatomic, weak) IBOutlet UIView *topColorView;
+@property (nonatomic, weak) IBOutlet UILabel *topColorInfoTextView;
+@property (nonatomic, weak) IBOutlet UIButton *topColorChangeButton;
+@property (nonatomic, weak) IBOutlet UIView *bottomColorView;
+@property (nonatomic, weak) IBOutlet UILabel *bottomColorInfoTextView;
 @end
 
 @implementation ViewControlleriOS
@@ -21,29 +25,50 @@ static NSString *const kRedColorFeature = @"red_color";
 
 #pragma mark - Actions
 
-- (IBAction)colorChangeButtonTapped
+- (IBAction)topColorChangeButtonTapped
 {
-    [self toggleFeature];
+    [self toggleRedFeature];
 }
 
 #pragma mark - Private
 
 - (void)setupView
 {
-    NSString *colorName;
-    UIColor *color;
-    if ([self isRedFeatureEnabled]) {
-        colorName = @"Red";
-        color = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
-    } else {
-        colorName = @"Green";
-        color = [UIColor colorWithRed:0 green:1 blue:0 alpha:1];
-    }
-    self.colorInfoTextView.text = [NSString stringWithFormat:@"The screen is %@", colorName];
-    self.view.backgroundColor = color;
+    [self setupTopView];
+    [self setupBottomView];
 }
 
-- (void)toggleFeature
+- (void)setupTopView
+{
+    NSString *topColorName;
+    UIColor *topColor;
+    if ([self isRedFeatureEnabled]) {
+        topColorName = @"Red";
+        topColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
+    } else {
+        topColorName = @"Green";
+        topColor = [UIColor colorWithRed:0 green:1 blue:0 alpha:1];
+    }
+    self.topColorInfoTextView.text = [NSString stringWithFormat:@"The top part of the screen is %@", topColorName];
+    self.topColorView.backgroundColor = topColor;
+}
+
+- (void)setupBottomView
+{
+    NSString *bottomColorName;
+    UIColor *bottomColor;
+    if ([self isPurpleFeatureEnabled]) {
+        bottomColorName = @"Purple";
+        bottomColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:1];
+    } else {
+        bottomColorName = @"Yellow";
+        bottomColor = [UIColor colorWithRed:1 green:1 blue:0 alpha:1];
+    }
+    self.bottomColorInfoTextView.text = [NSString stringWithFormat:@"The bottom part of the screen is %@", bottomColorName];
+    self.bottomColorView.backgroundColor = bottomColor;
+}
+
+- (void)toggleRedFeature
 {
     if ([self isRedFeatureEnabled]) {
         [self disableRedFeature];
@@ -56,6 +81,11 @@ static NSString *const kRedColorFeature = @"red_color";
 - (BOOL)isRedFeatureEnabled
 {
     return [[FlipTheSwitch sharedInstance] isFeatureEnabled:kRedColorFeature];
+}
+
+- (BOOL)isPurpleFeatureEnabled
+{
+    return [[FlipTheSwitch sharedInstance] isFeatureEnabled:kPurpleColorFeature];
 }
 
 - (void)disableRedFeature
