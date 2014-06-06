@@ -1,0 +1,9 @@
+language: objective-c
+before_install:
+    - brew update
+    - brew upgrade xctool
+    - sudo easy_install cpp-coveralls
+    - gem install cocoapods
+    - gem install rake
+script: rake ci
+after_success: rake coverage

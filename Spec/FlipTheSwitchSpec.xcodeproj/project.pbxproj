@@ -13,9 +13,7 @@
 		5B87AFF2193A80F20082F7A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B87AFF1193A80F20082F7A1 /* UIKit.framework */; };
 		5B9DCEAC193A869B00C63F9F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B87AFED193A80F20082F7A1 /* XCTest.framework */; };
 		EB1183C1939E44AB9E511CA6 /* libPods-FlipTheSwitchSpec-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F51A578171940B290050356 /* libPods-FlipTheSwitchSpec-iOS.a */; };
-		F803204D0B9719A3EA6C36A7 /* FlipTheSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = F80325C9A003B5841DA09DF0 /* FlipTheSwitch.m */; };
 		F803238AA8E0E1976F0F95DC /* FlipTheSwitchSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F80322BF56E8D76FB9736847 /* FlipTheSwitchSpec.m */; };
-		F80323A5146D9B2653CAF46A /* FlipTheSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = F80325C9A003B5841DA09DF0 /* FlipTheSwitch.m */; };
 		F80325D46C885BC440A30C43 /* FlipTheSwitchSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F80322BF56E8D76FB9736847 /* FlipTheSwitchSpec.m */; };
 		F803272CB8A5B38D4757608E /* GcovTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = F8032394DDE5CCE6C76898E9 /* GcovTestObserver.m */; };
 		F80329FE8A8EF57B776A9FDE /* GcovTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = F8032394DDE5CCE6C76898E9 /* GcovTestObserver.m */; };
@@ -36,10 +34,8 @@
 		F80322BF56E8D76FB9736847 /* FlipTheSwitchSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipTheSwitchSpec.m; sourceTree = "<group>"; };
 		F8032394DDE5CCE6C76898E9 /* GcovTestObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GcovTestObserver.m; sourceTree = "<group>"; };
 		F80325C7A88C24081CF78461 /* FlipTheSwitchSpec-iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "FlipTheSwitchSpec-iOS-Info.plist"; sourceTree = "<group>"; };
-		F80325C9A003B5841DA09DF0 /* FlipTheSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipTheSwitch.m; sourceTree = "<group>"; };
 		F80326FF993EEA2C7572BD21 /* FlipTheSwitchSpec-Mac-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlipTheSwitchSpec-Mac-Prefix.pch"; sourceTree = "<group>"; };
 		F80329E46696FF0EDC73C684 /* FlipTheSwitchSpec-Mac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "FlipTheSwitchSpec-Mac-Info.plist"; sourceTree = "<group>"; };
-		F8032FBE0E625172E3ED10F3 /* FlipTheSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipTheSwitch.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +72,6 @@
 				7B5491E544614A10BEAC9D47 /* Pods-FlipTheSwitchSpec-Mac.xcconfig */,
 				CF8E94075C5A480F893ECEE0 /* Pods-FlipTheSwitchSpec-iOS.xcconfig */,
 				F80326AA2A755B0873B15852 /* Spec */,
-				F80326071F125AAC5C879D11 /* Classes */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,15 +122,6 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		F80321A950C87742E17FCDA5 /* FlipTheSwitch */ = {
-			isa = PBXGroup;
-			children = (
-				F80325C9A003B5841DA09DF0 /* FlipTheSwitch.m */,
-				F8032FBE0E625172E3ED10F3 /* FlipTheSwitch.h */,
-			);
-			path = FlipTheSwitch;
-			sourceTree = "<group>";
-		};
 		F80322747F4E4DC74EC73A3A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,15 +137,6 @@
 				F80322BF56E8D76FB9736847 /* FlipTheSwitchSpec.m */,
 			);
 			path = FlipTheSwitch;
-			sourceTree = "<group>";
-		};
-		F80326071F125AAC5C879D11 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				F80321A950C87742E17FCDA5 /* FlipTheSwitch */,
-			);
-			name = Classes;
-			path = ../Classes;
 			sourceTree = "<group>";
 		};
 		F80326AA2A755B0873B15852 /* Spec */ = {
@@ -325,7 +302,6 @@
 			files = (
 				F803272CB8A5B38D4757608E /* GcovTestObserver.m in Sources */,
 				F80325D46C885BC440A30C43 /* FlipTheSwitchSpec.m in Sources */,
-				F803204D0B9719A3EA6C36A7 /* FlipTheSwitch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +311,6 @@
 			files = (
 				F803238AA8E0E1976F0F95DC /* FlipTheSwitchSpec.m in Sources */,
 				F80329FE8A8EF57B776A9FDE /* GcovTestObserver.m in Sources */,
-				F80323A5146D9B2653CAF46A /* FlipTheSwitch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
