@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		13A20D72CD1E4E3DACB19302 /* libPods-FlipTheSwitchSpec-Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC66316DAF9423DA99C4191 /* libPods-FlipTheSwitchSpec-Mac.a */; };
+		5B686E221942303100A4D4EF /* Features.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = F8032D47C9B9398DABCBBFC1 /* Features.plist */; };
+		5B686E241942303D00A4D4EF /* Features.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = F8032A02CCC0DA178199DB3A /* Features.plist */; };
 		5B87AFEE193A80F20082F7A1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B87AFED193A80F20082F7A1 /* XCTest.framework */; };
 		5B87AFF0193A80F20082F7A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B87AFEF193A80F20082F7A1 /* Foundation.framework */; };
 		5B87AFF2193A80F20082F7A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B87AFF1193A80F20082F7A1 /* UIKit.framework */; };
@@ -20,6 +22,29 @@
 		F80329B3B762341EF7AD3E7F /* FlipTheSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = F8032766B6B64076F108F6DC /* FlipTheSwitch.m */; };
 		F80329FE8A8EF57B776A9FDE /* GcovTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = F8032394DDE5CCE6C76898E9 /* GcovTestObserver.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5B686E2119422FF100A4D4EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				5B686E221942303100A4D4EF /* Features.plist in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B686E231942303600A4D4EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				5B686E241942303D00A4D4EF /* Features.plist in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5B87AFEA193A80F20082F7A1 /* FlipTheSwitchSpec-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FlipTheSwitchSpec-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +65,8 @@
 		F80326FF993EEA2C7572BD21 /* FlipTheSwitchSpec-Mac-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlipTheSwitchSpec-Mac-Prefix.pch"; sourceTree = "<group>"; };
 		F8032766B6B64076F108F6DC /* FlipTheSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipTheSwitch.m; sourceTree = "<group>"; };
 		F80329E46696FF0EDC73C684 /* FlipTheSwitchSpec-Mac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "FlipTheSwitchSpec-Mac-Info.plist"; sourceTree = "<group>"; };
+		F8032A02CCC0DA178199DB3A /* Features.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Features.plist; sourceTree = "<group>"; };
+		F8032D47C9B9398DABCBBFC1 /* Features.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Features.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +133,7 @@
 			children = (
 				F80321987A56E7AF3BFF5FD9 /* FlipTheSwitchSpec-iOS-Prefix.pch */,
 				F80325C7A88C24081CF78461 /* FlipTheSwitchSpec-iOS-Info.plist */,
+				F8032A02CCC0DA178199DB3A /* Features.plist */,
 			);
 			path = "FlipTheSwitchSpec-iOS";
 			sourceTree = "<group>";
@@ -115,6 +143,7 @@
 			children = (
 				F80326FF993EEA2C7572BD21 /* FlipTheSwitchSpec-Mac-Prefix.pch */,
 				F80329E46696FF0EDC73C684 /* FlipTheSwitchSpec-Mac-Info.plist */,
+				F8032D47C9B9398DABCBBFC1 /* Features.plist */,
 			);
 			path = "FlipTheSwitchSpec-Mac";
 			sourceTree = "<group>";
@@ -183,6 +212,7 @@
 				5B87AFE7193A80F20082F7A1 /* Frameworks */,
 				5B87AFE8193A80F20082F7A1 /* Resources */,
 				B9D09C9694D0440FA36F295C /* Copy Pods Resources */,
+				5B686E231942303600A4D4EF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -202,6 +232,7 @@
 				5B9DCEA8193A869B00C63F9F /* Frameworks */,
 				5B9DCEA9193A869B00C63F9F /* Resources */,
 				6A9CA4829E96429EA19B7DBF /* Copy Pods Resources */,
+				5B686E2119422FF100A4D4EF /* CopyFiles */,
 			);
 			buildRules = (
 			);

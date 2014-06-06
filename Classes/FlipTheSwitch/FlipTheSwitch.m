@@ -2,9 +2,12 @@
 
 @interface FlipTheSwitch ()
 @property (nonatomic, readonly) NSUserDefaults *userDefaults;
+@property (nonatomic, readonly) NSBundle *bundle;
 @end
 
-@implementation FlipTheSwitch
+@implementation FlipTheSwitch {
+    NSDictionary *_plistEnabledFeatures;
+}
 
 #pragma mark - Singleton
 
@@ -13,7 +16,8 @@
     static FlipTheSwitch *sharedInstance;
     static dispatch_once_t once;
     dispatch_once(&once, ^{
-        sharedInstance = [[self alloc] initWithUserDefaults:[NSUserDefaults standardUserDefaults]];
+        sharedInstance = [[self alloc] initWithUserDefaults:[NSUserDefaults standardUserDefaults]
+                                                     bundle:[NSBundle mainBundle]];
     });
     return sharedInstance;
 }
@@ -21,11 +25,14 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithUserDefaults:(NSUserDefaults *)userDefaults
+                              bundle:(NSBundle *)bundle
 {
     self = [super init];
     if (self) {
         NSParameterAssert(userDefaults);
+        NSParameterAssert(bundle);
         _userDefaults = userDefaults;
+        _bundle = bundle;
     }
     return self;
 }
@@ -34,7 +41,12 @@
 
 - (BOOL)isFeatureEnabled:(NSString *)feature
 {
-    return [self.userDefaults boolForKey:[self keyForFeature:feature]];
+    NSNumber *userEnabledFeature = [self.userDefaults objectForKey:[self userKeyForFeature:feature]];
+    if (userEnabledFeature) {
+        return [userEnabledFeature boolValue];
+    } else {
+        return [[[self plistEnabledFeatures] objectForKey:feature] boolValue];
+    }
 }
 
 - (void)enableFeature:(NSString *)feature
@@ -49,15 +61,28 @@
 
 - (void)setFeature:(NSString *)feature enabled:(BOOL)enabled
 {
-    [self.userDefaults setBool:enabled forKey:[self keyForFeature:feature]];
+    [self.userDefaults setBool:enabled forKey:[self userKeyForFeature:feature]];
     [self.userDefaults synchronize];
 }
 
 #pragma mark - Private
 
-- (NSString *)keyForFeature:(NSString *)feature
+- (NSString *)userKeyForFeature:(NSString *)feature
 {
     return [NSString stringWithFormat:@"FTS_FEATURE_%@", feature];
+}
+
+- (NSDictionary *)plistEnabledFeatures
+{
+    if (!_plistEnabledFeatures) {
+        _plistEnabledFeatures = [[NSDictionary alloc] initWithContentsOfFile:[self featurePlistPath]];
+    }
+    return _plistEnabledFeatures;
+}
+
+- (NSString *)featurePlistPath
+{
+    return [self.bundle pathForResource:@"Features" ofType:@"plist"];
 }
 
 @end
