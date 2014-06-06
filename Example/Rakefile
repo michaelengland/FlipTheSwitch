@@ -1,0 +1,21 @@
+require 'rake/clean'
+
+def pods; 'Pods'; end
+def podfile_lock; 'Podfile.lock'; end
+def build; 'build'; end
+def workspace; 'Colors'; end
+
+CLOBBER.include(podfile_lock)
+CLOBBER.include(pods)
+
+CLEAN.include(build)
+
+task :default => :test
+
+file podfile_lock do
+  sh 'pod install'
+end
+
+task :test => podfile_lock do
+  sh "xctool build -scheme #{workspace}-iOS -workspace #{workspace}.xcworkspace -sdk iphonesimulator OBJROOT=#{build} SHARED_PRECOMPS_DIR=#{build}"
+end
