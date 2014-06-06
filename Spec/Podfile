@@ -1,6 +1,4 @@
 def needed_pods
-  pod 'FlipTheSwitch', :path => '../'
-
   pod 'Specta'
   pod 'Expecta'
   pod 'OCMockito'
