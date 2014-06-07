@@ -10,8 +10,8 @@ Pod::Spec.new do |s|
   }
   s.source = { :git => 'git@github.com:michaelengland/FlipTheSwitch.git', :tag => s.version.to_s }
 
-  s.source_files = 'Classes/FlipTheSwitch/*.{h,m}'
-  s.public_header_files = 'Classes/FlipTheSwitch/*.h'
+  s.source_files = 'Pod/Classes/FlipTheSwitch/*.{h,m}'
+  s.public_header_files = 'Pod/Classes/FlipTheSwitch/*.h'
 
   s.requires_arc = true
 end
