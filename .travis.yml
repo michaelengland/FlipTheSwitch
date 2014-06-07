@@ -3,7 +3,7 @@ before_install:
     - brew update
     - brew upgrade xctool
     - sudo easy_install cpp-coveralls
-    - gem install cocoapods
-    - gem install rake
+    - gem install bundler
+    - bundle install
 script: rake ci
 after_success: rake coverage
