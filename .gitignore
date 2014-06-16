@@ -15,6 +15,10 @@
 #########################
 
 #####
+# Guard
+Guardfile
+
+#####
 # Coveralls
 .coveralls.yml
 

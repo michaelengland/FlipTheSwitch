@@ -1,4 +1,4 @@
-def subfolders; ['Pod/Spec', 'Pod/Example']; end
+def subfolders; ['Tests', 'Example']; end
 
 def subperform(command)
   subfolders.each do |subfolder|
