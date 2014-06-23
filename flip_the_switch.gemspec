@@ -6,6 +6,9 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/michaelengland/FlipTheSwitch'
   s.version = '0.3.0'
 
+  s.add_dependency 'thor', '~> 0.19.1'
+  s.add_dependency 'plist', '~> 3.1.0'
+
   s.files = `git ls-files`.split($\)
   s.executables = s.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   s.test_files = s.files.grep(%r{^(test|spec|features)/})

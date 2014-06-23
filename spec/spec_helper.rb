@@ -8,4 +8,5 @@ end
 
 Spork.each_run do
   require 'flip_the_switch'
+  require 'flip_the_switch/cli'
 end

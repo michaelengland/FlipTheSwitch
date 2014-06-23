@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'flip_the_switch/cli'
+
+FlipTheSwitch::Cli.start
