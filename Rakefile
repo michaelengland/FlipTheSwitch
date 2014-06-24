@@ -1,4 +1,8 @@
-def subfolders; ['Tests', 'Example']; end
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new(:spec)
+
+def subfolders; %w(Tests Example); end
 
 def subperform(command)
   subfolders.each do |subfolder|
@@ -20,8 +24,9 @@ task :clean do
   subperform(:clean)
 end
 
-task :test do
+task :test => :spec do
   subperform(:test)
+
 end
 
 task :coverage do

@@ -5,5 +5,5 @@ before_install:
     - sudo easy_install cpp-coveralls
     - gem install bundler
     - bundle install
-script: rake ci
-after_success: rake coverage
+script: bundle exec rake ci
+after_success: bundle exec rake coverage

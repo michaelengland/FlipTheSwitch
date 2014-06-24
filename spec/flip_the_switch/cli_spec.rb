@@ -4,7 +4,7 @@ describe FlipTheSwitch::Cli do
   subject(:cli) { described_class }
   let(:yaml_reader) { double(FlipTheSwitch::Reader::Yaml, feature_states: {'something' => true}) }
   let(:plist_generator) { double(FlipTheSwitch::Generator::Plist) }
-  let(:perform) { subject.start([command] + options) }
+  let(:perform) { subject.start([command] + options, debug: true) }
 
   context 'when invalid command called' do
     let(:command) { 'invalid' }
@@ -25,7 +25,9 @@ describe FlipTheSwitch::Cli do
 
       before do
         FlipTheSwitch::Reader::Yaml.stub(:new).with('features.yml').and_return(yaml_reader)
-        FlipTheSwitch::Generator::Plist.stub(:new).with('Features.plist', {'something' => true}).and_return(plist_generator)
+        FlipTheSwitch::Generator::Plist.stub(:new).with('Features.plist', {
+            'something' => true
+        }).and_return(plist_generator)
       end
 
       it 'generates a plist using default options' do
@@ -34,31 +36,34 @@ describe FlipTheSwitch::Cli do
       end
     end
 
-    context 'when options given using full name' do
-      let(:options) { %w(--input=input --output=output --enabled=en abled --disabled=dis appointing) }
-
+    context 'when options given' do
       before do
         FlipTheSwitch::Reader::Yaml.stub(:new).with('input').and_return(yaml_reader)
-        FlipTheSwitch::Generator::Plist.stub(:new).with('output', {'something' => true, 'en' => true, 'abled' => true, 'dis' => false, 'appointing' => false}).and_return(plist_generator)
+        FlipTheSwitch::Generator::Plist.stub(:new).with('output', {
+            'something' => true,
+            'en' => true,
+            'abled' => true,
+            'dis' => false,
+            'appointing' => false
+        }).and_return(plist_generator)
       end
 
-      it 'generates a plist using the options given' do
-        expect(plist_generator).to receive(:generate)
-        perform
-      end
-    end
+      context 'using full name' do
+        let(:options) { %w(--input=input --output=output --enabled=en abled --disabled=dis appointing) }
 
-    context 'when options given using aliases' do
-      let(:options) { %w(-i=input -o=output -e=en abled -d=dis appointing) }
-
-      before do
-        FlipTheSwitch::Reader::Yaml.stub(:new).with('input').and_return(yaml_reader)
-        FlipTheSwitch::Generator::Plist.stub(:new).with('output', {'something' => true, 'en' => true, 'abled' => true, 'dis' => false, 'appointing' => false}).and_return(plist_generator)
+        it 'generates a plist using the options given' do
+          expect(plist_generator).to receive(:generate)
+          perform
+        end
       end
 
-      it 'generates a plist using the options given' do
-        expect(plist_generator).to receive(:generate)
-        perform
+      context 'using aliases' do
+        let(:options) { %w(-i=input -o=output -e=en abled -d=dis appointing) }
+
+        it 'generates a plist using the options given' do
+          expect(plist_generator).to receive(:generate)
+          perform
+        end
       end
     end
   end
