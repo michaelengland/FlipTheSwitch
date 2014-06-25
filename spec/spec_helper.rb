@@ -1,6 +1,9 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'spork'
+require 'codeclimate-test-reporter'
+
+CodeClimate::TestReporter.start
 
 Spork.prefork do
   require 'rspec'

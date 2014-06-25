@@ -7,3 +7,7 @@ before_install:
     - bundle install
 script: bundle exec rake ci
 after_success: bundle exec rake coverage
+addons:
+  code_climate:
+    repo_token:
+      secure: OX7DsiC54CWoPd2c2LQ2zI9TNUNGwkXRRPDb1i0pPLHW3YhRnxfLC79R3wXSYHwWfQY4VYDvNL3Kn44XltyZfptPcksSYJFdU2bmA1ppoyEO72CuCAVlFlcbmBfqdLclP4h5pXJdP+euW0QPvl6JpEnIKz+77vVnkLj6jotSL+g=
