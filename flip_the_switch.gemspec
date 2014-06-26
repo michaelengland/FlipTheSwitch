@@ -6,6 +6,7 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/michaelengland/FlipTheSwitch'
   s.version = '0.3.0'
 
+  s.add_dependency 'activesupport', '~> 3.2.18'
   s.add_dependency 'thor', '~> 0.19.1'
   s.add_dependency 'plist', '~> 3.1.0'
 

@@ -1,0 +1,26 @@
+/* AUTO-GENERATED. DO NOT ALTER */
+#import "FlipTheSwitch+Features.h"
+
+@implementation FlipTheSwitch (Features)
+<% for feature in feature_names %>
++ (BOOL)is<%= feature.camelize %>Enabled
+{
+    return [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"<%= feature %>"];
+}
+
++ (void)enable<%= feature.camelize %>
+{
+    [[FlipTheSwitch sharedInstance] enableFeature:@"<%= feature %>"];
+}
+
++ (void)disable<%= feature.camelize %>
+{
+    [[FlipTheSwitch sharedInstance] disableFeature:@"<%= feature %>"];
+}
+
++ (void)set<%= feature.camelize %>Enabled:(BOOL)enabled
+{
+    [[FlipTheSwitch sharedInstance] setFeature:@"<%= feature %>" enabled:enabled];
+}
+<% end %>
+@end

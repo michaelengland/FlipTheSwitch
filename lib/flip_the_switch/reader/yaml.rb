@@ -1,5 +1,4 @@
 require 'yaml'
-require 'flip_the_switch/errors'
 
 module FlipTheSwitch
   module Reader

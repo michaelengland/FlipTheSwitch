@@ -2,8 +2,6 @@ require 'spec_helper'
 
 describe FlipTheSwitch::Cli do
   subject(:cli) { described_class }
-  let(:yaml_reader) { double(FlipTheSwitch::Reader::Yaml, feature_states: {'something' => true}) }
-  let(:plist_generator) { double(FlipTheSwitch::Generator::Plist) }
   let(:perform) { subject.start([command] + options, debug: true) }
 
   context 'when invalid command called' do
@@ -17,21 +15,20 @@ describe FlipTheSwitch::Cli do
     end
   end
 
-  context 'when plist command called' do
-    let(:command) { 'plist' }
+  shared_examples_for 'generator' do
+    let(:yaml_reader) { double(FlipTheSwitch::Reader::Yaml, feature_states: {'something' => true}) }
+    let(:generator) { double(generator_class) }
 
     context 'when no options given' do
       let(:options) { [] }
 
       before do
         FlipTheSwitch::Reader::Yaml.stub(:new).with('features.yml').and_return(yaml_reader)
-        FlipTheSwitch::Generator::Plist.stub(:new).with('Features.plist', {
-            'something' => true
-        }).and_return(plist_generator)
+        generator_class.stub(:new).with(default_output, 'something' => true).and_return(generator)
       end
 
-      it 'generates a plist using default options' do
-        expect(plist_generator).to receive(:generate)
+      it 'generates using default options' do
+        expect(generator).to receive(:generate)
         perform
       end
     end
@@ -39,20 +36,20 @@ describe FlipTheSwitch::Cli do
     context 'when options given' do
       before do
         FlipTheSwitch::Reader::Yaml.stub(:new).with('input').and_return(yaml_reader)
-        FlipTheSwitch::Generator::Plist.stub(:new).with('output', {
+        generator_class.stub(:new).with('output', {
             'something' => true,
             'en' => true,
             'abled' => true,
             'dis' => false,
             'appointing' => false
-        }).and_return(plist_generator)
+        }).and_return(generator)
       end
 
       context 'using full name' do
         let(:options) { %w(--input=input --output=output --enabled=en abled --disabled=dis appointing) }
 
-        it 'generates a plist using the options given' do
-          expect(plist_generator).to receive(:generate)
+        it 'generates using the options given' do
+          expect(generator).to receive(:generate)
           perform
         end
       end
@@ -60,11 +57,27 @@ describe FlipTheSwitch::Cli do
       context 'using aliases' do
         let(:options) { %w(-i=input -o=output -e=en abled -d=dis appointing) }
 
-        it 'generates a plist using the options given' do
-          expect(plist_generator).to receive(:generate)
+        it 'generates using the options given' do
+          expect(generator).to receive(:generate)
           perform
         end
       end
     end
+  end
+
+  context 'when plist command called' do
+    let(:command) { 'plist' }
+    let(:generator_class) { FlipTheSwitch::Generator::Plist }
+    let(:default_output) { 'Features.plist' }
+
+    it_behaves_like 'generator'
+  end
+
+  context 'when category command called' do
+    let(:command) { 'category' }
+    let(:generator_class) { FlipTheSwitch::Generator::Category }
+    let(:default_output) { 'FlipTheSwitch+Features' }
+
+    it_behaves_like 'generator'
   end
 end
