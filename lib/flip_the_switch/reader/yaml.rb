@@ -25,9 +25,13 @@ module FlipTheSwitch
       end
 
       def file_states
-        @file_states ||= YAML.load_file(input)
+        @file_states ||= YAML.load_file(input_file)
       rescue SystemCallError => e
         raise Error::UnreadableFile.new(e)
+      end
+
+      def input_file
+        File.join(input, 'features.yml')
       end
     end
   end

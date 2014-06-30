@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe FlipTheSwitch::Generator::Category do
   subject(:category) { FlipTheSwitch::Generator::Category.new(output, feature_states) }
-  let(:output) { 'spec/resources/FlipTheSwitch+Features' }
+  let(:output) { 'spec/resources' }
   let(:feature_states) { {'first_feature' => true, 'second_feature' => false} }
   let(:expected_header_file) { File.read('spec/resources/expected_header.h') }
   let(:expected_implementation_file) { File.read('spec/resources/expected_implementation.m') }
@@ -14,11 +14,13 @@ describe FlipTheSwitch::Generator::Category do
 
   it 'writes a FlipTheSwitch+Features.h file with the category header' do
     subject.generate
+
     expect(File.read(output_name_with('h'))).to eql(expected_header_file)
   end
 
   it 'writes a FlipTheSwitch+Features.m file with the category implementation' do
     subject.generate
+
     expect(File.read(output_name_with('m'))).to eql(expected_implementation_file)
   end
 
@@ -37,6 +39,6 @@ describe FlipTheSwitch::Generator::Category do
   end
 
   def output_name_with(suffix)
-    "#{output}.#{suffix}"
+    "#{output}/FlipTheSwitch+Features.#{suffix}"
   end
 end

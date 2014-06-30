@@ -4,7 +4,7 @@ describe FlipTheSwitch::Reader::Yaml do
   subject(:reader) { described_class.new(input) }
 
   context 'when given a real file' do
-    let(:input) { 'spec/resources/features.yml' }
+    let(:input) { 'spec/resources/real' }
 
     it 'reads the enabled/disabled states of the features' do
       expect(subject.feature_states).to eql('enabled_feature' => true, 'disabled_feature' => false)
@@ -22,7 +22,7 @@ describe FlipTheSwitch::Reader::Yaml do
   end
 
   context 'when given an invalid file type' do
-    let(:input) { 'spec/resources/invalid.txt' }
+    let(:input) { 'spec/resources/invalid_type' }
 
     specify do
       expect {
@@ -32,7 +32,7 @@ describe FlipTheSwitch::Reader::Yaml do
   end
 
   context 'when given an invalid file layout' do
-    let(:input) { 'spec/resources/invalid.yml' }
+    let(:input) { 'spec/resources/invalid_layout' }
 
     specify do
       expect {

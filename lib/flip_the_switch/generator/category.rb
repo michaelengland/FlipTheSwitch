@@ -32,11 +32,11 @@ module FlipTheSwitch
       end
 
       def header_file
-        "#{output}.h"
+        File.join(output, 'FlipTheSwitch+Features.h')
       end
 
       def implementation_file
-        "#{output}.m"
+        File.join(output, 'FlipTheSwitch+Features.m')
       end
 
       def header

@@ -23,8 +23,8 @@ describe FlipTheSwitch::Cli do
       let(:options) { [] }
 
       before do
-        FlipTheSwitch::Reader::Yaml.stub(:new).with('features.yml').and_return(yaml_reader)
-        generator_class.stub(:new).with(default_output, 'something' => true).and_return(generator)
+        FlipTheSwitch::Reader::Yaml.stub(:new).with(Dir.pwd).and_return(yaml_reader)
+        generator_class.stub(:new).with(Dir.pwd, 'something' => true).and_return(generator)
       end
 
       it 'generates using default options' do
@@ -68,7 +68,6 @@ describe FlipTheSwitch::Cli do
   context 'when plist command called' do
     let(:command) { 'plist' }
     let(:generator_class) { FlipTheSwitch::Generator::Plist }
-    let(:default_output) { 'Features.plist' }
 
     it_behaves_like 'generator'
   end
@@ -76,7 +75,6 @@ describe FlipTheSwitch::Cli do
   context 'when category command called' do
     let(:command) { 'category' }
     let(:generator_class) { FlipTheSwitch::Generator::Category }
-    let(:default_output) { 'FlipTheSwitch+Features' }
 
     it_behaves_like 'generator'
   end

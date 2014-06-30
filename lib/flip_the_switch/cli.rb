@@ -3,18 +3,18 @@ require 'flip_the_switch'
 
 module FlipTheSwitch
   class Cli < Thor
-    class_option :input, type: :string, aliases: '-i', default: 'features.yml', desc: 'Location of the yaml file to read'
+    class_option :input, type: :string, aliases: '-i', default: Dir.pwd, desc: 'Location of the directory containing features.yml file to read'
     class_option :enabled, type: :array, aliases: '-e', default: [], desc: 'Extra features to be set as enabled'
     class_option :disabled, type: :array, aliases: '-d', default: [], desc: 'Extra features to be set as disabled'
 
-    desc 'plist', 'Auto-generates a .plist file for enabled/disabled features'
-    method_option :output, type: :string, aliases: '-o', default: 'Features.plist', desc: 'Location of the plist file to create'
+    desc 'plist', 'Auto-generates a Features.plist file for enabled/disabled features'
+    method_option :output, type: :string, aliases: '-o', default: Dir.pwd, desc: 'Location of the directory in which Features.plist file will be created'
     def plist
       plist_generator.generate
     end
 
     desc 'category', 'Auto-generates .h & .m files for enabled/disabled features'
-    method_option :output, type: :string, aliases: '-o', default: 'FlipTheSwitch+Features', desc: 'Location of the plist file to create'
+    method_option :output, type: :string, aliases: '-o', default: Dir.pwd, desc: 'Location of the directory in which FlipTheSwitch+Features.{h,m} files will be created'
     def category
       category_generator.generate
     end
