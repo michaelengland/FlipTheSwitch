@@ -48,21 +48,56 @@ The features can defaulted to enabled/disabled via a plist file `Features.plist`
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>plist_enabled_feature</key>
+    <key>enabled_feature</key>
     <true/>
-    <key>plist_disabled_feature</key>
+    <key>disabled_feature</key>
     <false/>
 </dict>
 </plist>
 ```
 
+## Command-Line-Interface
+
+If you install the gem, you will be able to use the Command-Line-Interface.
+
+The CLI consists of 2 commands:
+
+ - `plist` - creates a `Features.plist` file for enabled/disabled features like that mentioned above.
+ - `category` - creates `FlipTheSwitch+Features.{h,m}` files for features, thus giving compile-time checks for adding/removal of new features.
+e.g:
+
+```objective-c
+/* AUTO-GENERATED. DO NOT ALTER */
+#import <FlipTheSwitch/FlipTheSwitch.h>
+
+@interface FlipTheSwitch (Features)
+
++ (BOOL)isAwesomeFeatureEnabled;
++ (void)enableAwesomeFeature;
++ (void)disableAwesomeFeature;
++ (void)setAwesomeFeatureEnabled:(BOOL)enabled;
+
+@end
+```
+
+The features, along with their default enabled/disabled state, are read from a `features.yml` file. e.g.:
+
+```yaml
+awesome_feature: Yes
+```
+
+For more information, run `flip-the-switch help`
+
 ## How to install
 
-Add `pod "FlipTheSwitch"` to your Podfile
+Add `pod 'FlipTheSwitch'` to your Podfile
+
+Add `gem 'flip-the-switch'` to your Gemfile
 
 ## Authors
 
   - [Michael England](https://github.com/michaelengland) @ [SoundCloud](https://github.com/soundcloud)
+  - [Rob Siwek](https://github.com/nerdsRob) @ [SoundCloud](https://github.com/soundcloud)
 
 ## License
 
