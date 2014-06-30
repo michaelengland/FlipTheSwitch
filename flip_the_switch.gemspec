@@ -5,6 +5,7 @@ Gem::Specification.new do |s|
   s.summary = 'A simple library to help enabling/disabling features on iOS/Mac applications.'
   s.homepage = 'https://github.com/michaelengland/FlipTheSwitch'
   s.version = '0.3.0'
+  s.license = 'MIT'
 
   s.add_dependency 'activesupport', '~> 3.2.18'
   s.add_dependency 'thor', '~> 0.19.1'
