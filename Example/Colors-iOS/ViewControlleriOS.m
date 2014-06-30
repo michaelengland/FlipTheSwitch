@@ -1,9 +1,6 @@
 #import "ViewControlleriOS.h"
 
-#import "FlipTheSwitch.h"
-
-static NSString *const kRedColorFeature = @"red_color";
-static NSString *const kPurpleColorFeature = @"purple_color";
+#import "FlipTheSwitch+Features.h"
 
 @interface ViewControlleriOS ()
 @property (nonatomic, weak) IBOutlet UIView *topColorView;
@@ -42,7 +39,7 @@ static NSString *const kPurpleColorFeature = @"purple_color";
 {
     NSString *topColorName;
     UIColor *topColor;
-    if ([self isRedFeatureEnabled]) {
+    if ([FlipTheSwitch isRedColorEnabled]) {
         topColorName = @"Red";
         topColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
     } else {
@@ -57,7 +54,7 @@ static NSString *const kPurpleColorFeature = @"purple_color";
 {
     NSString *bottomColorName;
     UIColor *bottomColor;
-    if ([self isPurpleFeatureEnabled]) {
+    if ([FlipTheSwitch isPurpleColorEnabled]) {
         bottomColorName = @"Purple";
         bottomColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:1];
     } else {
@@ -70,32 +67,12 @@ static NSString *const kPurpleColorFeature = @"purple_color";
 
 - (void)toggleRedFeature
 {
-    if ([self isRedFeatureEnabled]) {
-        [self disableRedFeature];
+    if ([FlipTheSwitch isRedColorEnabled]) {
+        [FlipTheSwitch disableRedColor];
     } else {
-        [self enableRedFeature];
+        [FlipTheSwitch enableRedColor];
     }
     [self setupView];
-}
-
-- (BOOL)isRedFeatureEnabled
-{
-    return [[FlipTheSwitch sharedInstance] isFeatureEnabled:kRedColorFeature];
-}
-
-- (BOOL)isPurpleFeatureEnabled
-{
-    return [[FlipTheSwitch sharedInstance] isFeatureEnabled:kPurpleColorFeature];
-}
-
-- (void)disableRedFeature
-{
-    [[FlipTheSwitch sharedInstance] disableFeature:kRedColorFeature];
-}
-
-- (void)enableRedFeature
-{
-    [[FlipTheSwitch sharedInstance] enableFeature:kRedColorFeature];
 }
 
 @end

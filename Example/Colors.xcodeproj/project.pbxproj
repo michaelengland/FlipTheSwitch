@@ -16,6 +16,7 @@
 		5B9098B1193A235E004C12B3 /* ViewControlleriOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9098B0193A235E004C12B3 /* ViewControlleriOS.m */; };
 		5B9098B3193A235E004C12B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9098B2193A235E004C12B3 /* Images.xcassets */; };
 		F803204E3B632B5F0E19014F /* AppDelegateiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = F803243E8A66F29C3EA37B65 /* AppDelegateiOS.m */; };
+		F80326F51193A67FEB8D4F69 /* FlipTheSwitch+Features.m in Sources */ = {isa = PBXBuildFile; fileRef = F803287440254AB051D00DDB /* FlipTheSwitch+Features.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		5F7C4D132FE24A06ACC52E5F /* libPods-Colors-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Colors-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80321679CBE499FFA387688 /* Features.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Features.plist; sourceTree = "<group>"; };
 		F803243E8A66F29C3EA37B65 /* AppDelegateiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateiOS.m; sourceTree = "<group>"; };
+		F803287440254AB051D00DDB /* FlipTheSwitch+Features.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FlipTheSwitch+Features.m"; sourceTree = "<group>"; };
+		F8032EBDB675B3B788B1297F /* FlipTheSwitch+Features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlipTheSwitch+Features.h"; sourceTree = "<group>"; };
 		F8032F89446610853BDFF019 /* AppDelegateiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateiOS.h; sourceTree = "<group>"; };
 		FA266F5E1A3E46478CDB53E6 /* Pods-Colors-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colors-iOS.xcconfig"; path = "Pods/Pods-Colors-iOS.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +91,8 @@
 				5B90989E193A235E004C12B3 /* Supporting Files */,
 				F8032F89446610853BDFF019 /* AppDelegateiOS.h */,
 				F803243E8A66F29C3EA37B65 /* AppDelegateiOS.m */,
+				F8032EBDB675B3B788B1297F /* FlipTheSwitch+Features.h */,
+				F803287440254AB051D00DDB /* FlipTheSwitch+Features.m */,
 			);
 			path = "Colors-iOS";
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				5B9098B1193A235E004C12B3 /* ViewControlleriOS.m in Sources */,
 				5B9098A4193A235E004C12B3 /* main.m in Sources */,
 				F803204E3B632B5F0E19014F /* AppDelegateiOS.m in Sources */,
+				F80326F51193A67FEB8D4F69 /* FlipTheSwitch+Features.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
