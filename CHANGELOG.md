@@ -1,4 +1,4 @@
-# 0.3.0 / Unreleased
+# 0.3.0 / 2014-07-02
 
  * [FEATURE] #15 Auto-create category for features
  * [FEATURE] #13 Auto-create plist file for features
