@@ -2,7 +2,7 @@
 
 A feature switching/toggling/flipping library  for ObjectiveC.
 
-# flip_the_switch [![Build Status](https://travis-ci.org/michaelengland/FlipTheSwitch.svg?branch=master)](https://travis-ci.org/michaelengland/FlipTheSwitch) [![Code Climate](https://codeclimate.com/github/michaelengland/FlipTheSwitch.png)](https://codeclimate.com/github/michaelengland/FlipTheSwitch) [![Code Climate](https://codeclimate.com/github/michaelengland/FlipTheSwitch/coverage.png)](https://codeclimate.com/github/michaelengland/FlipTheSwitch) [![Gem Version](https://badge.fury.io/rb/flip-the-switch.svg)](http://badge.fury.io/rb/flip-the-switch)
+# flip_the_switch [![Build Status](https://travis-ci.org/michaelengland/FlipTheSwitch.svg?branch=master)](https://travis-ci.org/michaelengland/FlipTheSwitch) [![Code Climate](https://codeclimate.com/github/michaelengland/FlipTheSwitch.png)](https://codeclimate.com/github/michaelengland/FlipTheSwitch) [![Code Climate](https://codeclimate.com/github/michaelengland/FlipTheSwitch/coverage.png)](https://codeclimate.com/github/michaelengland/FlipTheSwitch) [![Gem Version](https://badge.fury.io/rb/flip_the_switch.svg)](http://badge.fury.io/rb/flip_the_switch)
 
 A gem command line tool for generating the `Features.plist` & `FlipTheSwitch+Features.{h,m}` categories to help with the corresponding Pod.
 
