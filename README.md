@@ -92,7 +92,7 @@ For more information, run `flip-the-switch help`
 
 Add `pod 'FlipTheSwitch'` to your Podfile
 
-Add `gem 'flip-the-switch'` to your Gemfile
+Add `gem 'flip_the_switch'` to your Gemfile
 
 ## Authors
 
