@@ -46,7 +46,7 @@ describe FlipTheSwitch::Cli do
       end
 
       context 'using full name' do
-        let(:options) { %w(--input=input --environment=environment --output=output --enabled=en abled --disabled=dis appointing) }
+        let(:options) { %w(--input=input --environment=environment --output=output --enabled=en,abled --disabled=dis,appointing) }
 
         it 'generates using the options given' do
           expect(generator).to receive(:generate)
@@ -55,7 +55,7 @@ describe FlipTheSwitch::Cli do
       end
 
       context 'using aliases' do
-        let(:options) { %w(-i=input -n=environment -o=output -e=en abled -d=dis appointing) }
+        let(:options) { %w(-i=input -n=environment -o=output -e=en,abled -d=dis,appointing) }
 
         it 'generates using the options given' do
           expect(generator).to receive(:generate)
