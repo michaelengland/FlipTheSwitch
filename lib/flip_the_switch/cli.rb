@@ -35,13 +35,13 @@ module FlipTheSwitch
     end
 
     def feature_states
-      yaml_reader.feature_states.
+      feature_reader.feature_states.
           merge(enabled_states).
           merge(disabled_states)
     end
 
-    def yaml_reader
-      Reader::Yaml.new(options.input, options.environment)
+    def feature_reader
+      Reader::Features.new(options.input, options.environment)
     end
 
     def enabled_states

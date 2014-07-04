@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FlipTheSwitch::Reader::Yaml do
+describe FlipTheSwitch::Reader::Features do
   subject(:reader) { described_class.new(input, environment) }
   let(:environment) { 'beta' }
 

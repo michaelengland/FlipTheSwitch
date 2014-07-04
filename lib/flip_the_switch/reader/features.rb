@@ -2,7 +2,7 @@ require 'yaml'
 
 module FlipTheSwitch
   module Reader
-    class Yaml
+    class Features
       def initialize(input, environment)
         @input = input
         @environment = environment

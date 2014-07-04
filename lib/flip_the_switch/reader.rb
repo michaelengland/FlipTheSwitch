@@ -1,1 +1,1 @@
-require 'flip_the_switch/reader/yaml'
+require 'flip_the_switch/reader/features'

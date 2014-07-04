@@ -16,14 +16,14 @@ describe FlipTheSwitch::Cli do
   end
 
   shared_examples_for 'generator' do
-    let(:yaml_reader) { double(FlipTheSwitch::Reader::Yaml, feature_states: {'something' => true}) }
+    let(:feature_reader) { double(FlipTheSwitch::Reader::Features, feature_states: {'something' => true}) }
     let(:generator) { double(generator_class) }
 
     context 'when no options given' do
       let(:options) { [] }
 
       before do
-        FlipTheSwitch::Reader::Yaml.stub(:new).with(Dir.pwd, 'default').and_return(yaml_reader)
+        FlipTheSwitch::Reader::Features.stub(:new).with(Dir.pwd, 'default').and_return(feature_reader)
         generator_class.stub(:new).with(Dir.pwd, 'something' => true).and_return(generator)
       end
 
@@ -35,7 +35,7 @@ describe FlipTheSwitch::Cli do
 
     context 'when options given' do
       before do
-        FlipTheSwitch::Reader::Yaml.stub(:new).with('input', 'environment').and_return(yaml_reader)
+        FlipTheSwitch::Reader::Features.stub(:new).with('input', 'environment').and_return(feature_reader)
         generator_class.stub(:new).with('output', {
             'something' => true,
             'en' => true,
