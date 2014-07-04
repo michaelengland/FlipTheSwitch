@@ -1,2 +1,6 @@
-enabled_feature: Yes
-disabled_feature: No
+defaults: &DEFAULT
+  enabled_feature: Yes
+  disabled_feature: Yes
+beta:
+  <<: *DEFAULT
+  disabled_feature: No

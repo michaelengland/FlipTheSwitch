@@ -23,7 +23,7 @@ describe FlipTheSwitch::Cli do
       let(:options) { [] }
 
       before do
-        FlipTheSwitch::Reader::Yaml.stub(:new).with(Dir.pwd).and_return(yaml_reader)
+        FlipTheSwitch::Reader::Yaml.stub(:new).with(Dir.pwd, 'default').and_return(yaml_reader)
         generator_class.stub(:new).with(Dir.pwd, 'something' => true).and_return(generator)
       end
 
@@ -35,7 +35,7 @@ describe FlipTheSwitch::Cli do
 
     context 'when options given' do
       before do
-        FlipTheSwitch::Reader::Yaml.stub(:new).with('input').and_return(yaml_reader)
+        FlipTheSwitch::Reader::Yaml.stub(:new).with('input', 'environment').and_return(yaml_reader)
         generator_class.stub(:new).with('output', {
             'something' => true,
             'en' => true,
@@ -46,7 +46,7 @@ describe FlipTheSwitch::Cli do
       end
 
       context 'using full name' do
-        let(:options) { %w(--input=input --output=output --enabled=en abled --disabled=dis appointing) }
+        let(:options) { %w(--input=input --environment=environment --output=output --enabled=en abled --disabled=dis appointing) }
 
         it 'generates using the options given' do
           expect(generator).to receive(:generate)
@@ -55,7 +55,7 @@ describe FlipTheSwitch::Cli do
       end
 
       context 'using aliases' do
-        let(:options) { %w(-i=input -o=output -e=en abled -d=dis appointing) }
+        let(:options) { %w(-i=input -n=environment -o=output -e=en abled -d=dis appointing) }
 
         it 'generates using the options given' do
           expect(generator).to receive(:generate)

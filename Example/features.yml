@@ -1,2 +1,3 @@
-purple_color: Yes
-red_color: No
+default:
+  purple_color: Yes
+  red_color: No

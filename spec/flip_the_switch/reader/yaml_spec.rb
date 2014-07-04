@@ -1,13 +1,26 @@
 require 'spec_helper'
 
 describe FlipTheSwitch::Reader::Yaml do
-  subject(:reader) { described_class.new(input) }
+  subject(:reader) { described_class.new(input, environment) }
+  let(:environment) { 'beta' }
 
   context 'when given a real file' do
     let(:input) { 'spec/resources/real' }
 
-    it 'reads the enabled/disabled states of the features' do
-      expect(subject.feature_states).to eql('enabled_feature' => true, 'disabled_feature' => false)
+    context 'when given an valid environment' do
+      it 'reads the enabled/disabled states of the features for the environment' do
+        expect(subject.feature_states).to eql('enabled_feature' => true, 'disabled_feature' => false)
+      end
+    end
+
+    context 'when given an invalid environment' do
+      let(:environment) { 'invalid' }
+
+      specify do
+        expect {
+          subject.feature_states
+        }.to raise_error(FlipTheSwitch::Error::InvalidEnvironment)
+      end
     end
   end
 

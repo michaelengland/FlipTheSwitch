@@ -8,5 +8,8 @@ module FlipTheSwitch
 
     class InvalidFile < Base
     end
+
+    class InvalidEnvironment < Base
+    end
   end
 end

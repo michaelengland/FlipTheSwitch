@@ -4,6 +4,7 @@ require 'flip_the_switch'
 module FlipTheSwitch
   class Cli < Thor
     class_option :input, type: :string, aliases: '-i', default: Dir.pwd, desc: 'Location of the directory containing features.yml file to read'
+    class_option :environment, type: :string, aliases: '-n', default: 'default', desc: 'Name of environment to read from in features.yml file'
     class_option :enabled, type: :array, aliases: '-e', default: [], desc: 'Extra features to be set as enabled'
     class_option :disabled, type: :array, aliases: '-d', default: [], desc: 'Extra features to be set as disabled'
 
@@ -40,7 +41,7 @@ module FlipTheSwitch
     end
 
     def yaml_reader
-      Reader::Yaml.new(options.input)
+      Reader::Yaml.new(options.input, options.environment)
     end
 
     def enabled_states
