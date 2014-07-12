@@ -1,3 +1,5 @@
+require 'active_support/core_ext/hash/indifferent_access'
+
 module FlipTheSwitch
   module Reader
     class Defaults
@@ -17,12 +19,12 @@ module FlipTheSwitch
 
       def base_defaults
         {
-            'input' => Dir.pwd,
-            'environment' => 'default',
-            'enabled' => '',
-            'disabled' => '',
-            'output' => Dir.pwd
-        }
+            input: Dir.pwd,
+            environment: 'default',
+            enabled: '',
+            disabled: '',
+            output: Dir.pwd
+        }.with_indifferent_access
       end
 
       def file_defaults

@@ -1,3 +1,4 @@
+require 'flip_the_switch/generator/base'
 require 'plist'
 
 module FlipTheSwitch

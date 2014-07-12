@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe FlipTheSwitch::Generator::Plist do
-  subject(:plist) { FlipTheSwitch::Generator::Plist.new(output, feature_states) }
+  subject(:plist) { described_class.new(output, feature_states) }
   let(:output) { 'spec/resources' }
   let(:feature_states) { {enabled_feature: true, disabled_feature: false} }
   let(:output_file) { 'spec/resources/Features.plist' }

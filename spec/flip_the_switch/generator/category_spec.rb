@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe FlipTheSwitch::Generator::Category do
-  subject(:category) { FlipTheSwitch::Generator::Category.new(output, feature_states) }
+  subject(:category) { described_class.new(output, feature_states) }
   let(:output) { 'spec/resources' }
   let(:feature_states) { {'first_feature' => true, 'second_feature' => false} }
   let(:expected_header_file) { File.read('spec/resources/expected_header.h') }

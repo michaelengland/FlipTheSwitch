@@ -78,4 +78,11 @@ describe FlipTheSwitch::Cli do
 
     it_behaves_like 'generator'
   end
+
+  context 'when settings command called' do
+    let(:command) { 'settings' }
+    let(:generator_class) { FlipTheSwitch::Generator::Settings }
+
+    it_behaves_like 'generator'
+  end
 end
