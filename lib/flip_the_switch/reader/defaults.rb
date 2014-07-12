@@ -5,7 +5,7 @@ module FlipTheSwitch
         if valid_file?
           base_defaults.merge(file_defaults)
         else
-          raise Error::InvalidFile
+          raise Error::InvalidFile.new(defaults_file)
         end
       end
 

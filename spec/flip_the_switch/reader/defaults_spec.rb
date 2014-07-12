@@ -16,7 +16,7 @@ describe FlipTheSwitch::Reader::Defaults do
             'environment' => 'environment',
             'enabled' => 'enabled',
             'disabled' => 'disabled',
-            'output' => 'output',
+            'output' => 'output'
         }))
       end
 

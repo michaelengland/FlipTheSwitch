@@ -12,7 +12,7 @@ module FlipTheSwitch
         if valid_file?
           environment_states
         else
-          raise Error::InvalidFile.new
+          raise Error::InvalidFile.new(input_file)
         end
       end
 
@@ -35,7 +35,7 @@ module FlipTheSwitch
         if file_states.has_key?(environment)
           file_states[environment]
         else
-          raise Error::InvalidEnvironment
+          raise Error::InvalidEnvironment.new(environment)
         end
       end
 

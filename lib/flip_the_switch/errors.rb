@@ -7,9 +7,15 @@ module FlipTheSwitch
     end
 
     class InvalidFile < Base
+      def initialize(file)
+        super("Invalid file - #{file}")
+      end
     end
 
     class InvalidEnvironment < Base
+      def initialize(environment)
+        super("Invalid environment - #{environment}")
+      end
     end
   end
 end

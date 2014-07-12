@@ -1,4 +1,9 @@
 #!/usr/bin/env ruby
 require 'flip_the_switch/cli'
 
-FlipTheSwitch::Cli.start
+begin
+  FlipTheSwitch::Cli.start
+rescue FlipTheSwitch::Error::Base => e
+  $stderr.puts e
+  exit(false)
+end
