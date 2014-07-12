@@ -1,6 +1,6 @@
 module FlipTheSwitch
   module Reader
-    class Settings
+    class Defaults
       def defaults
         if valid_file?
           base_defaults.merge(file_defaults)
@@ -26,12 +26,12 @@ module FlipTheSwitch
       end
 
       def file_defaults
-        @file_defaults ||= YAML.load_file(settings_file)
+        @file_defaults ||= YAML.load_file(defaults_file)
       rescue SystemCallError
         {}
       end
 
-      def settings_file
+      def defaults_file
         '.flip.yml'
       end
     end

@@ -1,17 +1,17 @@
 require 'spec_helper'
 
-describe FlipTheSwitch::Reader::Settings do
+describe FlipTheSwitch::Reader::Defaults do
   subject(:reader) { described_class.new }
-  let(:settings_file) { '.flip.yml' }
+  let(:defaults_file) { '.flip.yml' }
 
   after do
-    File.delete(settings_file) if File.exists?(settings_file)
+    File.delete(defaults_file) if File.exists?(defaults_file)
   end
 
-  context 'when settings file exists' do
+  context 'when defaults file exists' do
     context 'when valid' do
       before do
-        File.write(settings_file, YAML.dump({
+        File.write(defaults_file, YAML.dump({
             'input' => 'input',
             'environment' => 'environment',
             'enabled' => 'enabled',
@@ -43,7 +43,7 @@ describe FlipTheSwitch::Reader::Settings do
 
     context 'when invalid' do
       before do
-        File.write(settings_file, 'this is not what we want')
+        File.write(defaults_file, 'this is not what we want')
       end
 
       specify do
@@ -54,7 +54,7 @@ describe FlipTheSwitch::Reader::Settings do
     end
   end
 
-  context 'when settings file does NOT exist' do
+  context 'when defaults file does NOT exist' do
     it 'returns base input default' do
       expect(subject.defaults['input']).to eql(Dir.pwd)
     end

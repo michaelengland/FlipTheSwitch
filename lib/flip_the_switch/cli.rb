@@ -5,7 +5,7 @@ module FlipTheSwitch
   class Cli < Thor
     private
     def self.defaults
-      @defaults ||= Reader::Settings.new.defaults
+      @defaults ||= Reader::Defaults.new.defaults
     end
 
     public

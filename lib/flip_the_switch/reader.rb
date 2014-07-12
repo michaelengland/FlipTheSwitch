@@ -1,2 +1,2 @@
 require 'flip_the_switch/reader/features'
-require 'flip_the_switch/reader/settings'
+require 'flip_the_switch/reader/defaults'
