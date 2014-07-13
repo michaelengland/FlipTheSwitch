@@ -12,11 +12,38 @@
 
 @implementation ViewControlleriOS
 
+#pragma mark - Lifecycle
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - UIViewController Lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupView];
+    [self setupStateChangeNotifications];
+}
+
+- (void)setupStateChangeNotifications
+{
+    [self setupNotification:UIApplicationWillEnterForegroundNotification];
+    [self setupNotification:UIApplicationDidBecomeActiveNotification];
+}
+
+- (void)setupNotification:(NSString *)notification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationStateChanged:)
+                                                 name:notification
+                                               object:nil];
+}
+
+- (void)applicationStateChanged:(UIApplication *)application
+{
     [self setupView];
 }
 

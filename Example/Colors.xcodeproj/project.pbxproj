@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35D6E35AEAC9473FAAAB5BE5 /* libPods-Colors-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7C4D132FE24A06ACC52E5F /* libPods-Colors-iOS.a */; };
+		5B13CA4919721395001D008A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B13CA4819721395001D008A /* Settings.bundle */; };
 		5B20701A194237BF00D07667 /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = F80321679CBE499FFA387688 /* Features.plist */; };
 		5B909898193A235E004C12B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B909897193A235E004C12B3 /* Foundation.framework */; };
 		5B90989C193A235E004C12B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B90989B193A235E004C12B3 /* UIKit.framework */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B13CA4819721395001D008A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		5B909894193A235E004C12B3 /* Colors-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Colors-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B909897193A235E004C12B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5B90989B193A235E004C12B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -93,6 +95,7 @@
 				F803243E8A66F29C3EA37B65 /* AppDelegateiOS.m */,
 				F8032EBDB675B3B788B1297F /* FlipTheSwitch+Features.h */,
 				F803287440254AB051D00DDB /* FlipTheSwitch+Features.m */,
+				5B13CA4819721395001D008A /* Settings.bundle */,
 			);
 			path = "Colors-iOS";
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B13CA4919721395001D008A /* Settings.bundle in Resources */,
 				5B20701A194237BF00D07667 /* Features.plist in Resources */,
 				5B9098B3193A235E004C12B3 /* Images.xcassets in Resources */,
 				5B9098AB193A235E004C12B3 /* Main_iPhone.storyboard in Resources */,

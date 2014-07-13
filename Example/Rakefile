@@ -19,5 +19,6 @@ end
 task :test => podfile_lock do
   sh 'bundle exec ../bin/flip-the-switch plist -o Colors-iOS'
   sh 'bundle exec ../bin/flip-the-switch category -o Colors-iOS'
+  sh 'bundle exec ../bin/flip-the-switch settings -o Colors-iOS'
   sh "xctool build -scheme #{workspace}-iOS -workspace #{workspace}.xcworkspace -sdk iphonesimulator OBJROOT=#{build} SHARED_PRECOMPS_DIR=#{build}"
 end
