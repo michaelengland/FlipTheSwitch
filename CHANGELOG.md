@@ -1,3 +1,9 @@
+# 0.4.0 / Unreleased
+
+ * [FEATURE] #17 Use environments for feature states
+ * [FEATURE] #16 Allow reading of CLI defaults from yml file
+ * [FEATURE] #14 Auto-create Settings.bundle from feature defaults
+
 # 0.3.0 / 2014-07-02
 
  * [FEATURE] #15 Auto-create category for features
