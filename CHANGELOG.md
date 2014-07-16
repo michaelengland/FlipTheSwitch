@@ -1,4 +1,4 @@
-# 0.4.0 / Unreleased
+# 0.4.0 / 2014-07-16
 
  * [FEATURE] #17 Use environments for feature states
  * [FEATURE] #16 Allow reading of CLI defaults from yml file
