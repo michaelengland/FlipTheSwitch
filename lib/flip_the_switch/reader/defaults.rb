@@ -23,7 +23,9 @@ module FlipTheSwitch
             environment: 'default',
             enabled: '',
             disabled: '',
-            output: Dir.pwd
+            category_output: Dir.pwd,
+            plist_output: Dir.pwd,
+            settings_output: Dir.pwd
         }.with_indifferent_access
       end
 

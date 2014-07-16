@@ -16,7 +16,9 @@ describe FlipTheSwitch::Reader::Defaults do
             environment: 'environment',
             enabled: 'enabled',
             disabled: 'disabled',
-            output: 'output'
+            category_output: 'category_output',
+            plist_output: 'plist_output',
+            settings_output: 'settings_output'
         }))
       end
 
@@ -36,8 +38,16 @@ describe FlipTheSwitch::Reader::Defaults do
         expect(subject.defaults[:disabled]).to eql('disabled')
       end
 
-      it 'returns file output default' do
-        expect(subject.defaults[:output]).to eql('output')
+      it 'returns file category output default' do
+        expect(subject.defaults[:category_output]).to eql('category_output')
+      end
+
+      it 'returns file plist output default' do
+        expect(subject.defaults[:plist_output]).to eql('plist_output')
+      end
+
+      it 'returns file settings output default' do
+        expect(subject.defaults[:settings_output]).to eql('settings_output')
       end
     end
 
@@ -71,8 +81,16 @@ describe FlipTheSwitch::Reader::Defaults do
       expect(subject.defaults[:disabled]).to eql('')
     end
 
-    it 'returns base output default' do
-      expect(subject.defaults[:output]).to eql(Dir.pwd)
+    it 'returns base category output default' do
+      expect(subject.defaults[:category_output]).to eql(Dir.pwd)
+    end
+
+    it 'returns base plist output default' do
+      expect(subject.defaults[:plist_output]).to eql(Dir.pwd)
+    end
+
+    it 'returns base settings output default' do
+      expect(subject.defaults[:settings_output]).to eql(Dir.pwd)
     end
   end
 end

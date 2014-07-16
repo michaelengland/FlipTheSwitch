@@ -15,19 +15,19 @@ module FlipTheSwitch
     class_option :disabled, type: :string, aliases: '-d', default: defaults[:disabled], desc: 'Extra features to be set as disabled'
 
     desc 'plist', 'Auto-generates a Features.plist file for enabled/disabled features'
-    method_option :output, type: :string, aliases: '-o', default: defaults[:output], desc: 'Location of the directory in which Features.plist file will be created'
+    method_option :output, type: :string, aliases: '-o', default: defaults[:plist_output], desc: 'Location of the directory in which Features.plist file will be created'
     def plist
       plist_generator.generate
     end
 
     desc 'category', 'Auto-generates .h & .m files for enabled/disabled features'
-    method_option :output, type: :string, aliases: '-o', default: defaults[:output], desc: 'Location of the directory in which FlipTheSwitch+Features.{h,m} files will be created'
+    method_option :output, type: :string, aliases: '-o', default: defaults[:category_output], desc: 'Location of the directory in which FlipTheSwitch+Features.{h,m} files will be created'
     def category
       category_generator.generate
     end
 
     desc 'settings', 'Auto-generates settings.bundle files for enabling/disabling features from iOS settings menu'
-    method_option :output, type: :string, aliases: '-o', default: defaults[:output], desc: 'Location of the directory in which FlipTheSwitch+Features.{h,m} files will be created'
+    method_option :output, type: :string, aliases: '-o', default: defaults[:settings_output], desc: 'Location of the directory in which FlipTheSwitch+Features.{h,m} files will be created'
     def settings
       settings_generator.generate
     end
