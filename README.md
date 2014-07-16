@@ -63,6 +63,7 @@ If you install the gem, you will be able to use the Command-Line-Interface.
 The CLI consists of 2 commands:
 
  - `plist` - creates a `Features.plist` file for enabled/disabled features like that mentioned above.
+ - `settings` - creates a `Settings.bundle` used by the OS settings. These can then be used to enable/disable the features at runtime.
  - `category` - creates `FlipTheSwitch+Features.{h,m}` files for features, thus giving compile-time checks for adding/removal of new features.
 e.g:
 
@@ -83,7 +84,16 @@ e.g:
 The features, along with their default enabled/disabled state, are read from a `features.yml` file. e.g.:
 
 ```yaml
-awesome_feature: Yes
+default:
+  awesome_feature: Yes
+```
+
+In order to avoid typing in the same options all the time, you can create a `.flip.yml` file for the default options, e.g.:
+
+```yaml
+input: features
+environment: development
+category_output: Classes/Extensions
 ```
 
 For more information, run `flip-the-switch help`
