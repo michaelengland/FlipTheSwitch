@@ -1,3 +1,7 @@
+extern NSString *const FTSFeatureStatusChangedNotification;
+extern NSString *const FTSFeatureStatusChangedNotificationFeatureKey;
+extern NSString *const FTSFeatureStatusChangedNotificationEnabledKey;
+
 @interface FlipTheSwitch : NSObject
 - (instancetype)init __attribute__((unavailable("init not available ")));
 + (instancetype)sharedInstance;

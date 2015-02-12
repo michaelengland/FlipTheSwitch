@@ -2,7 +2,8 @@
 
 @interface FlipTheSwitch (Spec)
 - (instancetype)initWithUserDefaults:(NSUserDefaults *)userDefaults
-                              bundle:(NSBundle *)bundle;
+                              bundle:(NSBundle *)bundle
+                  notificationCenter:(NSNotificationCenter *)notificationCenter;
 @end
 
 SpecBegin(FlipTheSwitch)
@@ -15,12 +16,15 @@ SpecBegin(FlipTheSwitch)
 
     before(^{
         userDefaults = [[NSUserDefaults alloc] init];
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 
         standardFeature = @"standard_feature";
         plistEnabledFeature = @"plist_enabled_feature";
 
         subject = [[FlipTheSwitch alloc] initWithUserDefaults:userDefaults
-                                                       bundle:[NSBundle bundleForClass:[self class]]];
+                                                       bundle:bundle
+                                           notificationCenter:notificationCenter];
     });
 
     after(^{
@@ -83,6 +87,57 @@ SpecBegin(FlipTheSwitch)
         it(@"is enabled", ^{
             expect([subject isFeatureEnabled:standardFeature]).to.beTruthy();
             expect([subject isFeatureEnabled:plistEnabledFeature]).to.beTruthy();
+        });
+    });
+
+    describe(@"notifications", ^{
+        context(@"when feature already enabled", ^{
+            before(^{
+                [subject setFeature:standardFeature enabled:YES];
+            });
+
+            context(@"when feature re-enabled", ^{
+                it(@"does nothing", ^{
+                    expect(^{ [subject setFeature:standardFeature enabled:YES]; }).toNot.notify(FTSFeatureStatusChangedNotification);
+                });
+            });
+
+            context(@"when feature disabled", ^{
+                it(@"sends a notification about the change", ^{
+                    NSNotification *enabledNotification = [NSNotification notificationWithName:FTSFeatureStatusChangedNotification
+                                                                                        object:subject
+                                                                                      userInfo:@{
+                                                                                          FTSFeatureStatusChangedNotificationFeatureKey : standardFeature,
+                                                                                          FTSFeatureStatusChangedNotificationEnabledKey : @NO
+                                                                                      }];
+                    expect(^{ [subject setFeature:standardFeature enabled:NO]; }).to.notify(enabledNotification);
+                });
+            });
+        });
+
+        context(@"when feature already disabled", ^{
+            before(^{
+                [subject setFeature:standardFeature enabled:NO];
+            });
+
+            context(@"when feature re-disabled", ^{
+                it(@"does nothing", ^{
+                    expect(^{ [subject setFeature:standardFeature enabled:NO]; }).toNot.notify(FTSFeatureStatusChangedNotification);
+                });
+            });
+
+            context(@"when feature enabled", ^{
+                it(@"sends a notification about the change", ^{
+                    NSNotification *enabledNotification = [NSNotification notificationWithName:FTSFeatureStatusChangedNotification
+                                                                                        object:subject
+                                                                                      userInfo:@{
+                                                                                          FTSFeatureStatusChangedNotificationFeatureKey : standardFeature,
+                                                                                          FTSFeatureStatusChangedNotificationEnabledKey : @YES
+                                                                                      }];
+                    expect(^{ [subject setFeature:standardFeature enabled:YES]; }).to.notify(enabledNotification);
+                });
+
+            });
         });
     });
 SpecEnd
