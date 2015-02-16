@@ -63,10 +63,6 @@ module FlipTheSwitch
       def file_template(name)
         File.read(File.expand_path("../#{name}.erb", __FILE__))
       end
-
-      def feature_names
-        feature_states.keys.map(&:to_s)
-      end
     end
   end
 end

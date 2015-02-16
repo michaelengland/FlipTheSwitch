@@ -3,37 +3,37 @@
 
 @implementation FlipTheSwitch (Features)
 
-<% for feature in feature_names -%>
-+ (BOOL)is<%= feature.camelize %>Enabled
+<% features.each do |feature| -%>
++ (BOOL)is<%= feature.name.camelize %>Enabled
 {
-    return [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"<%= feature %>"];
+    return [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"<%= feature.name %>"];
 }
 
-+ (void)enable<%= feature.camelize %>
++ (void)enable<%= feature.name.camelize %>
 {
-    [[FlipTheSwitch sharedInstance] enableFeature:@"<%= feature %>"];
+    [[FlipTheSwitch sharedInstance] enableFeature:@"<%= feature.name %>"];
 }
 
-+ (void)disable<%= feature.camelize %>
++ (void)disable<%= feature.name.camelize %>
 {
-    [[FlipTheSwitch sharedInstance] disableFeature:@"<%= feature %>"];
+    [[FlipTheSwitch sharedInstance] disableFeature:@"<%= feature.name %>"];
 }
 
-+ (void)set<%= feature.camelize %>Enabled:(BOOL)enabled
++ (void)set<%= feature.name.camelize %>Enabled:(BOOL)enabled
 {
-    [[FlipTheSwitch sharedInstance] setFeature:@"<%= feature %>" enabled:enabled];
+    [[FlipTheSwitch sharedInstance] setFeature:@"<%= feature.name %>" enabled:enabled];
 }
 
-+ (void)reset<%= feature.camelize %>
++ (void)reset<%= feature.name.camelize %>
 {
-    [[FlipTheSwitch sharedInstance] resetFeature:@"<%= feature %>"];
+    [[FlipTheSwitch sharedInstance] resetFeature:@"<%= feature.name %>"];
 }
 
 <% end -%>
 + (void)resetAll
 {
-<% for feature in feature_names -%>
-    [self reset<%= feature.camelize %>];
+<% features.each do |feature| -%>
+    [self reset<%= feature.name.camelize %>];
 <% end -%>
 }
 

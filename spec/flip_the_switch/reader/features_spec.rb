@@ -9,7 +9,10 @@ describe FlipTheSwitch::Reader::Features do
 
     context 'when given an valid environment' do
       it 'reads the enabled/disabled states of the features for the environment' do
-        expect(subject.feature_states).to eql('enabled_feature' => true, 'disabled_feature' => false)
+        expect(subject.features).to eql([
+            FlipTheSwitch::Feature.new('enabled_feature', true, 'This feature is enabled'),
+            FlipTheSwitch::Feature.new('disabled_feature', false, nil)
+          ])
       end
     end
 
@@ -18,7 +21,7 @@ describe FlipTheSwitch::Reader::Features do
 
       specify do
         expect {
-          subject.feature_states
+          subject.features
         }.to raise_error(FlipTheSwitch::Error::InvalidEnvironment)
       end
     end
@@ -29,7 +32,7 @@ describe FlipTheSwitch::Reader::Features do
 
     specify do
       expect {
-        subject.feature_states
+        subject.features
       }.to raise_error(FlipTheSwitch::Error::UnreadableFile)
     end
   end
@@ -39,7 +42,7 @@ describe FlipTheSwitch::Reader::Features do
 
     specify do
       expect {
-        subject.feature_states
+        subject.features
       }.to raise_error(FlipTheSwitch::Error::InvalidFile)
     end
   end
@@ -49,7 +52,7 @@ describe FlipTheSwitch::Reader::Features do
 
     specify do
       expect {
-        subject.feature_states
+        subject.features
       }.to raise_error(FlipTheSwitch::Error::InvalidFile)
     end
   end

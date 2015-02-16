@@ -1,6 +1,10 @@
 defaults: &DEFAULT
-  enabled_feature: Yes
-  disabled_feature: Yes
+  enabled_feature:
+    enabled: Yes
+    description: This feature is enabled
+  disabled_feature:
+    enabled: No
 beta:
   <<: *DEFAULT
-  disabled_feature: No
+  disabled_feature:
+    enabled: No

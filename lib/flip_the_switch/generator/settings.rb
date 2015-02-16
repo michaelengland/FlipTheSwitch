@@ -47,7 +47,7 @@ module FlipTheSwitch
       end
 
       def write_features_plist
-        ::Plist::Emit.save_plist(features, features_plist)
+        ::Plist::Emit.save_plist(feature_properties, features_plist)
       end
 
       def delete_file(file)
@@ -82,17 +82,17 @@ module FlipTheSwitch
         ]
       end
 
-      def features
+      def feature_properties
         {PreferenceSpecifiers: feature_toggles}
       end
 
       def feature_toggles
-        feature_states.map { |feature, state|
+        features.map { |feature|
           {
               Type: 'PSToggleSwitchSpecifier',
-              Title: feature,
-              Key: "FTS_FEATURE_#{feature}",
-              DefaultValue: state
+              Title: feature.name,
+              Key: "FTS_FEATURE_#{feature.name}",
+              DefaultValue: feature.enabled
           }
         }
       end

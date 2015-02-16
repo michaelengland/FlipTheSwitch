@@ -1,13 +1,13 @@
 module FlipTheSwitch
   module Generator
     class Base
-      def initialize(output, feature_states)
+      def initialize(output, features)
         @output = output
-        @feature_states = feature_states
+        @features = features
       end
 
       protected
-      attr_reader :output, :feature_states
+      attr_reader :output, :features
     end
   end
 end

@@ -1,4 +1,9 @@
-some:
-  random:
-    thing: 'wow'
-disabled_feature: No
+defaults: &DEFAULT
+  some:
+    random:
+      thing: 'wow'
+
+beta:
+  <<: *DEFAULT
+  disabled_feature:
+    enabled: No
