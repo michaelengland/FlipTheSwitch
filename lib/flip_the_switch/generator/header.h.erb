@@ -3,6 +3,9 @@
 
 @interface FlipTheSwitch (Features)
 <% features.each do |feature| -%>
+<% if feature.description -%>
+// <%= feature.description %>
+<% end -%>
 + (BOOL)is<%= feature.name.camelize %>Enabled;
 + (void)enable<%= feature.name.camelize %>;
 + (void)disable<%= feature.name.camelize %>;

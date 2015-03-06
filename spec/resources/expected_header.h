@@ -2,6 +2,7 @@
 #import <FlipTheSwitch/FlipTheSwitch.h>
 
 @interface FlipTheSwitch (Features)
+// This is the first feature
 + (BOOL)isFirstFeatureEnabled;
 + (void)enableFirstFeature;
 + (void)disableFirstFeature;

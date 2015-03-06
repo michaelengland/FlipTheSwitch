@@ -4,7 +4,7 @@ describe FlipTheSwitch::Generator::Category do
   subject(:category) { described_class.new(output, features) }
   let(:output) { 'spec/resources' }
   let(:features) { [
-    FlipTheSwitch::Feature.new('first_feature', true, nil),
+    FlipTheSwitch::Feature.new('first_feature', true, 'This is the first feature'),
     FlipTheSwitch::Feature.new('second_feature', false, nil)
   ] }
   let(:expected_header_file) { File.read('spec/resources/expected_header.h') }
