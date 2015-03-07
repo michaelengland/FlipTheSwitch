@@ -2,6 +2,8 @@ defaults: &DEFAULT
   enabled_feature:
     enabled: Yes
     description: This feature is enabled
+    sub_feature:
+      enabled: No
   disabled_feature:
     enabled: No
 beta:

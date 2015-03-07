@@ -61,7 +61,7 @@ describe FlipTheSwitch::Cli do
 
   def features_for_hash(hash)
     hash.map { |feature, enabled|
-      FlipTheSwitch::Feature.new(feature, enabled, nil)
+      FlipTheSwitch::Feature.new(feature, enabled)
     }
   end
 

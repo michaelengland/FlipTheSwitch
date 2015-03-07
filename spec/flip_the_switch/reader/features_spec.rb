@@ -10,8 +10,10 @@ describe FlipTheSwitch::Reader::Features do
     context 'when given an valid environment' do
       it 'reads the enabled/disabled states of the features for the environment' do
         expect(subject.features).to eql([
-            FlipTheSwitch::Feature.new('enabled_feature', true, 'This feature is enabled'),
-            FlipTheSwitch::Feature.new('disabled_feature', false, nil)
+            FlipTheSwitch::Feature.new('enabled_feature', true, 'This feature is enabled', [
+                FlipTheSwitch::Feature.new('sub_feature', false)
+              ]),
+            FlipTheSwitch::Feature.new('disabled_feature', false)
           ])
       end
     end
