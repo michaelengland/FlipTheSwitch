@@ -10,4 +10,5 @@ extern NSString *const FTSFeatureStatusChangedNotificationEnabledKey;
 - (void)enableFeature:(NSString *)feature;
 - (void)disableFeature:(NSString *)feature;
 - (void)setFeature:(NSString *)feature enabled:(BOOL)enabled;
+- (void)resetFeature:(NSString *)feature;
 @end
