@@ -71,11 +71,17 @@ NSString *const FTSFeatureStatusChangedNotificationEnabledKey = @"FTSFeatureStat
 - (void)setFeature:(NSString *)feature enabled:(BOOL)enabled
 {
     if (![self isFeatureEnabled:feature] == enabled) {
-        [self.userDefaults setBool:enabled forKey:[self userKeyForFeature:feature]];
+        [self.userDefaults setObject:@(enabled) forKey:[self userKeyForFeature:feature]];
         [self.userDefaults synchronize];
         [self.notificationCenter postNotification:[self statusChangeNotificationForFeature:feature
                                                                                    enabled:enabled]];
     }
+}
+
+- (void)resetFeature:(NSString *)feature
+{
+    [self.userDefaults removeObjectForKey:[self userKeyForFeature:feature]];
+    [self.userDefaults synchronize];
 }
 
 #pragma mark - Private

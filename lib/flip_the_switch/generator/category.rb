@@ -49,7 +49,7 @@ module FlipTheSwitch
       end
 
       def render(template)
-        ERB.new(template).result(binding)
+        ERB.new(template, nil, '-').result(binding)
       end
 
       def header_template

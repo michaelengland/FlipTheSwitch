@@ -2,10 +2,13 @@
 #import <FlipTheSwitch/FlipTheSwitch.h>
 
 @interface FlipTheSwitch (Features)
-<% for feature in feature_names %>
+<% for feature in feature_names -%>
 + (BOOL)is<%= feature.camelize %>Enabled;
 + (void)enable<%= feature.camelize %>;
 + (void)disable<%= feature.camelize %>;
 + (void)set<%= feature.camelize %>Enabled:(BOOL)enabled;
-<% end %>
++ (void)reset<%= feature.camelize %>;
+
+<% end -%>
++ (void)resetAll;
 @end

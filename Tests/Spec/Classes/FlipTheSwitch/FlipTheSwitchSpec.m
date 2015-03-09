@@ -64,7 +64,7 @@ SpecBegin(FlipTheSwitch)
         });
     });
 
-    context(@"when feature is manually enabled", ^{
+    context(@"when feature is manually disabled", ^{
         before(^{
             [subject enableFeature:standardFeature];
             [subject enableFeature:plistEnabledFeature];
@@ -86,6 +86,20 @@ SpecBegin(FlipTheSwitch)
 
         it(@"is enabled", ^{
             expect([subject isFeatureEnabled:standardFeature]).to.beTruthy();
+            expect([subject isFeatureEnabled:plistEnabledFeature]).to.beTruthy();
+        });
+    });
+
+    context(@"when feature is reset", ^{
+        before(^{
+            [subject enableFeature:standardFeature];
+            [subject enableFeature:plistEnabledFeature];
+            [subject resetFeature:standardFeature];
+            [subject resetFeature:plistEnabledFeature];
+        });
+
+        it(@"is in their original state (plist or false)", ^{
+            expect([subject isFeatureEnabled:standardFeature]).to.beFalsy();
             expect([subject isFeatureEnabled:plistEnabledFeature]).to.beTruthy();
         });
     });
