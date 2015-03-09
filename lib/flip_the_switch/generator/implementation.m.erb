@@ -2,7 +2,8 @@
 #import "FlipTheSwitch+Features.h"
 
 @implementation FlipTheSwitch (Features)
-<% for feature in feature_names %>
+
+<% for feature in feature_names -%>
 + (BOOL)is<%= feature.camelize %>Enabled
 {
     return [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"<%= feature %>"];
@@ -27,5 +28,13 @@
 {
     [[FlipTheSwitch sharedInstance] resetFeature:@"<%= feature %>"];
 }
-<% end %>
+
+<% end -%>
++ (void)resetAll
+{
+<% for feature in feature_names -%>
+    [self reset<%= feature.camelize %>];
+<% end -%>
+}
+
 @end

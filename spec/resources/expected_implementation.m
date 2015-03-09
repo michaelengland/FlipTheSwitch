@@ -53,4 +53,10 @@
     [[FlipTheSwitch sharedInstance] resetFeature:@"second_feature"];
 }
 
++ (void)resetAll
+{
+    [self resetFirstFeature];
+    [self resetSecondFeature];
+}
+
 @end

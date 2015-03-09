@@ -2,7 +2,6 @@
 #import <FlipTheSwitch/FlipTheSwitch.h>
 
 @interface FlipTheSwitch (Features)
-
 + (BOOL)isFirstFeatureEnabled;
 + (void)enableFirstFeature;
 + (void)disableFirstFeature;
@@ -15,4 +14,5 @@
 + (void)setSecondFeatureEnabled:(BOOL)enabled;
 + (void)resetSecondFeature;
 
++ (void)resetAll;
 @end
