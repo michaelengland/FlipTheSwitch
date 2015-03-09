@@ -3,10 +3,15 @@
 
 @implementation FlipTheSwitch (Features)
 
-<% features.each do |feature| -%>
+<% all_features.each do |feature| -%>
 + (BOOL)is<%= feature.name.camelize %>Enabled
 {
+<% if feature.parent -%>
+    return [self is<%= feature.parent.name.camelize %>Enabled] &&
+        [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"<%= feature.name %>"];
+<% else -%>
     return [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"<%= feature.name %>"];
+<% end -%>
 }
 
 + (void)enable<%= feature.name.camelize %>
@@ -32,7 +37,7 @@
 <% end -%>
 + (void)resetAll
 {
-<% features.each do |feature| -%>
+<% all_features.each do |feature| -%>
     [self reset<%= feature.name.camelize %>];
 <% end -%>
 }

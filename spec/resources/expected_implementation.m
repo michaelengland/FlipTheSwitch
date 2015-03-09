@@ -30,7 +30,8 @@
 
 + (BOOL)isSecondFeatureEnabled
 {
-    return [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"second_feature"];
+    return [self isFirstFeatureEnabled] &&
+        [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"second_feature"];
 }
 
 + (void)enableSecondFeature

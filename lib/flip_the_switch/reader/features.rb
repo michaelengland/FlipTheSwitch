@@ -27,11 +27,11 @@ module FlipTheSwitch
         feature_info_dup = feature_info.dup
         enabled = !!feature_info_dup.delete('enabled')
         description = feature_info_dup.delete('description')
-        subfeatures = feature_info_dup.map { |subfeature_name, subfeature_info|
-          feature_state(subfeature_name, subfeature_info)
+        sub_features = feature_info_dup.map { |sub_feature_name, sub_feature_info|
+          feature_state(sub_feature_name, sub_feature_info)
         }
 
-        Feature.new(feature_name, enabled, description, subfeatures)
+        Feature.new(feature_name, enabled, description, sub_features)
       end
 
       def file_states
