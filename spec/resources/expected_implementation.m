@@ -23,6 +23,11 @@
     [[FlipTheSwitch sharedInstance] setFeature:@"first_feature" enabled:enabled];
 }
 
++ (void)resetFirstFeature
+{
+    [[FlipTheSwitch sharedInstance] resetFeature:@"first_feature"];
+}
+
 + (BOOL)isSecondFeatureEnabled
 {
     return [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"second_feature"];
@@ -41,6 +46,11 @@
 + (void)setSecondFeatureEnabled:(BOOL)enabled
 {
     [[FlipTheSwitch sharedInstance] setFeature:@"second_feature" enabled:enabled];
+}
+
++ (void)resetSecondFeature
+{
+    [[FlipTheSwitch sharedInstance] resetFeature:@"second_feature"];
 }
 
 @end

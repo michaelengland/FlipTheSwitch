@@ -22,5 +22,10 @@
 {
     [[FlipTheSwitch sharedInstance] setFeature:@"<%= feature %>" enabled:enabled];
 }
+
++ (void)reset<%= feature.camelize %>
+{
+    [[FlipTheSwitch sharedInstance] resetFeature:@"<%= feature %>"];
+}
 <% end %>
 @end
