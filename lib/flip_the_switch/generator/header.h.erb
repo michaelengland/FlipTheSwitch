@@ -11,6 +11,7 @@
 + (void)disable<%= feature.name.camelize %>;
 + (void)set<%= feature.name.camelize %>Enabled:(BOOL)enabled;
 + (void)reset<%= feature.name.camelize %>;
++ (NSString *)<%= feature.name.camelize(:lower) %>Key;
 
 <% end -%>
 + (void)resetAll;

@@ -8,30 +8,35 @@
 {
 <% if feature.parent -%>
     return [self is<%= feature.parent.name.camelize %>Enabled] &&
-        [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"<%= feature.name %>"];
+        [[FlipTheSwitch sharedInstance] isFeatureEnabled:[self <%= feature.name.camelize(:lower) %>Key]];
 <% else -%>
-    return [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"<%= feature.name %>"];
+    return [[FlipTheSwitch sharedInstance] isFeatureEnabled:[self <%= feature.name.camelize(:lower) %>Key]];
 <% end -%>
 }
 
 + (void)enable<%= feature.name.camelize %>
 {
-    [[FlipTheSwitch sharedInstance] enableFeature:@"<%= feature.name %>"];
+    [[FlipTheSwitch sharedInstance] enableFeature:[self <%= feature.name.camelize(:lower) %>Key]];
 }
 
 + (void)disable<%= feature.name.camelize %>
 {
-    [[FlipTheSwitch sharedInstance] disableFeature:@"<%= feature.name %>"];
+    [[FlipTheSwitch sharedInstance] disableFeature:[self <%= feature.name.camelize(:lower) %>Key]];
 }
 
 + (void)set<%= feature.name.camelize %>Enabled:(BOOL)enabled
 {
-    [[FlipTheSwitch sharedInstance] setFeature:@"<%= feature.name %>" enabled:enabled];
+    [[FlipTheSwitch sharedInstance] setFeature:[self <%= feature.name.camelize(:lower) %>Key] enabled:enabled];
 }
 
 + (void)reset<%= feature.name.camelize %>
 {
-    [[FlipTheSwitch sharedInstance] resetFeature:@"<%= feature.name %>"];
+    [[FlipTheSwitch sharedInstance] resetFeature:[self <%= feature.name.camelize(:lower) %>Key]];
+}
+
++ (NSString *)<%= feature.name.camelize(:lower) %>Key
+{
+    return @"<%= feature.name %>";
 }
 
 <% end -%>

@@ -5,53 +5,63 @@
 
 + (BOOL)isFirstFeatureEnabled
 {
-    return [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"first_feature"];
+    return [[FlipTheSwitch sharedInstance] isFeatureEnabled:[self firstFeatureKey]];
 }
 
 + (void)enableFirstFeature
 {
-    [[FlipTheSwitch sharedInstance] enableFeature:@"first_feature"];
+    [[FlipTheSwitch sharedInstance] enableFeature:[self firstFeatureKey]];
 }
 
 + (void)disableFirstFeature
 {
-    [[FlipTheSwitch sharedInstance] disableFeature:@"first_feature"];
+    [[FlipTheSwitch sharedInstance] disableFeature:[self firstFeatureKey]];
 }
 
 + (void)setFirstFeatureEnabled:(BOOL)enabled
 {
-    [[FlipTheSwitch sharedInstance] setFeature:@"first_feature" enabled:enabled];
+    [[FlipTheSwitch sharedInstance] setFeature:[self firstFeatureKey] enabled:enabled];
 }
 
 + (void)resetFirstFeature
 {
-    [[FlipTheSwitch sharedInstance] resetFeature:@"first_feature"];
+    [[FlipTheSwitch sharedInstance] resetFeature:[self firstFeatureKey]];
+}
+
++ (NSString *)firstFeatureKey
+{
+    return @"first_feature";
 }
 
 + (BOOL)isSecondFeatureEnabled
 {
     return [self isFirstFeatureEnabled] &&
-        [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"second_feature"];
+        [[FlipTheSwitch sharedInstance] isFeatureEnabled:[self secondFeatureKey]];
 }
 
 + (void)enableSecondFeature
 {
-    [[FlipTheSwitch sharedInstance] enableFeature:@"second_feature"];
+    [[FlipTheSwitch sharedInstance] enableFeature:[self secondFeatureKey]];
 }
 
 + (void)disableSecondFeature
 {
-    [[FlipTheSwitch sharedInstance] disableFeature:@"second_feature"];
+    [[FlipTheSwitch sharedInstance] disableFeature:[self secondFeatureKey]];
 }
 
 + (void)setSecondFeatureEnabled:(BOOL)enabled
 {
-    [[FlipTheSwitch sharedInstance] setFeature:@"second_feature" enabled:enabled];
+    [[FlipTheSwitch sharedInstance] setFeature:[self secondFeatureKey] enabled:enabled];
 }
 
 + (void)resetSecondFeature
 {
-    [[FlipTheSwitch sharedInstance] resetFeature:@"second_feature"];
+    [[FlipTheSwitch sharedInstance] resetFeature:[self secondFeatureKey]];
+}
+
++ (NSString *)secondFeatureKey
+{
+    return @"second_feature";
 }
 
 + (void)resetAll
