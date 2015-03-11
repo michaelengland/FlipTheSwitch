@@ -82,6 +82,8 @@ NSString *const FTSFeatureStatusChangedNotificationEnabledKey = @"FTSFeatureStat
 {
     [self.userDefaults removeObjectForKey:[self userKeyForFeature:feature]];
     [self.userDefaults synchronize];
+    [self.notificationCenter postNotification:[self statusChangeNotificationForFeature:feature
+                                                                               enabled:[self isFeatureEnabled:feature]]];
 }
 
 #pragma mark - Private

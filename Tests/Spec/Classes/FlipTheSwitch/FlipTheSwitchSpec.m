@@ -102,6 +102,16 @@ SpecBegin(FlipTheSwitch)
             expect([subject isFeatureEnabled:standardFeature]).to.beFalsy();
             expect([subject isFeatureEnabled:plistEnabledFeature]).to.beTruthy();
         });
+
+        it(@"sends a notification about the change", ^{
+            NSNotification *notification = [NSNotification notificationWithName:FTSFeatureStatusChangedNotification
+                                                                         object:subject
+                                                                       userInfo:@{
+                                                                               FTSFeatureStatusChangedNotificationFeatureKey : standardFeature,
+                                                                               FTSFeatureStatusChangedNotificationEnabledKey : @NO
+                                                                       }];
+            expect(^{ [subject resetFeature:standardFeature]; }).to.notify(notification);
+        });
     });
 
     describe(@"notifications", ^{
