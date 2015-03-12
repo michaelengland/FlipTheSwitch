@@ -60,7 +60,7 @@ The features can defaulted to enabled/disabled via a plist file `Features.plist`
 
 If you install the gem, you will be able to use the Command-Line-Interface.
 
-The CLI consists of 2 commands:
+The CLI consists of 3 commands:
 
  - `plist` - creates a `Features.plist` file for enabled/disabled features like that mentioned above.
  - `settings` - creates a `Settings.bundle` used by the OS settings. These can then be used to enable/disable the features at runtime.
