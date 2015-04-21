@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		13A20D72CD1E4E3DACB19302 /* libPods-FlipTheSwitchSpec-Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC66316DAF9423DA99C4191 /* libPods-FlipTheSwitchSpec-Mac.a */; };
-		5B686E221942303100A4D4EF /* Features.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = F8032D47C9B9398DABCBBFC1 /* Features.plist */; };
 		5B686E241942303D00A4D4EF /* Features.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = F8032A02CCC0DA178199DB3A /* Features.plist */; };
 		5B87AFEE193A80F20082F7A1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B87AFED193A80F20082F7A1 /* XCTest.framework */; };
 		5B87AFF0193A80F20082F7A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B87AFEF193A80F20082F7A1 /* Foundation.framework */; };
 		5B87AFF2193A80F20082F7A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B87AFF1193A80F20082F7A1 /* UIKit.framework */; };
 		5B9DCEAC193A869B00C63F9F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B87AFED193A80F20082F7A1 /* XCTest.framework */; };
+		79B389F11AE68B0000B536BA /* OtherFeatures.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79B389F01AE68B0000B536BA /* OtherFeatures.plist */; };
+		79B389F21AE68B1300B536BA /* OtherFeatures.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79B389F01AE68B0000B536BA /* OtherFeatures.plist */; };
+		79B389F31AE68B2200B536BA /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8032A02CCC0DA178199DB3A /* Features.plist */; };
 		EB1183C1939E44AB9E511CA6 /* libPods-FlipTheSwitchSpec-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F51A578171940B290050356 /* libPods-FlipTheSwitchSpec-iOS.a */; };
 		F803222F52BB5CB3482ED84D /* FlipTheSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = F8032766B6B64076F108F6DC /* FlipTheSwitch.m */; };
 		F803238AA8E0E1976F0F95DC /* FlipTheSwitchSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F80322BF56E8D76FB9736847 /* FlipTheSwitchSpec.m */; };
@@ -28,7 +30,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				5B686E221942303100A4D4EF /* Features.plist in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +56,7 @@
 		704C4D22FAE416A0681F700B /* Pods-FlipTheSwitchSpec-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTheSwitchSpec-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlipTheSwitchSpec-iOS/Pods-FlipTheSwitchSpec-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		8B0B7DFD31E46DDBC14D07F2 /* Pods-FlipTheSwitchSpec-Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTheSwitchSpec-Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlipTheSwitchSpec-Mac/Pods-FlipTheSwitchSpec-Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		8FC66316DAF9423DA99C4191 /* libPods-FlipTheSwitchSpec-Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlipTheSwitchSpec-Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		79B389F01AE68B0000B536BA /* OtherFeatures.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OtherFeatures.plist; sourceTree = "<group>"; };
 		F8032139C1E76BF6C51205CD /* FlipTheSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipTheSwitch.h; sourceTree = "<group>"; };
 		F80321987A56E7AF3BFF5FD9 /* FlipTheSwitchSpec-iOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlipTheSwitchSpec-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		F80322BF56E8D76FB9736847 /* FlipTheSwitchSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipTheSwitchSpec.m; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				F80321987A56E7AF3BFF5FD9 /* FlipTheSwitchSpec-iOS-Prefix.pch */,
 				F80325C7A88C24081CF78461 /* FlipTheSwitchSpec-iOS-Info.plist */,
 				F8032A02CCC0DA178199DB3A /* Features.plist */,
+				79B389F01AE68B0000B536BA /* OtherFeatures.plist */,
 			);
 			path = "FlipTheSwitchSpec-iOS";
 			sourceTree = "<group>";
@@ -151,7 +154,6 @@
 			children = (
 				F80326FF993EEA2C7572BD21 /* FlipTheSwitchSpec-Mac-Prefix.pch */,
 				F80329E46696FF0EDC73C684 /* FlipTheSwitchSpec-Mac-Info.plist */,
-				F8032D47C9B9398DABCBBFC1 /* Features.plist */,
 			);
 			path = "FlipTheSwitchSpec-Mac";
 			sourceTree = "<group>";
@@ -272,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79B389F11AE68B0000B536BA /* OtherFeatures.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +282,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79B389F21AE68B1300B536BA /* OtherFeatures.plist in Resources */,
+				79B389F31AE68B2200B536BA /* Features.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
