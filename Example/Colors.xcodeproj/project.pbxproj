@@ -13,7 +13,8 @@
 		5B9098A4193A235E004C12B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9098A3193A235E004C12B3 /* main.m */; };
 		5B9098B1193A235E004C12B3 /* ViewControlleriOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9098B0193A235E004C12B3 /* ViewControlleriOS.m */; };
 		5B9098B3193A235E004C12B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9098B2193A235E004C12B3 /* Images.xcassets */; };
-		BF6EF23F1B54012D00AF5FE4 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9098A9193A235E004C12B3 /* Main_iPhone.storyboard */; };
+		BF6D40A71B54110400BB3CE3 /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = F80321679CBE499FFA387688 /* Features.plist */; };
+		BF6EF23F1B54012D00AF5FE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9098A9193A235E004C12B3 /* Main.storyboard */; };
 		BF6EF2421B54016B00AF5FE4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF6EF2411B54016B00AF5FE4 /* Settings.bundle */; };
 		F803204E3B632B5F0E19014F /* AppDelegateiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = F803243E8A66F29C3EA37B65 /* AppDelegateiOS.m */; };
 		F80326F51193A67FEB8D4F69 /* FlipTheSwitch+Features.m in Sources */ = {isa = PBXBuildFile; fileRef = F803287440254AB051D00DDB /* FlipTheSwitch+Features.m */; };
@@ -28,7 +29,7 @@
 		5B90989F193A235E004C12B3 /* Colors-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Colors-iOS-Info.plist"; sourceTree = "<group>"; };
 		5B9098A3193A235E004C12B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5B9098A5193A235E004C12B3 /* Colors-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colors-iOS-Prefix.pch"; sourceTree = "<group>"; };
-		5B9098AA193A235E004C12B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		5B9098AA193A235E004C12B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B9098AF193A235E004C12B3 /* ViewControlleriOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControlleriOS.h; sourceTree = "<group>"; };
 		5B9098B0193A235E004C12B3 /* ViewControlleriOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControlleriOS.m; sourceTree = "<group>"; };
 		5B9098B2193A235E004C12B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -87,7 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6EF2411B54016B00AF5FE4 /* Settings.bundle */,
-				5B9098A9193A235E004C12B3 /* Main_iPhone.storyboard */,
+				5B9098A9193A235E004C12B3 /* Main.storyboard */,
 				5B9098AF193A235E004C12B3 /* ViewControlleriOS.h */,
 				5B9098B0193A235E004C12B3 /* ViewControlleriOS.m */,
 				5B9098B2193A235E004C12B3 /* Images.xcassets */,
@@ -174,7 +175,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF6EF23F1B54012D00AF5FE4 /* Main_iPhone.storyboard in Resources */,
+				BF6D40A71B54110400BB3CE3 /* Features.plist in Resources */,
+				BF6EF23F1B54012D00AF5FE4 /* Main.storyboard in Resources */,
 				BF6EF2421B54016B00AF5FE4 /* Settings.bundle in Resources */,
 				5B9098B3193A235E004C12B3 /* Images.xcassets in Resources */,
 			);
@@ -230,12 +232,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5B9098A9193A235E004C12B3 /* Main_iPhone.storyboard */ = {
+		5B9098A9193A235E004C12B3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5B9098AA193A235E004C12B3 /* Base */,
 			);
-			name = Main_iPhone.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -322,8 +324,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colors-iOS/Colors-iOS-Prefix.pch";
 				INFOPLIST_FILE = "Colors-iOS/Colors-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -337,8 +340,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colors-iOS/Colors-iOS-Prefix.pch";
 				INFOPLIST_FILE = "Colors-iOS/Colors-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

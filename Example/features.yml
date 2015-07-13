@@ -1,4 +1,7 @@
 default:
+  features_controller:
+    enabled: true
+    description: 'Enable feature switching UI'
   purple_color:
     enabled: true
     description: 'The color purple'
