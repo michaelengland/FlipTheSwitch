@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JoB-ig-Mfq">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="qwZ-Ky-GhV">
+            <objects>
+                <navigationController id="JoB-ig-Mfq" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f1w-AZ-qSx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MfP-lZ-lJZ" kind="relationship" relationship="rootViewController" id="rLW-Lj-Qm9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAa-aH-cBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-215" y="403"/>
+        </scene>
+        <!--Features-->
+        <scene sceneID="HmN-ks-p58">
+            <objects>
+                <tableViewController id="MfP-lZ-lJZ" customClass="FlipTheSwitchTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qox-Cy-iKL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="featureCell" rowHeight="79" id="D45-mi-SWk" customClass="FlipTheSwitchCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D45-mi-SWk" id="SUw-kE-nVw">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" tag="300" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4di-o3-Roi">
+                                            <rect key="frame" x="543" y="24" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="featureToggled:" destination="D45-mi-SWk" eventType="valueChanged" id="bWY-eF-ECi"/>
+                                            </connections>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="feature" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSo-ca-2f5">
+                                            <rect key="frame" x="8" y="29.5" width="527" height="19.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="4di-o3-Roi" secondAttribute="centerY" id="3Ru-x7-t4V"/>
+                                        <constraint firstItem="4di-o3-Roi" firstAttribute="trailing" secondItem="SUw-kE-nVw" secondAttribute="trailingMargin" id="LKR-wi-Nej"/>
+                                        <constraint firstAttribute="centerY" secondItem="nSo-ca-2f5" secondAttribute="centerY" id="XDM-4e-bMm"/>
+                                        <constraint firstItem="nSo-ca-2f5" firstAttribute="leading" secondItem="SUw-kE-nVw" secondAttribute="leadingMargin" id="bgh-yN-3ON"/>
+                                        <constraint firstItem="4di-o3-Roi" firstAttribute="leading" secondItem="nSo-ca-2f5" secondAttribute="trailing" constant="8" id="qEp-ds-7cv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="feature" destination="nSo-ca-2f5" id="L2g-NU-jVj"/>
+                                    <outlet property="toggle" destination="4di-o3-Roi" id="TD4-u7-QzW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MfP-lZ-lJZ" id="WKz-RW-2Ip"/>
+                            <outlet property="delegate" destination="MfP-lZ-lJZ" id="TeA-Cq-pD2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Features" id="CmQ-ny-cRX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Fxb-5D-mkV">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="MfP-lZ-lJZ" id="l1S-0q-bey"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TNm-zL-vN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="537" y="403"/>
+        </scene>
+    </scenes>
+</document>

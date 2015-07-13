@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'travis', '~> 1.6.11'
-gem 'cocoapods', '~> 0.33.1'
+gem 'cocoapods', '~> 0.37.2'
 gem 'rake', '~> 10.3.2'
 
 gemspec

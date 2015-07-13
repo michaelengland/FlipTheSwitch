@@ -8,6 +8,7 @@
 @property (nonatomic, weak) IBOutlet UIButton *topColorChangeButton;
 @property (nonatomic, weak) IBOutlet UIView *bottomColorView;
 @property (nonatomic, weak) IBOutlet UILabel *bottomColorInfoTextView;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *featuresButton;
 @end
 
 @implementation ViewControlleriOS
@@ -24,9 +25,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupView];
     [self setupStateChangeNotifications];
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self setupView];
+}
+
+#pragma mark - Actions
+
+- (IBAction)topColorChangeButtonTapped
+{
+    [self toggleRedFeature];
+}
+
+- (IBAction)featuresButtonTapped:(id)sender
+{
+    [self openFeaturesController];
+}
+
+#pragma mark - Private
 
 - (void)setupStateChangeNotifications
 {
@@ -47,19 +67,11 @@
     [self setupView];
 }
 
-#pragma mark - Actions
-
-- (IBAction)topColorChangeButtonTapped
-{
-    [self toggleRedFeature];
-}
-
-#pragma mark - Private
-
 - (void)setupView
 {
     [self setupTopView];
     [self setupBottomView];
+    [self setupFeaturesButton];
 }
 
 - (void)setupTopView
@@ -92,6 +104,13 @@
     self.bottomColorView.backgroundColor = bottomColor;
 }
 
+- (void)setupFeaturesButton
+{
+    if (![FlipTheSwitch isFeaturesControllerEnabled]) {
+        self.navigationController.navigationBar.topItem.rightBarButtonItems = @[];
+    }
+}
+
 - (void)toggleRedFeature
 {
     if ([FlipTheSwitch isRedColorEnabled]) {
@@ -100,6 +119,22 @@
         [FlipTheSwitch enableRedColor];
     }
     [self setupView];
+}
+
+- (void)openFeaturesController
+{
+    NSBundle *flipTheSwitchBundle = [self flipTheSwithBundle];
+    UIStoryboard *flipTheSwitchStoryboard = [UIStoryboard storyboardWithName:@"FlipTheSwitch"
+                                                                      bundle:flipTheSwitchBundle];
+    UIViewController *flipTheSwitchController = [flipTheSwitchStoryboard instantiateInitialViewController];
+    [self presentViewController:flipTheSwitchController
+                       animated:YES
+                     completion:nil];
+}
+
+- (NSBundle *)flipTheSwithBundle
+{
+    return [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"FlipTheSwitch" ofType:@"bundle"]];
 }
 
 @end

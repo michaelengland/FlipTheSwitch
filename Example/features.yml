@@ -1,3 +1,10 @@
 default:
-  purple_color: Yes
-  red_color: No
+  features_controller:
+    enabled: true
+    description: 'Enable feature switching UI'
+  purple_color:
+    enabled: true
+    description: 'The color purple'
+  red_color:
+    enabled: false
+    description: 'The color red'
