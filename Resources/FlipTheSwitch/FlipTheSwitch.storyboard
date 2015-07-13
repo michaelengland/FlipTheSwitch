@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -14,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="gOO-y5-Ukv" kind="relationship" relationship="rootViewController" id="kRo-XR-1gH"/>
+                        <segue destination="MfP-lZ-lJZ" kind="relationship" relationship="rootViewController" id="rLW-Lj-Qm9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAa-aH-cBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -22,45 +23,62 @@
             <point key="canvasLocation" x="-215" y="403"/>
         </scene>
         <!--Features-->
-        <scene sceneID="2d2-2p-Vur">
+        <scene sceneID="HmN-ks-p58">
             <objects>
-                <collectionViewController id="gOO-y5-Ukv" customClass="FlipTheSwitchCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="im6-ng-ReZ">
+                <tableViewController id="MfP-lZ-lJZ" customClass="FlipTheSwitchTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qox-Cy-iKL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cBx-OV-1fB">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="n7D-UR-UE3">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="featureCell" rowHeight="79" id="D45-mi-SWk" customClass="FlipTheSwitchCell">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D45-mi-SWk" id="SUw-kE-nVw">
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
+                                    <subviews>
+                                        <switch opaque="NO" tag="300" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4di-o3-Roi">
+                                            <rect key="frame" x="543" y="24" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="featureToggled:" destination="D45-mi-SWk" eventType="valueChanged" id="bWY-eF-ECi"/>
+                                            </connections>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="feature" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSo-ca-2f5">
+                                            <rect key="frame" x="8" y="29.5" width="527" height="19.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="4di-o3-Roi" secondAttribute="centerY" id="3Ru-x7-t4V"/>
+                                        <constraint firstItem="4di-o3-Roi" firstAttribute="trailing" secondItem="SUw-kE-nVw" secondAttribute="trailingMargin" id="LKR-wi-Nej"/>
+                                        <constraint firstAttribute="centerY" secondItem="nSo-ca-2f5" secondAttribute="centerY" id="XDM-4e-bMm"/>
+                                        <constraint firstItem="nSo-ca-2f5" firstAttribute="leading" secondItem="SUw-kE-nVw" secondAttribute="leadingMargin" id="bgh-yN-3ON"/>
+                                        <constraint firstItem="4di-o3-Roi" firstAttribute="leading" secondItem="nSo-ca-2f5" secondAttribute="trailing" constant="8" id="qEp-ds-7cv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="feature" destination="nSo-ca-2f5" id="L2g-NU-jVj"/>
+                                    <outlet property="toggle" destination="4di-o3-Roi" id="TD4-u7-QzW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="gOO-y5-Ukv" id="Yfc-rs-vEB"/>
-                            <outlet property="delegate" destination="gOO-y5-Ukv" id="TKK-l2-y90"/>
+                            <outlet property="dataSource" destination="MfP-lZ-lJZ" id="WKz-RW-2Ip"/>
+                            <outlet property="delegate" destination="MfP-lZ-lJZ" id="TeA-Cq-pD2"/>
                         </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Features" id="2Jz-al-Bhg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rzm-IK-bgi">
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Features" id="CmQ-ny-cRX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Fxb-5D-mkV">
                             <connections>
-                                <action selector="doneButtonTapped:" destination="gOO-y5-Ukv" id="QuJ-SY-cca"/>
+                                <action selector="doneButtonTapped:" destination="MfP-lZ-lJZ" id="l1S-0q-bey"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wBe-aW-8Ep" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TNm-zL-vN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="480" y="403"/>
+            <point key="canvasLocation" x="537" y="403"/>
         </scene>
     </scenes>
 </document>

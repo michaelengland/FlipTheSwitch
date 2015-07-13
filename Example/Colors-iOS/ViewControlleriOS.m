@@ -25,9 +25,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupView];
     [self setupStateChangeNotifications];
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self setupView];
+}
+
+#pragma mark - Actions
+
+- (IBAction)topColorChangeButtonTapped
+{
+    [self toggleRedFeature];
+}
+
+- (IBAction)featuresButtonTapped:(id)sender
+{
+    [self openFeaturesController];
+}
+
+#pragma mark - Private
 
 - (void)setupStateChangeNotifications
 {
@@ -47,20 +66,6 @@
 {
     [self setupView];
 }
-
-#pragma mark - Actions
-
-- (IBAction)topColorChangeButtonTapped
-{
-    [self toggleRedFeature];
-}
-
-- (IBAction)featuresButtonTapped:(id)sender
-{
-    [self openFeaturesController];
-}
-
-#pragma mark - Private
 
 - (void)setupView
 {
