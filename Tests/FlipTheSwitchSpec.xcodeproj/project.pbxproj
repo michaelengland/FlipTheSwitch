@@ -45,15 +45,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		533EE70A034A5E571E6F63C4 /* Pods-FlipTheSwitchSpec-Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTheSwitchSpec-Mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlipTheSwitchSpec-Mac/Pods-FlipTheSwitchSpec-Mac.release.xcconfig"; sourceTree = "<group>"; };
 		5B87AFEA193A80F20082F7A1 /* FlipTheSwitchSpec-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FlipTheSwitchSpec-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B87AFED193A80F20082F7A1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5B87AFEF193A80F20082F7A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5B87AFF1193A80F20082F7A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		5B9DCEAB193A869B00C63F9F /* FlipTheSwitchSpec-Mac.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FlipTheSwitchSpec-Mac.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F51A578171940B290050356 /* libPods-FlipTheSwitchSpec-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlipTheSwitchSpec-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B5491E544614A10BEAC9D47 /* Pods-FlipTheSwitchSpec-Mac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTheSwitchSpec-Mac.xcconfig"; path = "Pods/Pods-FlipTheSwitchSpec-Mac.xcconfig"; sourceTree = "<group>"; };
+		704C4D22FAE416A0681F700B /* Pods-FlipTheSwitchSpec-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTheSwitchSpec-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlipTheSwitchSpec-iOS/Pods-FlipTheSwitchSpec-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		8B0B7DFD31E46DDBC14D07F2 /* Pods-FlipTheSwitchSpec-Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTheSwitchSpec-Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlipTheSwitchSpec-Mac/Pods-FlipTheSwitchSpec-Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		8FC66316DAF9423DA99C4191 /* libPods-FlipTheSwitchSpec-Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlipTheSwitchSpec-Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF8E94075C5A480F893ECEE0 /* Pods-FlipTheSwitchSpec-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTheSwitchSpec-iOS.xcconfig"; path = "Pods/Pods-FlipTheSwitchSpec-iOS.xcconfig"; sourceTree = "<group>"; };
 		F8032139C1E76BF6C51205CD /* FlipTheSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipTheSwitch.h; sourceTree = "<group>"; };
 		F80321987A56E7AF3BFF5FD9 /* FlipTheSwitchSpec-iOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlipTheSwitchSpec-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		F80322BF56E8D76FB9736847 /* FlipTheSwitchSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipTheSwitchSpec.m; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		F80329E46696FF0EDC73C684 /* FlipTheSwitchSpec-Mac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "FlipTheSwitchSpec-Mac-Info.plist"; sourceTree = "<group>"; };
 		F8032A02CCC0DA178199DB3A /* Features.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Features.plist; sourceTree = "<group>"; };
 		F8032D47C9B9398DABCBBFC1 /* Features.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Features.plist; sourceTree = "<group>"; };
+		F8713CD82F93E5B582FDBA04 /* Pods-FlipTheSwitchSpec-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTheSwitchSpec-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlipTheSwitchSpec-iOS/Pods-FlipTheSwitchSpec-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3177E4F140D9AC1B409A740F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B0B7DFD31E46DDBC14D07F2 /* Pods-FlipTheSwitchSpec-Mac.debug.xcconfig */,
+				533EE70A034A5E571E6F63C4 /* Pods-FlipTheSwitchSpec-Mac.release.xcconfig */,
+				F8713CD82F93E5B582FDBA04 /* Pods-FlipTheSwitchSpec-iOS.debug.xcconfig */,
+				704C4D22FAE416A0681F700B /* Pods-FlipTheSwitchSpec-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5B87AFDF193A80980082F7A1 = {
 			isa = PBXGroup;
 			children = (
@@ -96,10 +109,9 @@
 				5B9DCEAD193A869B00C63F9F /* FlipTheSwitchSpec-Mac */,
 				5B87AFEC193A80F20082F7A1 /* Frameworks */,
 				5B87AFEB193A80F20082F7A1 /* Products */,
-				7B5491E544614A10BEAC9D47 /* Pods-FlipTheSwitchSpec-Mac.xcconfig */,
-				CF8E94075C5A480F893ECEE0 /* Pods-FlipTheSwitchSpec-iOS.xcconfig */,
 				F80326AA2A755B0873B15852 /* Spec */,
 				F8032AB64AEEA3FCC6493A27 /* Classes */,
+				3177E4F140D9AC1B409A740F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -300,7 +312,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-FlipTheSwitchSpec-Mac-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlipTheSwitchSpec-Mac/Pods-FlipTheSwitchSpec-Mac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B9D09C9694D0440FA36F295C /* Copy Pods Resources */ = {
@@ -315,7 +327,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-FlipTheSwitchSpec-iOS-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlipTheSwitchSpec-iOS/Pods-FlipTheSwitchSpec-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C67EE0388E8341CCB8C5BACC /* Check Pods Manifest.lock */ = {
@@ -375,7 +387,7 @@
 		};
 		5B87AFFD193A80F20082F7A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF8E94075C5A480F893ECEE0 /* Pods-FlipTheSwitchSpec-iOS.xcconfig */;
+			baseConfigurationReference = F8713CD82F93E5B582FDBA04 /* Pods-FlipTheSwitchSpec-iOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -423,7 +435,7 @@
 		};
 		5B87AFFE193A80F20082F7A1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF8E94075C5A480F893ECEE0 /* Pods-FlipTheSwitchSpec-iOS.xcconfig */;
+			baseConfigurationReference = 704C4D22FAE416A0681F700B /* Pods-FlipTheSwitchSpec-iOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -465,7 +477,7 @@
 		};
 		5B9DCEB7193A869B00C63F9F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B5491E544614A10BEAC9D47 /* Pods-FlipTheSwitchSpec-Mac.xcconfig */;
+			baseConfigurationReference = 8B0B7DFD31E46DDBC14D07F2 /* Pods-FlipTheSwitchSpec-Mac.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -513,7 +525,7 @@
 		};
 		5B9DCEB8193A869B00C63F9F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B5491E544614A10BEAC9D47 /* Pods-FlipTheSwitchSpec-Mac.xcconfig */;
+			baseConfigurationReference = 533EE70A034A5E571E6F63C4 /* Pods-FlipTheSwitchSpec-Mac.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

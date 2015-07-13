@@ -21,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D961C37058021E09DB92885 /* Pods-Colors-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colors-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Colors-iOS/Pods-Colors-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		2A0FA57A01F8129C4C31C5D8 /* Pods-Colors-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colors-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Colors-iOS/Pods-Colors-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5B13CA4819721395001D008A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		5B909894193A235E004C12B3 /* Colors-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Colors-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B909897193A235E004C12B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -38,7 +40,6 @@
 		F803287440254AB051D00DDB /* FlipTheSwitch+Features.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FlipTheSwitch+Features.m"; sourceTree = "<group>"; };
 		F8032EBDB675B3B788B1297F /* FlipTheSwitch+Features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlipTheSwitch+Features.h"; sourceTree = "<group>"; };
 		F8032F89446610853BDFF019 /* AppDelegateiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateiOS.h; sourceTree = "<group>"; };
-		FA266F5E1A3E46478CDB53E6 /* Pods-Colors-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colors-iOS.xcconfig"; path = "Pods/Pods-Colors-iOS.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +62,7 @@
 				5B90989D193A235E004C12B3 /* Colors-iOS */,
 				5B909896193A235E004C12B3 /* Frameworks */,
 				5B909895193A235E004C12B3 /* Products */,
-				FA266F5E1A3E46478CDB53E6 /* Pods-Colors-iOS.xcconfig */,
+				C3D7AC360E9D2AD760817EA7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +110,15 @@
 				F80321679CBE499FFA387688 /* Features.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3D7AC360E9D2AD760817EA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A0FA57A01F8129C4C31C5D8 /* Pods-Colors-iOS.debug.xcconfig */,
+				0D961C37058021E09DB92885 /* Pods-Colors-iOS.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,7 +197,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Colors-iOS-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Colors-iOS/Pods-Colors-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		55584C56EF90491FA19D948C /* Check Pods Manifest.lock */ = {
@@ -307,7 +317,7 @@
 		};
 		5B9098CA193A235E004C12B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA266F5E1A3E46478CDB53E6 /* Pods-Colors-iOS.xcconfig */;
+			baseConfigurationReference = 2A0FA57A01F8129C4C31C5D8 /* Pods-Colors-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -322,7 +332,7 @@
 		};
 		5B9098CB193A235E004C12B3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA266F5E1A3E46478CDB53E6 /* Pods-Colors-iOS.xcconfig */;
+			baseConfigurationReference = 0D961C37058021E09DB92885 /* Pods-Colors-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
