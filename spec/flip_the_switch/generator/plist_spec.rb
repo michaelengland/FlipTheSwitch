@@ -14,25 +14,22 @@ describe FlipTheSwitch::Generator::Plist do
     File.delete(output_file) if File.exists?(output_file)
   end
 
-  context 'When the output is a directory' do
-    let(:output) { 'spec/resources' }
-    let(:output_file) { 'spec/resources/Features.plist' }
+  shared_examples "a plist writer" do |output, output_file|
+    let(:output) { output }
+    let(:output_file) { output_file }
 
-    it 'writes a Features.plist file with the enabled features set' do
+    it "writes a #{File.basename(output_file)} file with the features set" do
       subject.generate
 
       expect(File.read(output_file)).to eql(expected_plist_file)
     end
   end
 
+  context 'When the output is a directory' do
+    it_behaves_like "a plist writer", 'spec/resources', 'spec/resources/Features.plist'
+  end
+
   context 'when the output is a file' do
-    let(:output) { 'spec/resources/DasPlist.plist' }
-    let(:output_file) { 'spec/resources/DasPlist.plist' }
-
-    it 'writes a DasPlist.plist file with the enabled features set' do
-      subject.generate
-
-      expect(File.read(output_file)).to eql(expected_plist_file)
-    end
+    it_behaves_like "a plist writer", 'spec/resources/DasPlist.plist', 'spec/resources/DasPlist.plist'
   end
 end
