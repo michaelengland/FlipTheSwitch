@@ -3,6 +3,8 @@
 NSString *const FTSFeatureStatusChangedNotification = @"FTSFeatureStatusChangedNotification";
 NSString *const FTSFeatureStatusChangedNotificationFeatureKey = @"FTSFeatureStatusChangedNotificationFeatureKey";
 NSString *const FTSFeatureStatusChangedNotificationEnabledKey = @"FTSFeatureStatusChangedNotificationEnabledKey";
+NSString *const FTSFeaturePlistNameKey = @"FTSFeaturePlistNameKey";
+
 
 @interface FlipTheSwitch ()
 @property (nonatomic, readonly) NSUserDefaults *userDefaults;
@@ -103,7 +105,11 @@ NSString *const FTSFeatureStatusChangedNotificationEnabledKey = @"FTSFeatureStat
 
 - (NSString *)featurePlistPath
 {
-    return [self.bundle pathForResource:@"Features" ofType:@"plist"];
+    NSString *plistName = [self.userDefaults objectForKey:FTSFeaturePlistNameKey];
+    if (plistName == nil) {
+      plistName = @"Features";
+    }
+    return [self.bundle pathForResource:plistName ofType:@"plist"];
 }
 
 - (NSNotification *)statusChangeNotificationForFeature:(NSString *)feature enabled:(BOOL)enabled

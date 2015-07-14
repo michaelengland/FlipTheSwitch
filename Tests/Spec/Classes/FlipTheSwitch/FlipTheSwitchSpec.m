@@ -164,4 +164,23 @@ SpecBegin(FlipTheSwitch)
             });
         });
     });
+
+    describe(@"specifying plist files", ^{
+        context(@"when no name is specified", ^{
+            it(@"defaults to Features.plist", ^{
+                expect([subject isFeatureEnabled:plistEnabledFeature]).to.beTruthy();
+            });
+        });
+
+        context(@"when a custom plist name is specified", ^{
+            before(^{
+                [userDefaults setObject:@"OtherFeatures" forKey:FTSFeaturePlistNameKey];
+            });
+
+            it(@"uses the settings from that plist", ^{
+                expect([subject isFeatureEnabled:@"other_feature"]).to.beTruthy();
+            });
+        });
+    });
+
 SpecEnd
