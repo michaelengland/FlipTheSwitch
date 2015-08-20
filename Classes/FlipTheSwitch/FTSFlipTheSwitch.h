@@ -5,7 +5,7 @@ extern NSString *const FTSFeatureStatusChangedNotificationFeatureKey;
 extern NSString *const FTSFeatureStatusChangedNotificationEnabledKey;
 extern NSString *const FTSFeaturePlistNameKey;
 
-@interface FlipTheSwitch : NSObject
+@interface FTSFlipTheSwitch : NSObject
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)sharedInstance;
 

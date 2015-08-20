@@ -1,13 +1,13 @@
-#import "FlipTheSwitch.h"
+#import "FTSFlipTheSwitch.h"
 
-@interface FlipTheSwitch (Spec)
+@interface FTSFlipTheSwitch (Spec)
 - (instancetype)initWithUserDefaults:(NSUserDefaults *)userDefaults
                               bundle:(NSBundle *)bundle
                   notificationCenter:(NSNotificationCenter *)notificationCenter;
 @end
 
 SpecBegin(FlipTheSwitch)
-    __block FlipTheSwitch *subject;
+    __block FTSFlipTheSwitch *subject;
 
     __block NSUserDefaults *userDefaults;
 
@@ -22,7 +22,7 @@ SpecBegin(FlipTheSwitch)
         standardFeature = @"standard_feature";
         plistEnabledFeature = @"plist_enabled_feature";
 
-        subject = [[FlipTheSwitch alloc] initWithUserDefaults:userDefaults
+        subject = [[FTSFlipTheSwitch alloc] initWithUserDefaults:userDefaults
                                                        bundle:bundle
                                            notificationCenter:notificationCenter];
     });
@@ -35,7 +35,7 @@ SpecBegin(FlipTheSwitch)
     });
 
     it(@"is a singleton", ^{
-        expect([FlipTheSwitch sharedInstance]).to.beIdenticalTo([FlipTheSwitch sharedInstance]);
+        expect([FTSFlipTheSwitch sharedInstance]).to.beIdenticalTo([FTSFlipTheSwitch sharedInstance]);
     });
 
     context(@"when feature is NOT set", ^{

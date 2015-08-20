@@ -1,13 +1,13 @@
 @import Foundation;
 @import UIKit;
 
-@class FlipTheSwitchCell;
+@class FTSFeatureCell;
 
 @protocol FlipTheSwitchCellDelegate <NSObject>
-- (void)flipTheSwitchCellDidToggleFeature:(FlipTheSwitchCell *)cell;
+- (void)flipTheSwitchCellDidToggleFeature:(FTSFeatureCell *)cell;
 @end
 
-@interface FlipTheSwitchCell : UITableViewCell
+@interface FTSFeatureCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel *feature;
 @property (nonatomic, weak) IBOutlet UISwitch *toggle;
 @property (weak, nonatomic) IBOutlet UILabel *featureDescription;

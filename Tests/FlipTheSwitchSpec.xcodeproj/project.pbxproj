@@ -16,14 +16,14 @@
 		79B389F11AE68B0000B536BA /* OtherFeatures.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79B389F01AE68B0000B536BA /* OtherFeatures.plist */; };
 		79B389F21AE68B1300B536BA /* OtherFeatures.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79B389F01AE68B0000B536BA /* OtherFeatures.plist */; };
 		79B389F31AE68B2200B536BA /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8032A02CCC0DA178199DB3A /* Features.plist */; };
-		AAB8C571C6FFC5C9874DABF3 /* FlipTheSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB8C6A133DA952A98084522 /* FlipTheSwitchCell.m */; };
+		AAB8C571C6FFC5C9874DABF3 /* FTSFeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB8C6A133DA952A98084522 /* FTSFeatureCell.m */; };
 		AAB8C5768CC4E0C7A7D4AAB6 /* FlipTheSwitch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAB8CEB6ECE8E2DDFEBCCB60 /* FlipTheSwitch.storyboard */; };
-		AAB8C5A9DDE27E82ED12A91E /* FlipTheSwitchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB8C80C735DBE1EBED65D99 /* FlipTheSwitchTableViewController.m */; };
+		AAB8C5A9DDE27E82ED12A91E /* FTSFeatureConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB8C80C735DBE1EBED65D99 /* FTSFeatureConfigurationViewController.m */; };
 		EB1183C1939E44AB9E511CA6 /* libPods-FlipTheSwitchSpec-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F51A578171940B290050356 /* libPods-FlipTheSwitchSpec-iOS.a */; };
-		F803222F52BB5CB3482ED84D /* FlipTheSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = F8032766B6B64076F108F6DC /* FlipTheSwitch.m */; };
+		F803222F52BB5CB3482ED84D /* FTSFlipTheSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = F8032766B6B64076F108F6DC /* FTSFlipTheSwitch.m */; };
 		F803238AA8E0E1976F0F95DC /* FlipTheSwitchSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F80322BF56E8D76FB9736847 /* FlipTheSwitchSpec.m */; };
 		F80325D46C885BC440A30C43 /* FlipTheSwitchSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F80322BF56E8D76FB9736847 /* FlipTheSwitchSpec.m */; };
-		F80329B3B762341EF7AD3E7F /* FlipTheSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = F8032766B6B64076F108F6DC /* FlipTheSwitch.m */; };
+		F80329B3B762341EF7AD3E7F /* FTSFlipTheSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = F8032766B6B64076F108F6DC /* FTSFlipTheSwitch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,21 +60,20 @@
 		79B389F01AE68B0000B536BA /* OtherFeatures.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OtherFeatures.plist; sourceTree = "<group>"; };
 		8B0B7DFD31E46DDBC14D07F2 /* Pods-FlipTheSwitchSpec-Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTheSwitchSpec-Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlipTheSwitchSpec-Mac/Pods-FlipTheSwitchSpec-Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		8FC66316DAF9423DA99C4191 /* libPods-FlipTheSwitchSpec-Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlipTheSwitchSpec-Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAB8C136458DEC29B500F8C9 /* FlipTheSwitchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipTheSwitchTableViewController.h; sourceTree = "<group>"; };
-		AAB8C3B874C1F48CA8C990CD /* FlipTheSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipTheSwitchCell.h; sourceTree = "<group>"; };
-		AAB8C4B420442CEF3E7F9AEF /* FlipTheSwitch+Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlipTheSwitch+Plist.h"; sourceTree = "<group>"; };
-		AAB8C6A133DA952A98084522 /* FlipTheSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipTheSwitchCell.m; sourceTree = "<group>"; };
-		AAB8C80C735DBE1EBED65D99 /* FlipTheSwitchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipTheSwitchTableViewController.m; sourceTree = "<group>"; };
+		AAB8C136458DEC29B500F8C9 /* FTSFeatureConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSFeatureConfigurationViewController.h; sourceTree = "<group>"; };
+		AAB8C3B874C1F48CA8C990CD /* FTSFeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSFeatureCell.h; sourceTree = "<group>"; };
+		AAB8C4B420442CEF3E7F9AEF /* FTSFlipTheSwitch+Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTSFlipTheSwitch+Plist.h"; sourceTree = "<group>"; };
+		AAB8C6A133DA952A98084522 /* FTSFeatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSFeatureCell.m; sourceTree = "<group>"; };
+		AAB8C80C735DBE1EBED65D99 /* FTSFeatureConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSFeatureConfigurationViewController.m; sourceTree = "<group>"; };
 		AAB8CEB6ECE8E2DDFEBCCB60 /* FlipTheSwitch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FlipTheSwitch.storyboard; sourceTree = "<group>"; };
-		F8032139C1E76BF6C51205CD /* FlipTheSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipTheSwitch.h; sourceTree = "<group>"; };
+		F8032139C1E76BF6C51205CD /* FTSFlipTheSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSFlipTheSwitch.h; sourceTree = "<group>"; };
 		F80321987A56E7AF3BFF5FD9 /* FlipTheSwitchSpec-iOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlipTheSwitchSpec-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		F80322BF56E8D76FB9736847 /* FlipTheSwitchSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipTheSwitchSpec.m; sourceTree = "<group>"; };
 		F80325C7A88C24081CF78461 /* FlipTheSwitchSpec-iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "FlipTheSwitchSpec-iOS-Info.plist"; sourceTree = "<group>"; };
 		F80326FF993EEA2C7572BD21 /* FlipTheSwitchSpec-Mac-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlipTheSwitchSpec-Mac-Prefix.pch"; sourceTree = "<group>"; };
-		F8032766B6B64076F108F6DC /* FlipTheSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipTheSwitch.m; sourceTree = "<group>"; };
+		F8032766B6B64076F108F6DC /* FTSFlipTheSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSFlipTheSwitch.m; sourceTree = "<group>"; };
 		F80329E46696FF0EDC73C684 /* FlipTheSwitchSpec-Mac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "FlipTheSwitchSpec-Mac-Info.plist"; sourceTree = "<group>"; };
 		F8032A02CCC0DA178199DB3A /* Features.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Features.plist; sourceTree = "<group>"; };
-		F8032D47C9B9398DABCBBFC1 /* Features.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Features.plist; sourceTree = "<group>"; };
 		F8713CD82F93E5B582FDBA04 /* Pods-FlipTheSwitchSpec-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTheSwitchSpec-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlipTheSwitchSpec-iOS/Pods-FlipTheSwitchSpec-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,13 +195,13 @@
 		F80323A5D7806CC7C7B8D36A /* FlipTheSwitch */ = {
 			isa = PBXGroup;
 			children = (
-				F8032139C1E76BF6C51205CD /* FlipTheSwitch.h */,
-				F8032766B6B64076F108F6DC /* FlipTheSwitch.m */,
-				AAB8C4B420442CEF3E7F9AEF /* FlipTheSwitch+Plist.h */,
-				AAB8C3B874C1F48CA8C990CD /* FlipTheSwitchCell.h */,
-				AAB8C6A133DA952A98084522 /* FlipTheSwitchCell.m */,
-				AAB8C136458DEC29B500F8C9 /* FlipTheSwitchTableViewController.h */,
-				AAB8C80C735DBE1EBED65D99 /* FlipTheSwitchTableViewController.m */,
+				F8032139C1E76BF6C51205CD /* FTSFlipTheSwitch.h */,
+				F8032766B6B64076F108F6DC /* FTSFlipTheSwitch.m */,
+				AAB8C4B420442CEF3E7F9AEF /* FTSFlipTheSwitch+Plist.h */,
+				AAB8C3B874C1F48CA8C990CD /* FTSFeatureCell.h */,
+				AAB8C6A133DA952A98084522 /* FTSFeatureCell.m */,
+				AAB8C136458DEC29B500F8C9 /* FTSFeatureConfigurationViewController.h */,
+				AAB8C80C735DBE1EBED65D99 /* FTSFeatureConfigurationViewController.m */,
 			);
 			path = FlipTheSwitch;
 			sourceTree = "<group>";
@@ -391,9 +390,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F80325D46C885BC440A30C43 /* FlipTheSwitchSpec.m in Sources */,
-				F80329B3B762341EF7AD3E7F /* FlipTheSwitch.m in Sources */,
-				AAB8C571C6FFC5C9874DABF3 /* FlipTheSwitchCell.m in Sources */,
-				AAB8C5A9DDE27E82ED12A91E /* FlipTheSwitchTableViewController.m in Sources */,
+				F80329B3B762341EF7AD3E7F /* FTSFlipTheSwitch.m in Sources */,
+				AAB8C571C6FFC5C9874DABF3 /* FTSFeatureCell.m in Sources */,
+				AAB8C5A9DDE27E82ED12A91E /* FTSFeatureConfigurationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,7 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F803238AA8E0E1976F0F95DC /* FlipTheSwitchSpec.m in Sources */,
-				F803222F52BB5CB3482ED84D /* FlipTheSwitch.m in Sources */,
+				F803222F52BB5CB3482ED84D /* FTSFlipTheSwitch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

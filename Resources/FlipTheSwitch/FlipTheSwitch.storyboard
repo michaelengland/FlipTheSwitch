@@ -26,13 +26,13 @@
         <!--Features-->
         <scene sceneID="HmN-ks-p58">
             <objects>
-                <tableViewController id="MfP-lZ-lJZ" customClass="FlipTheSwitchTableViewController" sceneMemberID="viewController">
+                <tableViewController id="MfP-lZ-lJZ" customClass="FTSFeatureConfigurationViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qox-Cy-iKL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="featureCell" rowHeight="79" id="D45-mi-SWk" customClass="FlipTheSwitchCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="featureCell" rowHeight="79" id="D45-mi-SWk" customClass="FTSFeatureCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D45-mi-SWk" id="SUw-kE-nVw">
                                     <autoresizingMask key="autoresizingMask"/>

@@ -1,4 +1,4 @@
-#import "FlipTheSwitch.h"
+#import "FTSFlipTheSwitch.h"
 
 NSString *const FTSFeatureStatusChangedNotification = @"FTSFeatureStatusChangedNotification";
 NSString *const FTSFeatureStatusChangedNotificationFeatureKey = @"FTSFeatureStatusChangedNotificationFeatureKey";
@@ -6,13 +6,13 @@ NSString *const FTSFeatureStatusChangedNotificationEnabledKey = @"FTSFeatureStat
 NSString *const FTSFeaturePlistNameKey = @"FTSFeaturePlistNameKey";
 
 
-@interface FlipTheSwitch ()
+@interface FTSFlipTheSwitch ()
 @property (nonatomic, readonly) NSUserDefaults *userDefaults;
 @property (nonatomic, readonly) NSBundle *bundle;
 @property (nonatomic, readonly) NSNotificationCenter *notificationCenter;
 @end
 
-@implementation FlipTheSwitch {
+@implementation FTSFlipTheSwitch {
     NSDictionary *_plistEnabledFeatures;
 }
 
@@ -20,7 +20,7 @@ NSString *const FTSFeaturePlistNameKey = @"FTSFeaturePlistNameKey";
 
 + (instancetype)sharedInstance
 {
-    static FlipTheSwitch *sharedInstance;
+    static FTSFlipTheSwitch *sharedInstance;
     static dispatch_once_t once;
     dispatch_once(&once, ^{
         sharedInstance = [[self alloc] initWithUserDefaults:[NSUserDefaults standardUserDefaults]
