@@ -1,7 +1,7 @@
 /* AUTO-GENERATED. DO NOT ALTER */
-#import <FlipTheSwitch/FlipTheSwitch.h>
+#import <FlipTheSwitch/FTSFlipTheSwitch.h>
 
-@interface FlipTheSwitch (Features)
+@interface FTSFlipTheSwitch (Features)
 // This is the first feature
 + (BOOL)isFirstFeatureEnabled;
 + (void)enableFirstFeature;

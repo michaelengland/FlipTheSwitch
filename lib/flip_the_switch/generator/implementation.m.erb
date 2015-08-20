@@ -1,37 +1,37 @@
 /* AUTO-GENERATED. DO NOT ALTER */
-#import "FlipTheSwitch+Features.h"
+#import "FTSFlipTheSwitch+Features.h"
 
-@implementation FlipTheSwitch (Features)
+@implementation FTSFlipTheSwitch (Features)
 
 <% all_features.each do |feature| -%>
 + (BOOL)is<%= feature.name.camelize %>Enabled
 {
 <% if feature.parent -%>
     return [self is<%= feature.parent.name.camelize %>Enabled] &&
-        [[FlipTheSwitch sharedInstance] isFeatureEnabled:[self <%= feature.name.camelize(:lower) %>Key]];
+        [[FTSFlipTheSwitch sharedInstance] isFeatureEnabled:[self <%= feature.name.camelize(:lower) %>Key]];
 <% else -%>
-    return [[FlipTheSwitch sharedInstance] isFeatureEnabled:[self <%= feature.name.camelize(:lower) %>Key]];
+    return [[FTSFlipTheSwitch sharedInstance] isFeatureEnabled:[self <%= feature.name.camelize(:lower) %>Key]];
 <% end -%>
 }
 
 + (void)enable<%= feature.name.camelize %>
 {
-    [[FlipTheSwitch sharedInstance] enableFeature:[self <%= feature.name.camelize(:lower) %>Key]];
+    [[FTSFlipTheSwitch sharedInstance] enableFeature:[self <%= feature.name.camelize(:lower) %>Key]];
 }
 
 + (void)disable<%= feature.name.camelize %>
 {
-    [[FlipTheSwitch sharedInstance] disableFeature:[self <%= feature.name.camelize(:lower) %>Key]];
+    [[FTSFlipTheSwitch sharedInstance] disableFeature:[self <%= feature.name.camelize(:lower) %>Key]];
 }
 
 + (void)set<%= feature.name.camelize %>Enabled:(BOOL)enabled
 {
-    [[FlipTheSwitch sharedInstance] setFeature:[self <%= feature.name.camelize(:lower) %>Key] enabled:enabled];
+    [[FTSFlipTheSwitch sharedInstance] setFeature:[self <%= feature.name.camelize(:lower) %>Key] enabled:enabled];
 }
 
 + (void)reset<%= feature.name.camelize %>
 {
-    [[FlipTheSwitch sharedInstance] resetFeature:[self <%= feature.name.camelize(:lower) %>Key]];
+    [[FTSFlipTheSwitch sharedInstance] resetFeature:[self <%= feature.name.camelize(:lower) %>Key]];
 }
 
 + (NSString *)<%= feature.name.camelize(:lower) %>Key

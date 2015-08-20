@@ -1,31 +1,31 @@
 /* AUTO-GENERATED. DO NOT ALTER */
-#import "FlipTheSwitch+Features.h"
+#import "FTSFlipTheSwitch+Features.h"
 
-@implementation FlipTheSwitch (Features)
+@implementation FTSFlipTheSwitch (Features)
 
 + (BOOL)isFirstFeatureEnabled
 {
-    return [[FlipTheSwitch sharedInstance] isFeatureEnabled:[self firstFeatureKey]];
+    return [[FTSFlipTheSwitch sharedInstance] isFeatureEnabled:[self firstFeatureKey]];
 }
 
 + (void)enableFirstFeature
 {
-    [[FlipTheSwitch sharedInstance] enableFeature:[self firstFeatureKey]];
+    [[FTSFlipTheSwitch sharedInstance] enableFeature:[self firstFeatureKey]];
 }
 
 + (void)disableFirstFeature
 {
-    [[FlipTheSwitch sharedInstance] disableFeature:[self firstFeatureKey]];
+    [[FTSFlipTheSwitch sharedInstance] disableFeature:[self firstFeatureKey]];
 }
 
 + (void)setFirstFeatureEnabled:(BOOL)enabled
 {
-    [[FlipTheSwitch sharedInstance] setFeature:[self firstFeatureKey] enabled:enabled];
+    [[FTSFlipTheSwitch sharedInstance] setFeature:[self firstFeatureKey] enabled:enabled];
 }
 
 + (void)resetFirstFeature
 {
-    [[FlipTheSwitch sharedInstance] resetFeature:[self firstFeatureKey]];
+    [[FTSFlipTheSwitch sharedInstance] resetFeature:[self firstFeatureKey]];
 }
 
 + (NSString *)firstFeatureKey
@@ -36,27 +36,27 @@
 + (BOOL)isSecondFeatureEnabled
 {
     return [self isFirstFeatureEnabled] &&
-        [[FlipTheSwitch sharedInstance] isFeatureEnabled:[self secondFeatureKey]];
+        [[FTSFlipTheSwitch sharedInstance] isFeatureEnabled:[self secondFeatureKey]];
 }
 
 + (void)enableSecondFeature
 {
-    [[FlipTheSwitch sharedInstance] enableFeature:[self secondFeatureKey]];
+    [[FTSFlipTheSwitch sharedInstance] enableFeature:[self secondFeatureKey]];
 }
 
 + (void)disableSecondFeature
 {
-    [[FlipTheSwitch sharedInstance] disableFeature:[self secondFeatureKey]];
+    [[FTSFlipTheSwitch sharedInstance] disableFeature:[self secondFeatureKey]];
 }
 
 + (void)setSecondFeatureEnabled:(BOOL)enabled
 {
-    [[FlipTheSwitch sharedInstance] setFeature:[self secondFeatureKey] enabled:enabled];
+    [[FTSFlipTheSwitch sharedInstance] setFeature:[self secondFeatureKey] enabled:enabled];
 }
 
 + (void)resetSecondFeature
 {
-    [[FlipTheSwitch sharedInstance] resetFeature:[self secondFeatureKey]];
+    [[FTSFlipTheSwitch sharedInstance] resetFeature:[self secondFeatureKey]];
 }
 
 + (NSString *)secondFeatureKey
