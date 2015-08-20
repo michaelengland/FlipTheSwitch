@@ -12,7 +12,15 @@ module FlipTheSwitch
 
       def feature_states
         features.inject({}) do |states, feature|
-          states.merge(feature.name => feature.enabled)
+          states.merge(feature.name => feature_hash(feature))
+        end
+      end
+
+      def feature_hash(feature)
+        if feature.description
+          {enabled: feature.enabled, description: feature.description}
+        else
+          {enabled: feature.enabled}
         end
       end
 

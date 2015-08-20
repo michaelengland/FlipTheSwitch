@@ -5,7 +5,7 @@ describe FlipTheSwitch::Generator::Plist do
   let(:output) { 'tmp' }
   let(:features) { [
     FlipTheSwitch::Feature.new('enabled_feature', true, nil),
-    FlipTheSwitch::Feature.new('disabled_feature', false, nil)
+    FlipTheSwitch::Feature.new('disabled_feature', false, 'is disabled description')
   ] }
   let(:output_file) { 'tmp/Features.plist' }
   let(:actual_output_file) { File.read(output_file) }
