@@ -1,4 +1,5 @@
 #import "FTSFlipTheSwitch.h"
+#import "FTSFeature.h"
 
 @interface FTSFlipTheSwitch (Spec)
 - (instancetype)initWithUserDefaults:(NSUserDefaults *)userDefaults
@@ -11,16 +12,16 @@ SpecBegin(FlipTheSwitch)
 
     __block NSUserDefaults *userDefaults;
 
-    __block NSString *standardFeature;
-    __block NSString *plistEnabledFeature;
+    __block NSString *standardFeatureName;
+    __block NSString *plistEnabledFeatureName;
 
     before(^{
         userDefaults = [[NSUserDefaults alloc] init];
         NSBundle *bundle = [NSBundle bundleForClass:[self class]];
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 
-        standardFeature = @"standard_feature";
-        plistEnabledFeature = @"plist_enabled_feature";
+        standardFeatureName = @"standard_feature";
+        plistEnabledFeatureName = @"plist_enabled_feature";
 
         subject = [[FTSFlipTheSwitch alloc] initWithUserDefaults:userDefaults
                                                        bundle:bundle
@@ -38,91 +39,98 @@ SpecBegin(FlipTheSwitch)
         expect([FTSFlipTheSwitch sharedInstance]).to.beIdenticalTo([FTSFlipTheSwitch sharedInstance]);
     });
 
+    it(@"returns a list of all features with their states", ^{
+        FTSFeature *plistEnabledFeature = [[FTSFeature alloc] initWithName:@"plist_enabled_feature"
+                                                                   enabled:YES
+                                                        featureDescription:@"ein geiles Feature"];
+        expect([subject features]).to.equal(@[ plistEnabledFeature ]);
+    });
+
     context(@"when feature is NOT set", ^{
         context(@"when feature defaults to enabled through plist", ^{
             it(@"is enabled", ^{
-                expect([subject isFeatureEnabled:plistEnabledFeature]).to.beTruthy();
+                expect([subject isFeatureEnabled:plistEnabledFeatureName]).to.beTruthy();
             });
         });
 
         context(@"when feature does not default to enabled through plist", ^{
             it(@"is disabled", ^{
-                expect([subject isFeatureEnabled:standardFeature]).to.beFalsy();
+                expect([subject isFeatureEnabled:standardFeatureName]).to.beFalsy();
             });
         });
     });
 
     context(@"when feature is manually enabled", ^{
         before(^{
-            [subject enableFeature:standardFeature];
-            [subject enableFeature:plistEnabledFeature];
+            [subject enableFeature:standardFeatureName];
+            [subject enableFeature:plistEnabledFeatureName];
         });
 
         it(@"is enabled", ^{
-            expect([subject isFeatureEnabled:standardFeature]).to.beTruthy();
-            expect([subject isFeatureEnabled:plistEnabledFeature]).to.beTruthy();
+            expect([subject isFeatureEnabled:standardFeatureName]).to.beTruthy();
+            expect([subject isFeatureEnabled:plistEnabledFeatureName]).to.beTruthy();
         });
     });
 
     context(@"when feature is manually disabled", ^{
         before(^{
-            [subject enableFeature:standardFeature];
-            [subject enableFeature:plistEnabledFeature];
-            [subject disableFeature:standardFeature];
-            [subject disableFeature:plistEnabledFeature];
+            [subject enableFeature:standardFeatureName];
+            [subject enableFeature:plistEnabledFeatureName];
+            [subject disableFeature:standardFeatureName];
+            [subject disableFeature:plistEnabledFeatureName];
         });
 
         it(@"is enabled", ^{
-            expect([subject isFeatureEnabled:standardFeature]).to.beFalsy();
-            expect([subject isFeatureEnabled:plistEnabledFeature]).to.beFalsy();
+            expect([subject isFeatureEnabled:standardFeatureName]).to.beFalsy();
+            expect([subject isFeatureEnabled:plistEnabledFeatureName]).to.beFalsy();
         });
     });
 
     context(@"when feature is manually set", ^{
         before(^{
-            [subject setFeature:standardFeature enabled:YES];
-            [subject setFeature:plistEnabledFeature enabled:YES];
+            [subject setFeature:standardFeatureName enabled:YES];
+            [subject setFeature:plistEnabledFeatureName enabled:YES];
         });
 
         it(@"is enabled", ^{
-            expect([subject isFeatureEnabled:standardFeature]).to.beTruthy();
-            expect([subject isFeatureEnabled:plistEnabledFeature]).to.beTruthy();
+            expect([subject isFeatureEnabled:standardFeatureName]).to.beTruthy();
+            expect([subject isFeatureEnabled:plistEnabledFeatureName]).to.beTruthy();
         });
     });
 
     context(@"when feature is reset", ^{
         before(^{
-            [subject enableFeature:standardFeature];
-            [subject enableFeature:plistEnabledFeature];
-            [subject resetFeature:standardFeature];
-            [subject resetFeature:plistEnabledFeature];
+            [subject enableFeature:standardFeatureName];
+            [subject enableFeature:plistEnabledFeatureName];
+            [subject resetFeature:standardFeatureName];
+            [subject resetFeature:plistEnabledFeatureName];
         });
 
         it(@"is in their original state (plist or false)", ^{
-            expect([subject isFeatureEnabled:standardFeature]).to.beFalsy();
-            expect([subject isFeatureEnabled:plistEnabledFeature]).to.beTruthy();
+            expect([subject isFeatureEnabled:standardFeatureName]).to.beFalsy();
+            expect([subject isFeatureEnabled:plistEnabledFeatureName]).to.beTruthy();
         });
 
         it(@"sends a notification about the change", ^{
             NSNotification *notification = [NSNotification notificationWithName:FTSFeatureStatusChangedNotification
                                                                          object:subject
                                                                        userInfo:@{
-                                                                               FTSFeatureStatusChangedNotificationFeatureKey : standardFeature,
+                                                                               FTSFeatureStatusChangedNotificationFeatureKey : standardFeatureName,
                                                                                FTSFeatureStatusChangedNotificationEnabledKey : @NO
                                                                        }];
-            expect(^{ [subject resetFeature:standardFeature]; }).to.notify(notification);
+            expect(^{ [subject resetFeature:standardFeatureName]; }).to.notify(notification);
         });
     });
 
     describe(@"notifications", ^{
         context(@"when feature already enabled", ^{
             before(^{
-                [subject setFeature:standardFeature enabled:YES];
+                [subject setFeature:standardFeatureName enabled:YES];
             });
 
             context(@"when feature re-enabled", ^{
                 it(@"does nothing", ^{
-                    expect(^{ [subject setFeature:standardFeature enabled:YES]; }).toNot.notify(FTSFeatureStatusChangedNotification);
+                    expect(^{ [subject setFeature:standardFeatureName enabled:YES]; }).toNot.notify(FTSFeatureStatusChangedNotification);
                 });
             });
 
@@ -131,22 +139,22 @@ SpecBegin(FlipTheSwitch)
                     NSNotification *enabledNotification = [NSNotification notificationWithName:FTSFeatureStatusChangedNotification
                                                                                         object:subject
                                                                                       userInfo:@{
-                                                                                          FTSFeatureStatusChangedNotificationFeatureKey : standardFeature,
+                                                                                          FTSFeatureStatusChangedNotificationFeatureKey : standardFeatureName,
                                                                                           FTSFeatureStatusChangedNotificationEnabledKey : @NO
                                                                                       }];
-                    expect(^{ [subject setFeature:standardFeature enabled:NO]; }).to.notify(enabledNotification);
+                    expect(^{ [subject setFeature:standardFeatureName enabled:NO]; }).to.notify(enabledNotification);
                 });
             });
         });
 
         context(@"when feature already disabled", ^{
             before(^{
-                [subject setFeature:standardFeature enabled:NO];
+                [subject setFeature:standardFeatureName enabled:NO];
             });
 
             context(@"when feature re-disabled", ^{
                 it(@"does nothing", ^{
-                    expect(^{ [subject setFeature:standardFeature enabled:NO]; }).toNot.notify(FTSFeatureStatusChangedNotification);
+                    expect(^{ [subject setFeature:standardFeatureName enabled:NO]; }).toNot.notify(FTSFeatureStatusChangedNotification);
                 });
             });
 
@@ -155,10 +163,10 @@ SpecBegin(FlipTheSwitch)
                     NSNotification *enabledNotification = [NSNotification notificationWithName:FTSFeatureStatusChangedNotification
                                                                                         object:subject
                                                                                       userInfo:@{
-                                                                                          FTSFeatureStatusChangedNotificationFeatureKey : standardFeature,
+                                                                                          FTSFeatureStatusChangedNotificationFeatureKey : standardFeatureName,
                                                                                           FTSFeatureStatusChangedNotificationEnabledKey : @YES
                                                                                       }];
-                    expect(^{ [subject setFeature:standardFeature enabled:YES]; }).to.notify(enabledNotification);
+                    expect(^{ [subject setFeature:standardFeatureName enabled:YES]; }).to.notify(enabledNotification);
                 });
 
             });
@@ -168,7 +176,7 @@ SpecBegin(FlipTheSwitch)
     describe(@"specifying plist files", ^{
         context(@"when no name is specified", ^{
             it(@"defaults to Features.plist", ^{
-                expect([subject isFeatureEnabled:plistEnabledFeature]).to.beTruthy();
+                expect([subject isFeatureEnabled:plistEnabledFeatureName]).to.beTruthy();
             });
         });
 

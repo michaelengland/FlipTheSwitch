@@ -50,6 +50,18 @@ NSString *const FTSFeaturePlistNameKey = @"FTSFeaturePlistNameKey";
 
 #pragma mark - Public
 
+- (NSArray *)features
+{
+    NSMutableArray *featureArray = [NSMutableArray array];
+    for (NSString *featureName in [self plistEnabledFeatures]) {
+        FTSFeature *feature = [[FTSFeature alloc] initWithName:featureName
+                                                       enabled:[self isFeatureEnabled:featureName]
+                                            featureDescription:[self plistEnabledFeatures][featureName][@"description"]];
+        [featureArray addObject:feature];
+    }
+    return [featureArray copy];
+}
+
 - (BOOL)isFeatureEnabled:(NSString *)feature
 {
     NSNumber *userEnabledFeature = [self.userDefaults objectForKey:[self userKeyForFeature:feature]];

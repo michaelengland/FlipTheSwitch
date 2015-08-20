@@ -16,6 +16,8 @@
 		79B389F11AE68B0000B536BA /* OtherFeatures.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79B389F01AE68B0000B536BA /* OtherFeatures.plist */; };
 		79B389F21AE68B1300B536BA /* OtherFeatures.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79B389F01AE68B0000B536BA /* OtherFeatures.plist */; };
 		79B389F31AE68B2200B536BA /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8032A02CCC0DA178199DB3A /* Features.plist */; };
+		AAB8C1120E8E6CC7FA11E131 /* FTSFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB8CB99F64E6C131977318B /* FTSFeature.m */; };
+		AAB8C14C2B986DBDD629260F /* FTSFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB8CB99F64E6C131977318B /* FTSFeature.m */; };
 		AAB8C571C6FFC5C9874DABF3 /* FTSFeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB8C6A133DA952A98084522 /* FTSFeatureCell.m */; };
 		AAB8C5768CC4E0C7A7D4AAB6 /* FlipTheSwitch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAB8CEB6ECE8E2DDFEBCCB60 /* FlipTheSwitch.storyboard */; };
 		AAB8C5A9DDE27E82ED12A91E /* FTSFeatureConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB8C80C735DBE1EBED65D99 /* FTSFeatureConfigurationViewController.m */; };
@@ -65,6 +67,8 @@
 		AAB8C4B420442CEF3E7F9AEF /* FTSFlipTheSwitch+Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTSFlipTheSwitch+Plist.h"; sourceTree = "<group>"; };
 		AAB8C6A133DA952A98084522 /* FTSFeatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSFeatureCell.m; sourceTree = "<group>"; };
 		AAB8C80C735DBE1EBED65D99 /* FTSFeatureConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSFeatureConfigurationViewController.m; sourceTree = "<group>"; };
+		AAB8C8A23E7F3255A0343628 /* FTSFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSFeature.h; sourceTree = "<group>"; };
+		AAB8CB99F64E6C131977318B /* FTSFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSFeature.m; sourceTree = "<group>"; };
 		AAB8CEB6ECE8E2DDFEBCCB60 /* FlipTheSwitch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FlipTheSwitch.storyboard; sourceTree = "<group>"; };
 		F8032139C1E76BF6C51205CD /* FTSFlipTheSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSFlipTheSwitch.h; sourceTree = "<group>"; };
 		F80321987A56E7AF3BFF5FD9 /* FlipTheSwitchSpec-iOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlipTheSwitchSpec-iOS-Prefix.pch"; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 				AAB8C6A133DA952A98084522 /* FTSFeatureCell.m */,
 				AAB8C136458DEC29B500F8C9 /* FTSFeatureConfigurationViewController.h */,
 				AAB8C80C735DBE1EBED65D99 /* FTSFeatureConfigurationViewController.m */,
+				AAB8C8A23E7F3255A0343628 /* FTSFeature.h */,
+				AAB8CB99F64E6C131977318B /* FTSFeature.m */,
 			);
 			path = FlipTheSwitch;
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 				F80329B3B762341EF7AD3E7F /* FTSFlipTheSwitch.m in Sources */,
 				AAB8C571C6FFC5C9874DABF3 /* FTSFeatureCell.m in Sources */,
 				AAB8C5A9DDE27E82ED12A91E /* FTSFeatureConfigurationViewController.m in Sources */,
+				AAB8C14C2B986DBDD629260F /* FTSFeature.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +409,7 @@
 			files = (
 				F803238AA8E0E1976F0F95DC /* FlipTheSwitchSpec.m in Sources */,
 				F803222F52BB5CB3482ED84D /* FTSFlipTheSwitch.m in Sources */,
+				AAB8C1120E8E6CC7FA11E131 /* FTSFeature.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

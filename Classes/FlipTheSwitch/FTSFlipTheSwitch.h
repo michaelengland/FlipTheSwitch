@@ -1,5 +1,7 @@
 @import Foundation;
 
+#import "FTSFeature.h"
+
 extern NSString *const FTSFeatureStatusChangedNotification;
 extern NSString *const FTSFeatureStatusChangedNotificationFeatureKey;
 extern NSString *const FTSFeatureStatusChangedNotificationEnabledKey;
