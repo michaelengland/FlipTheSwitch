@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JoB-ig-Mfq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JoB-ig-Mfq">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -42,8 +43,14 @@
                                                 <action selector="featureToggled:" destination="D45-mi-SWk" eventType="valueChanged" id="bWY-eF-ECi"/>
                                             </connections>
                                         </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="feature_description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaF-d3-JCO">
+                                            <rect key="frame" x="8" y="34" width="527" height="29"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="feature" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSo-ca-2f5">
-                                            <rect key="frame" x="8" y="29.5" width="527" height="19.5"/>
+                                            <rect key="frame" x="8" y="16" width="527" height="18"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -51,14 +58,20 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="4di-o3-Roi" secondAttribute="centerY" id="3Ru-x7-t4V"/>
+                                        <constraint firstItem="nSo-ca-2f5" firstAttribute="top" secondItem="SUw-kE-nVw" secondAttribute="topMargin" constant="8" id="59Z-ub-1aI"/>
+                                        <constraint firstItem="XaF-d3-JCO" firstAttribute="trailing" secondItem="nSo-ca-2f5" secondAttribute="trailing" id="Asu-GW-usi"/>
+                                        <constraint firstItem="nSo-ca-2f5" firstAttribute="height" secondItem="XaF-d3-JCO" secondAttribute="height" multiplier="0.6" id="GHa-tE-E7a"/>
+                                        <constraint firstItem="XaF-d3-JCO" firstAttribute="leading" secondItem="nSo-ca-2f5" secondAttribute="leading" id="IyL-Xj-KGb"/>
                                         <constraint firstItem="4di-o3-Roi" firstAttribute="trailing" secondItem="SUw-kE-nVw" secondAttribute="trailingMargin" id="LKR-wi-Nej"/>
-                                        <constraint firstAttribute="centerY" secondItem="nSo-ca-2f5" secondAttribute="centerY" id="XDM-4e-bMm"/>
+                                        <constraint firstItem="XaF-d3-JCO" firstAttribute="top" secondItem="nSo-ca-2f5" secondAttribute="bottom" id="Te7-1X-bx6"/>
                                         <constraint firstItem="nSo-ca-2f5" firstAttribute="leading" secondItem="SUw-kE-nVw" secondAttribute="leadingMargin" id="bgh-yN-3ON"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="XaF-d3-JCO" secondAttribute="bottom" constant="8" id="k2C-yN-Tht"/>
                                         <constraint firstItem="4di-o3-Roi" firstAttribute="leading" secondItem="nSo-ca-2f5" secondAttribute="trailing" constant="8" id="qEp-ds-7cv"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="feature" destination="nSo-ca-2f5" id="L2g-NU-jVj"/>
+                                    <outlet property="featureDescription" destination="XaF-d3-JCO" id="BoD-uq-04r"/>
                                     <outlet property="toggle" destination="4di-o3-Roi" id="TD4-u7-QzW"/>
                                 </connections>
                             </tableViewCell>
