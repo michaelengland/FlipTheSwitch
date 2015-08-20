@@ -1,6 +1,6 @@
 #import "ViewControlleriOS.h"
 
-#import "FlipTheSwitch+Features.h"
+#import "FTSFlipTheSwitch+Features.h"
 
 @interface ViewControlleriOS ()
 @property (nonatomic, weak) IBOutlet UIView *topColorView;
@@ -78,7 +78,7 @@
 {
     NSString *topColorName;
     UIColor *topColor;
-    if ([FlipTheSwitch isRedColorEnabled]) {
+    if ([FTSFlipTheSwitch isRedColorEnabled]) {
         topColorName = @"Red";
         topColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
     } else {
@@ -93,7 +93,7 @@
 {
     NSString *bottomColorName;
     UIColor *bottomColor;
-    if ([FlipTheSwitch isPurpleColorEnabled]) {
+    if ([FTSFlipTheSwitch isPurpleColorEnabled]) {
         bottomColorName = @"Purple";
         bottomColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:1];
     } else {
@@ -106,17 +106,17 @@
 
 - (void)setupFeaturesButton
 {
-    if (![FlipTheSwitch isFeaturesControllerEnabled]) {
+    if (![FTSFlipTheSwitch isFeaturesControllerEnabled]) {
         self.navigationController.navigationBar.topItem.rightBarButtonItems = @[];
     }
 }
 
 - (void)toggleRedFeature
 {
-    if ([FlipTheSwitch isRedColorEnabled]) {
-        [FlipTheSwitch disableRedColor];
+    if ([FTSFlipTheSwitch isRedColorEnabled]) {
+        [FTSFlipTheSwitch disableRedColor];
     } else {
-        [FlipTheSwitch enableRedColor];
+        [FTSFlipTheSwitch enableRedColor];
     }
     [self setupView];
 }
