@@ -56,7 +56,7 @@ NSString *const FTSFeaturePlistNameKey = @"FTSFeaturePlistNameKey";
     if (userEnabledFeature) {
         return [userEnabledFeature boolValue];
     } else {
-        return [[self plistEnabledFeatures][feature] boolValue];
+        return [[self plistEnabledFeatures][feature][@"enabled"] boolValue];
     }
 }
 

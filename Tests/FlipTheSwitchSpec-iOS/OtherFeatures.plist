@@ -3,6 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>other_feature</key>
-	<true/>
+	<dict>
+		<key>enabled</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
