@@ -1,10 +1,9 @@
 #import "FTSFeatureConfigurationViewController.h"
 #import "FTSFlipTheSwitch.h"
-#import "FTSFlipTheSwitch+Plist.h"
 #import "FTSFeatureCell.h"
 
 @interface FTSFeatureConfigurationViewController () <FlipTheSwitchCellDelegate>
-@property (nonatomic) NSDictionary *dataSource;
+@property (nonatomic) NSArray *dataSource;
 @end
 
 @implementation FTSFeatureConfigurationViewController
@@ -34,14 +33,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.dataSource.allKeys count];
+    return [self.dataSource count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FTSFeatureCell *cell = [tableView dequeueReusableCellWithIdentifier:@"featureCell"];
-    NSString *feature = self.dataSource.allKeys[(NSUInteger)indexPath.row];
-    [self presentCell:cell feature:feature enabled:[self.dataSource[feature] boolValue]];
+    FTSFeature *feature = self.dataSource[(NSUInteger)indexPath.row];
+    [self presentCell:cell withFeature:feature];
     cell.delegate = self;
     return cell;
 }
@@ -51,25 +50,22 @@
 - (void)flipTheSwitchCellDidToggleFeature:(FTSFeatureCell *)cell
 {
     NSUInteger index = (NSUInteger)[self.tableView indexPathForCell:cell].row;
-    [[FTSFlipTheSwitch sharedInstance] setFeature:self.dataSource.allKeys[index]
-                                       enabled:cell.toggle.on];
+    FTSFeature *feature = self.dataSource[index];
+    [[FTSFlipTheSwitch sharedInstance] setFeature:feature.name
+                                          enabled:cell.toggle.on];
 }
 
 #pragma mark - Private
 
 - (void)setupDataSource
 {
-    NSMutableDictionary *plistFeatures = [[[FTSFlipTheSwitch sharedInstance] plistEnabledFeatures] mutableCopy];
-    [plistFeatures enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
-        plistFeatures[key] = @([[FTSFlipTheSwitch sharedInstance] isFeatureEnabled:key]);
-    }];
-    self.dataSource = plistFeatures;
+    self.dataSource = [[FTSFlipTheSwitch sharedInstance] features];
 }
 
-- (void)presentCell:(FTSFeatureCell *)cell feature:(NSString *)feature enabled:(BOOL)enabled
+- (void)presentCell:(FTSFeatureCell *)cell withFeature:(FTSFeature *)feature
 {
-    cell.feature.text = feature;
-    [cell.toggle setOn:enabled animated:NO];
+    cell.feature.text = feature.name;
+    [cell.toggle setOn:feature.enabled animated:NO];
 }
 
 @end

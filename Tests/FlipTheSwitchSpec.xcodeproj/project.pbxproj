@@ -64,7 +64,6 @@
 		8FC66316DAF9423DA99C4191 /* libPods-FlipTheSwitchSpec-Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlipTheSwitchSpec-Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAB8C136458DEC29B500F8C9 /* FTSFeatureConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSFeatureConfigurationViewController.h; sourceTree = "<group>"; };
 		AAB8C3B874C1F48CA8C990CD /* FTSFeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSFeatureCell.h; sourceTree = "<group>"; };
-		AAB8C4B420442CEF3E7F9AEF /* FTSFlipTheSwitch+Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTSFlipTheSwitch+Plist.h"; sourceTree = "<group>"; };
 		AAB8C6A133DA952A98084522 /* FTSFeatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSFeatureCell.m; sourceTree = "<group>"; };
 		AAB8C80C735DBE1EBED65D99 /* FTSFeatureConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSFeatureConfigurationViewController.m; sourceTree = "<group>"; };
 		AAB8C8A23E7F3255A0343628 /* FTSFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSFeature.h; sourceTree = "<group>"; };
@@ -201,7 +200,6 @@
 			children = (
 				F8032139C1E76BF6C51205CD /* FTSFlipTheSwitch.h */,
 				F8032766B6B64076F108F6DC /* FTSFlipTheSwitch.m */,
-				AAB8C4B420442CEF3E7F9AEF /* FTSFlipTheSwitch+Plist.h */,
 				AAB8C3B874C1F48CA8C990CD /* FTSFeatureCell.h */,
 				AAB8C6A133DA952A98084522 /* FTSFeatureCell.m */,
 				AAB8C136458DEC29B500F8C9 /* FTSFeatureConfigurationViewController.h */,
