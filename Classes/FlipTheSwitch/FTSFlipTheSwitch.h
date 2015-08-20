@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 extern NSString *const FTSFeatureStatusChangedNotification;
 extern NSString *const FTSFeatureStatusChangedNotificationFeatureKey;
@@ -9,6 +9,7 @@ extern NSString *const FTSFeaturePlistNameKey;
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)sharedInstance;
 
+- (NSArray *)features;
 - (BOOL)isFeatureEnabled:(NSString *)feature;
 - (void)enableFeature:(NSString *)feature;
 - (void)disableFeature:(NSString *)feature;
