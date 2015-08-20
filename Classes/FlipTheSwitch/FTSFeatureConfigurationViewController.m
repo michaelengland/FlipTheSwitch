@@ -66,6 +66,7 @@
 {
     cell.feature.text = feature.name;
     [cell.toggle setOn:feature.enabled animated:NO];
+    cell.featureDescription.text = feature.featureDescription;
 }
 
 @end
