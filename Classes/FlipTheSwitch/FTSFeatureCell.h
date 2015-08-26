@@ -2,6 +2,7 @@
 @import UIKit;
 
 @class FTSFeatureCell;
+#import "FTSFeatureDescriptionLabel.h"
 
 @protocol FlipTheSwitchCellDelegate <NSObject>
 - (void)flipTheSwitchCellDidToggleFeature:(FTSFeatureCell *)cell;
@@ -10,7 +11,7 @@
 @interface FTSFeatureCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel *featureNameLabel;
 @property (nonatomic, weak) IBOutlet UISwitch *toggle;
-@property (weak, nonatomic) IBOutlet UILabel *featureDescriptionLabel;
+@property (weak, nonatomic) IBOutlet FTSFeatureDescriptionLabel *featureDescriptionLabel;
 
 @property (nonatomic, weak) id<FlipTheSwitchCellDelegate> delegate;
 @end

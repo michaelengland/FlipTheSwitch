@@ -2,6 +2,8 @@
 #import "FTSFlipTheSwitch.h"
 #import "FTSFeatureCell.h"
 
+static NSString * const FTSFeatureCellIdentifier = @"featureCell";
+
 @interface FTSFeatureConfigurationViewController () <FlipTheSwitchCellDelegate>
 @property (nonatomic) NSArray *dataSource;
 @end
@@ -13,7 +15,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     [self setupDataSource];
 }
 
@@ -26,14 +27,14 @@
 
 #pragma mark - UITableViewDataSource
 
+- (void)setupDataSource
+{
+    self.dataSource = [[FTSFlipTheSwitch sharedInstance] features];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 80;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -41,15 +42,35 @@
     return [self.dataSource count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FTSFeatureCell *cell = [tableView dequeueReusableCellWithIdentifier:@"featureCell"];
-    FTSFeature *feature = self.dataSource[(NSUInteger)indexPath.row];
-    [self presentCell:cell withFeature:feature];
-    cell.delegate = self;
-    return cell;
+    return [self heightForBasicCellAtIndexPath:indexPath];
 }
 
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self configureFeatureCell:self.sizingCell atIndexPath:indexPath];
+    return [self calculateHeightForConfiguredSizingCell:self.sizingCell];
+}
+
+- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell
+{
+    sizingCell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.frame), CGRectGetHeight(sizingCell.bounds));
+    [sizingCell layoutIfNeeded];
+
+    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height + 1.0f; // seperator
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self featureCellAtIndexPath:indexPath];
+}
+
+
+    
 #pragma mark - FlipTheSwitchCellDelegate
 
 - (void)flipTheSwitchCellDidToggleFeature:(FTSFeatureCell *)cell
@@ -59,19 +80,41 @@
     [[FTSFlipTheSwitch sharedInstance] setFeature:feature.name
                                           enabled:cell.toggle.on];
 }
-
 #pragma mark - Private
 
-- (void)setupDataSource
+- (void)configureFeatureCell:(FTSFeatureCell *)cell atIndexPath:(NSIndexPath *)indexPath{
+    FTSFeature *feature = self.dataSource[(NSUInteger)indexPath.row];
+    [self presentCell:cell withFeature:feature];
+}
+
+- (FTSFeatureCell *)featureCellAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.dataSource = [[FTSFlipTheSwitch sharedInstance] features];
+    FTSFeatureCell *cell = [self.tableView dequeueReusableCellWithIdentifier:FTSFeatureCellIdentifier forIndexPath:indexPath];
+    cell.delegate = self;
+    [self configureFeatureCell:cell atIndexPath:indexPath];
+    
+    return cell;
 }
 
 - (void)presentCell:(FTSFeatureCell *)cell withFeature:(FTSFeature *)feature
 {
-    cell.feature.text = feature.name;
+    cell.featureNameLabel.text = feature.name;
     [cell.toggle setOn:feature.enabled animated:NO];
-    cell.featureDescription.text = feature.featureDescription;
+    cell.featureDescriptionLabel.text = feature.featureDescription;
 }
+
+- (FTSFeatureCell *)sizingCell
+{
+    static FTSFeatureCell *sizingCell = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sizingCell = [self.tableView dequeueReusableCellWithIdentifier:FTSFeatureCellIdentifier];
+        // iOS bug fix to avoid breaking a by system added 'UIView-Encapsulated-Layout-Height' constraint
+        sizingCell.frame = CGRectMake(0, 0, 100, 100);
+        sizingCell.contentView.frame = sizingCell.frame;
+    });
+    return sizingCell;
+}
+
 
 @end
