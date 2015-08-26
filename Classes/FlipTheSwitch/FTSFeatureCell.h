@@ -11,7 +11,7 @@
 @interface FTSFeatureCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel *featureNameLabel;
 @property (nonatomic, weak) IBOutlet UISwitch *toggle;
-@property (weak, nonatomic) IBOutlet FTSFeatureDescriptionLabel *featureDescriptionLabel;
+@property (nonatomic, weak) IBOutlet FTSFeatureDescriptionLabel *featureDescriptionLabel;
 
 @property (nonatomic, weak) id<FlipTheSwitchCellDelegate> delegate;
 @end
