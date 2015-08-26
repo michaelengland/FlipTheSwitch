@@ -68,8 +68,6 @@ static NSString * const FTSFeatureCellIdentifier = @"featureCell";
 {
     return [self featureCellAtIndexPath:indexPath];
 }
-
-
     
 #pragma mark - FlipTheSwitchCellDelegate
 
@@ -80,6 +78,7 @@ static NSString * const FTSFeatureCellIdentifier = @"featureCell";
     [[FTSFlipTheSwitch sharedInstance] setFeature:feature.name
                                           enabled:cell.toggle.on];
 }
+
 #pragma mark - Private
 
 - (void)configureFeatureCell:(FTSFeatureCell *)cell atIndexPath:(NSIndexPath *)indexPath{
@@ -115,6 +114,5 @@ static NSString * const FTSFeatureCellIdentifier = @"featureCell";
     });
     return sizingCell;
 }
-
 
 @end

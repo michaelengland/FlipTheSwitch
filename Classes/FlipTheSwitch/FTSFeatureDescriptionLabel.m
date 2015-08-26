@@ -7,7 +7,6 @@
     
     if (self.numberOfLines == 0 && bounds.size.width != self.preferredMaxLayoutWidth) {
         self.preferredMaxLayoutWidth = self.bounds.size.width;
-//        [self setNeedsUpdateConstraints];
     }
 }
 
