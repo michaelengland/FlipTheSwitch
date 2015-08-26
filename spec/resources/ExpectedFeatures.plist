@@ -3,8 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>disabled_feature</key>
-	<false/>
+	<dict>
+		<key>description</key>
+		<string>is disabled description</string>
+		<key>enabled</key>
+		<false/>
+	</dict>
 	<key>enabled_feature</key>
-	<true/>
+	<dict>
+		<key>enabled</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

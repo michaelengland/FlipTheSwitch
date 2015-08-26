@@ -1,6 +1,6 @@
 #import "ViewControlleriOS.h"
 
-#import "FlipTheSwitch+Features.h"
+#import "FTSFlipTheSwitch+Features.h"
 
 @interface ViewControlleriOS ()
 @property (nonatomic, weak) IBOutlet UIView *topColorView;
@@ -78,12 +78,12 @@
 {
     NSString *topColorName;
     UIColor *topColor;
-    if ([FlipTheSwitch isRedColorEnabled]) {
+    if ([FTSFlipTheSwitch isRedColorEnabled]) {
         topColorName = @"Red";
-        topColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
+        topColor = [UIColor colorWithRed:1 green:0.4 blue:0.4 alpha:1];
     } else {
         topColorName = @"Green";
-        topColor = [UIColor colorWithRed:0 green:1 blue:0 alpha:1];
+        topColor = [UIColor colorWithRed:0.6 green:1 blue:0.6 alpha:1];
     }
     self.topColorInfoTextView.text = [NSString stringWithFormat:@"The top part of the screen is %@", topColorName];
     self.topColorView.backgroundColor = topColor;
@@ -93,12 +93,12 @@
 {
     NSString *bottomColorName;
     UIColor *bottomColor;
-    if ([FlipTheSwitch isPurpleColorEnabled]) {
+    if ([FTSFlipTheSwitch isPurpleColorEnabled]) {
         bottomColorName = @"Purple";
-        bottomColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:1];
+        bottomColor = [UIColor colorWithRed:1 green:0.8 blue:1 alpha:1];
     } else {
         bottomColorName = @"Yellow";
-        bottomColor = [UIColor colorWithRed:1 green:1 blue:0 alpha:1];
+        bottomColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.6 alpha:1];
     }
     self.bottomColorInfoTextView.text = [NSString stringWithFormat:@"The bottom part of the screen is %@", bottomColorName];
     self.bottomColorView.backgroundColor = bottomColor;
@@ -106,17 +106,17 @@
 
 - (void)setupFeaturesButton
 {
-    if (![FlipTheSwitch isFeaturesControllerEnabled]) {
+    if (![FTSFlipTheSwitch isFeaturesControllerEnabled]) {
         self.navigationController.navigationBar.topItem.rightBarButtonItems = @[];
     }
 }
 
 - (void)toggleRedFeature
 {
-    if ([FlipTheSwitch isRedColorEnabled]) {
-        [FlipTheSwitch disableRedColor];
+    if ([FTSFlipTheSwitch isRedColorEnabled]) {
+        [FTSFlipTheSwitch disableRedColor];
     } else {
-        [FlipTheSwitch enableRedColor];
+        [FTSFlipTheSwitch enableRedColor];
     }
     [self setupView];
 }

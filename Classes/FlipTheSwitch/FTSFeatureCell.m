@@ -1,6 +1,6 @@
-#import "FlipTheSwitchCell.h"
+#import "FTSFeatureCell.h"
 
-@implementation FlipTheSwitchCell
+@implementation FTSFeatureCell
 
 #pragma mark - Action
 

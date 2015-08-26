@@ -1,14 +1,17 @@
-#import <Foundation/Foundation.h>
+@import Foundation;
+
+#import "FTSFeature.h"
 
 extern NSString *const FTSFeatureStatusChangedNotification;
 extern NSString *const FTSFeatureStatusChangedNotificationFeatureKey;
 extern NSString *const FTSFeatureStatusChangedNotificationEnabledKey;
 extern NSString *const FTSFeaturePlistNameKey;
 
-@interface FlipTheSwitch : NSObject
+@interface FTSFlipTheSwitch : NSObject
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)sharedInstance;
 
+- (NSArray *)features;
 - (BOOL)isFeatureEnabled:(NSString *)feature;
 - (void)enableFeature:(NSString *)feature;
 - (void)disableFeature:(NSString *)feature;
