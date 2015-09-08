@@ -1,34 +1,37 @@
 require 'json'
+require 'json-schema'
 
 module FlipTheSwitch
   module Reader
     class Features
+      INHERITANCE_INDICATOR = "inherits_from"
+
       def initialize(input, environment)
         @input = input
         @environment = environment
       end
 
       def features
-        raise Error::InvalidFile.new(input_file) unless file_states.is_a?(Hash)
+        raise Error::InvalidFile.new(input_file) unless valid_file?
         raise Error::InvalidEnvironment.new(environment) unless file_states.has_key?(environment)
         raise Error::InvalidFile.new(input_file) unless file_states[environment].is_a?(Hash)
-        
+
         parent = nil
-        if file_states[environment].has_key?("inherits_from")
-          parent = file_states[environment]["inherits_from"]
+        if file_states[environment].has_key?(INHERITANCE_INDICATOR)
+          parent = file_states[environment][INHERITANCE_INDICATOR]
         end
 
         merged_env_hash = {}
 
         if parent
           file_states[parent].map { |feature_name, feature_info|
-            if feature_name != "inherits_from"
+            if feature_name != INHERITANCE_INDICATOR
               merged_env_hash[feature_name] = feature_info
             end
           }
         end
         file_states[environment].map { |feature_name, feature_info|
-          if feature_name != "inherits_from"
+          if feature_name != INHERITANCE_INDICATOR
             if merged_env_hash.has_key?(feature_name)
               feature_info.map { |key, value|
                   merged_env_hash[feature_name][key] = value
@@ -58,9 +61,8 @@ module FlipTheSwitch
       end
 
       def file_states
+
         @file_states ||=  JSON.parse(File.read(input_file))
-      rescue SystemCallError => e
-        raise Error::UnreadableFile.new(e)
       end
 
       def input_file
@@ -69,6 +71,32 @@ module FlipTheSwitch
         else
           input
         end
+      end
+
+      def valid_file?
+        schema = {
+          "type" => "object",
+          "additionalProperties" => {
+            "type" => "object",
+            "additionalProperties" => {
+                "properties" => {
+                    "enabled" => {
+                        "type" => "boolean"
+                    },
+                    "description" => {
+                        "type" => "string"
+                    }
+                },
+                "required" => [
+                    "enabled"
+                ]
+            }
+          }
+        }
+
+        JSON::Validator.validate(schema, File.read(input_file)) && file_states.is_a?(Hash)
+      rescue SystemCallError => e
+        raise Error::UnreadableFile.new(e)
       end
     end
   end
