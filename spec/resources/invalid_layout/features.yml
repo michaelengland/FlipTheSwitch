@@ -1,9 +1,0 @@
-defaults: &DEFAULT
-  some:
-    random:
-      thing: 'wow'
-
-beta:
-  <<: *DEFAULT
-  disabled_feature:
-    enabled: No
