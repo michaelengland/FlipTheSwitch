@@ -24,7 +24,6 @@ typedef enum Colors {
     [super viewWillAppear];
 }
 
-
 - (void)setupStateChangeNotifications
 {
     [self setupNotification:NSApplicationDidBecomeActiveNotification];
@@ -47,7 +46,6 @@ typedef enum Colors {
 {
     [self setupLeftView];
     [self setupRightView];
-//    [self setupFeaturesButton];
 }
 
 - (void)setupLeftView {
@@ -57,10 +55,13 @@ typedef enum Colors {
         [self.leftColoredView removeConstraints:[self.leftColoredView constraints]];
     }
     
-    self.leftColoredView = [self coloredViewForColor:Red];
-    self.leftLabel.stringValue = @"The left view is red";
-//    self.leftColoredView = [self coloredViewForColor:Green];
-//    self.leftLabel.stringValue = @"The left view is green";
+    if (true) {
+        self.leftColoredView = [self coloredViewForColor:Red];
+        self.leftLabel.stringValue = @"The left view is red";
+    } else {
+        self.leftColoredView = [self coloredViewForColor:Green];
+        self.leftLabel.stringValue = @"The left view is green";
+    }
     
     [self setLayoutForLeftView];
 }
@@ -72,10 +73,13 @@ typedef enum Colors {
         [self.rightColoredView removeConstraints:[self.rightColoredView constraints]];
     }
     
-    self.rightColoredView = [self coloredViewForColor:Purple];
-    self.rightLabel.stringValue = @"The right view is purple";
-    //    self.rightColoredView = [self coloredViewForColor:Yellow];
-//    self.rightLabel.stringValue = @"The right view is yellow";
+    if (true) {
+        self.rightColoredView = [self coloredViewForColor:Purple];
+        self.rightLabel.stringValue = @"The right view is purple";
+    } else {
+        self.rightColoredView = [self coloredViewForColor:Yellow];
+        self.rightLabel.stringValue = @"The right view is yellow";
+    }
     [self setLayoutForRightView];
 }
 

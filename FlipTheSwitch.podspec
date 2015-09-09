@@ -10,8 +10,9 @@ Pod::Spec.new do |s|
 
   s.license = {:type => 'MIT', :file => 'LICENSE'}
   s.source = {:git => 'git@github.com:michaelengland/FlipTheSwitch.git', :tag => s.version.to_s}
-  s.source_files = 'Classes/FlipTheSwitch/*.{h,m}'
-  s.resource_bundles = { 'FlipTheSwitch' => 'Resources/FlipTheSwitch/*.storyboard' }
+  s.ios.source_files = 'Classes/FlipTheSwitch/**/*.{h,m}'
+  s.osx.source_files = 'Classes/FlipTheSwitch/Shared/*.{h,m}'
+  s.ios.resource_bundles = { 'FlipTheSwitch' => 'Resources/FlipTheSwitch/*.storyboard' }
   s.public_header_files = 'Classes/FlipTheSwitch/*.h'
   s.requires_arc = true
 end

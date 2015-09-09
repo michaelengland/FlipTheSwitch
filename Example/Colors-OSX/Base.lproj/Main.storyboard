@@ -690,7 +690,7 @@
                                 </holdingPriorities>
                             </splitView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6CR-mI-faG">
-                                <rect key="frame" x="362" y="127" width="70" height="17"/>
+                                <rect key="frame" x="392" y="127" width="70" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="right Label" id="oLh-Gk-vrR">
                                     <font key="font" metaFont="titleBar"/>
                                     <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -705,11 +705,11 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nSG-Cr-G03">
-                                <rect key="frame" x="373" y="247" width="99" height="19"/>
-                                <buttonCell key="cell" type="roundRect" title="Open Features" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Msr-9j-ozv">
+                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nSG-Cr-G03">
+                                <rect key="frame" x="316" y="247" width="156" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="change right color" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Msr-9j-ozv">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="controlContent"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                             </button>
                         </subviews>
@@ -717,13 +717,13 @@
                             <constraint firstItem="uic-t4-fQ3" firstAttribute="top" secondItem="nSG-Cr-G03" secondAttribute="bottom" constant="8" id="4RL-Y9-gIu"/>
                             <constraint firstAttribute="centerY" secondItem="6CR-mI-faG" secondAttribute="centerY" id="Fmm-ae-b9e"/>
                             <constraint firstAttribute="trailing" secondItem="nSG-Cr-G03" secondAttribute="trailing" constant="8" id="NAe-RD-3qa"/>
-                            <constraint firstItem="2M7-ri-oAf" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="50" id="Qk6-q0-8RB"/>
+                            <constraint firstItem="2M7-ri-oAf" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Qk6-q0-8RB"/>
                             <constraint firstAttribute="bottom" secondItem="uic-t4-fQ3" secondAttribute="bottom" id="TDt-Wn-K59"/>
                             <constraint firstItem="nSG-Cr-G03" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="4" id="bes-M5-XlL"/>
                             <constraint firstAttribute="centerY" secondItem="2M7-ri-oAf" secondAttribute="centerY" id="bid-tU-lDF"/>
                             <constraint firstItem="uic-t4-fQ3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="brq-yv-b4V"/>
                             <constraint firstAttribute="trailing" secondItem="uic-t4-fQ3" secondAttribute="trailing" id="i6V-UB-AzU"/>
-                            <constraint firstAttribute="trailing" secondItem="6CR-mI-faG" secondAttribute="trailing" constant="50" id="qXF-wF-XuC"/>
+                            <constraint firstAttribute="trailing" secondItem="6CR-mI-faG" secondAttribute="trailing" constant="20" id="qXF-wF-XuC"/>
                         </constraints>
                     </view>
                     <connections>
