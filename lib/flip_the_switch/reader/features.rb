@@ -4,7 +4,7 @@ require 'json-schema'
 module FlipTheSwitch
   module Reader
     class Features
-      INHERITANCE_INDICATOR = "inherits_from"
+      INHERITANCE_INDICATOR = 'inherits_from'
 
       def initialize(input, environment)
         @input = input
@@ -12,35 +12,22 @@ module FlipTheSwitch
       end
 
       def features
-        raise Error::InvalidFile.new(input_file) unless valid_file?
+        raise Error::InvalidFile.new(input) unless valid_file?
         raise Error::InvalidEnvironment.new(environment) unless file_states.has_key?(environment)
-        raise Error::InvalidFile.new(input_file) unless file_states[environment].is_a?(Hash)
+        raise Error::InvalidFile.new(input) unless file_states[environment].is_a?(Hash)
 
-        parent = nil
-        if file_states[environment].has_key?(INHERITANCE_INDICATOR)
-          parent = file_states[environment][INHERITANCE_INDICATOR]
-        end
-
-        merged_env_hash = {}
-
-        if parent
-          file_states[parent].map { |feature_name, feature_info|
+        features = {}
+        if inherits?
+          features = merged_features
+        elsif
+          file_states[environment].map { |feature_name, feature_info|
             if feature_name != INHERITANCE_INDICATOR
-              merged_env_hash[feature_name] = feature_info
+              features[feature_name] = feature_info
             end
           }
         end
-        file_states[environment].map { |feature_name, feature_info|
-          if feature_name != INHERITANCE_INDICATOR
-            if merged_env_hash.has_key?(feature_name)
-              feature_info.map { |key, value|
-                  merged_env_hash[feature_name][key] = value
-              }
-            end
-          end
-        }
 
-        merged_env_hash.map { |feature_name, feature_info|
+        features.map { |feature_name, feature_info|
           feature_state(feature_name, feature_info)
         }
       end
@@ -48,8 +35,44 @@ module FlipTheSwitch
       private
       attr_reader :input, :environment
 
+      def inherits?
+        file_states[environment].has_key?(INHERITANCE_INDICATOR)
+      end
+
+      def merged_features
+        merged_features_tmp = parent_features
+        file_states[environment].map { |feature_name, feature_info|
+          if feature_name != INHERITANCE_INDICATOR
+            if merged_features_tmp.has_key?(feature_name)
+              # check if needs to be overwritten
+              feature_info.map { |key, value|
+                merged_features_tmp[feature_name][key] = value
+              }
+            elsif
+              merged_features_tmp[feature_name] = feature_info
+            end
+          end
+        }
+        merged_features_tmp
+      end
+
+      def parent_features
+        parent = file_states[environment][INHERITANCE_INDICATOR]
+        hash_for_env(parent)
+      end
+
+      def hash_for_env(env_label)
+        hash = {}
+        file_states[env_label].map { |feature_name, feature_info|
+          if feature_name != INHERITANCE_INDICATOR
+            hash[feature_name] = feature_info
+          end
+        }
+        hash
+      end
+
       def feature_state(feature_name, feature_info)
-        raise Error::InvalidFile.new(input_file) unless feature_info.is_a?(Hash)
+        raise Error::InvalidFile.new(input) unless feature_info.is_a?(Hash)
 
         feature_info_dup = feature_info.dup
         enabled = !!feature_info_dup.delete('enabled')
@@ -61,42 +84,35 @@ module FlipTheSwitch
       end
 
       def file_states
-
-        @file_states ||=  JSON.parse(File.read(input_file))
-      end
-
-      def input_file
-        if File.directory?(input)
-          File.join(input, 'features.json')
-        else
-          input
-        end
+        @file_states ||=  JSON.parse(File.read(input))
       end
 
       def valid_file?
-        schema = {
-          "type" => "object",
-          "additionalProperties" => {
-            "type" => "object",
-            "additionalProperties" => {
-                "properties" => {
-                    "enabled" => {
-                        "type" => "boolean"
-                    },
-                    "description" => {
-                        "type" => "string"
-                    }
-                },
-                "required" => [
-                    "enabled"
-                ]
-            }
-          }
-        }
-
-        JSON::Validator.validate(schema, File.read(input_file)) && file_states.is_a?(Hash)
+        JSON::Validator.validate(expected_schema, File.read(input)) && file_states.is_a?(Hash)
       rescue SystemCallError => e
         raise Error::UnreadableFile.new(e)
+      end
+
+      def expected_schema
+         {
+            "type" => "object",
+            "additionalProperties" => {
+                "type" => "object",
+                "additionalProperties" => {
+                    "properties" => {
+                        "enabled" => {
+                            "type" => "boolean"
+                        },
+                        "description" => {
+                            "type" => "string"
+                        }
+                    },
+                    "required" => [
+                        "enabled"
+                    ]
+                }
+            }
+         }
       end
     end
   end
