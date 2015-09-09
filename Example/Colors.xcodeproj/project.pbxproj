@@ -14,15 +14,27 @@
 		5B9098B1193A235E004C12B3 /* ViewControlleriOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9098B0193A235E004C12B3 /* ViewControlleriOS.m */; };
 		5B9098B3193A235E004C12B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9098B2193A235E004C12B3 /* Images.xcassets */; };
 		607A81D01B86249700F907AF /* FTSFlipTheSwitch+Features.m in Sources */ = {isa = PBXBuildFile; fileRef = 607A81CF1B86249700F907AF /* FTSFlipTheSwitch+Features.m */; };
+		607D10861BA080690023E025 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 607D10851BA080690023E025 /* AppDelegate.m */; };
+		607D10881BA080690023E025 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 607D10871BA080690023E025 /* main.m */; };
+		607D108B1BA080690023E025 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 607D108A1BA080690023E025 /* ViewController.m */; };
+		607D108D1BA080690023E025 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607D108C1BA080690023E025 /* Images.xcassets */; };
+		607D10901BA080690023E025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607D108E1BA080690023E025 /* Main.storyboard */; };
+		607D10AE1BA0810D0023E025 /* GreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 607D10A71BA0810D0023E025 /* GreenView.m */; };
+		607D10AF1BA0810D0023E025 /* PurpleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 607D10A91BA0810D0023E025 /* PurpleView.m */; };
+		607D10B01BA0810D0023E025 /* RedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 607D10AB1BA0810D0023E025 /* RedView.m */; };
+		607D10B11BA0810D0023E025 /* YellowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 607D10AD1BA0810D0023E025 /* YellowView.m */; };
 		BF6D40A71B54110400BB3CE3 /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = F80321679CBE499FFA387688 /* Features.plist */; };
 		BF6EF23F1B54012D00AF5FE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9098A9193A235E004C12B3 /* Main.storyboard */; };
 		BF6EF2421B54016B00AF5FE4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF6EF2411B54016B00AF5FE4 /* Settings.bundle */; };
+		F52F57D8EED8D61A0F860877 /* libPods-Colors-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E16FB03237410B53C47E724 /* libPods-Colors-OSX.a */; };
 		F803204E3B632B5F0E19014F /* AppDelegateiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = F803243E8A66F29C3EA37B65 /* AppDelegateiOS.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0D961C37058021E09DB92885 /* Pods-Colors-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colors-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Colors-iOS/Pods-Colors-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		0E16FB03237410B53C47E724 /* libPods-Colors-OSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Colors-OSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0FA57A01F8129C4C31C5D8 /* Pods-Colors-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colors-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Colors-iOS/Pods-Colors-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		512D79FF0F6B21A750DE143B /* Pods-Colors-OSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colors-OSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Colors-OSX/Pods-Colors-OSX.debug.xcconfig"; sourceTree = "<group>"; };
 		5B909894193A235E004C12B3 /* Colors-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Colors-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B909897193A235E004C12B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5B90989B193A235E004C12B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -36,6 +48,24 @@
 		5F7C4D132FE24A06ACC52E5F /* libPods-Colors-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Colors-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607A81CE1B86249700F907AF /* FTSFlipTheSwitch+Features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTSFlipTheSwitch+Features.h"; sourceTree = "<group>"; };
 		607A81CF1B86249700F907AF /* FTSFlipTheSwitch+Features.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTSFlipTheSwitch+Features.m"; sourceTree = "<group>"; };
+		607D10801BA080690023E025 /* Colors-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Colors-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		607D10831BA080690023E025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607D10841BA080690023E025 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		607D10851BA080690023E025 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		607D10871BA080690023E025 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		607D10891BA080690023E025 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		607D108A1BA080690023E025 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		607D108C1BA080690023E025 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		607D108F1BA080690023E025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		607D10A61BA0810D0023E025 /* GreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenView.h; sourceTree = "<group>"; };
+		607D10A71BA0810D0023E025 /* GreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenView.m; sourceTree = "<group>"; };
+		607D10A81BA0810D0023E025 /* PurpleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurpleView.h; sourceTree = "<group>"; };
+		607D10A91BA0810D0023E025 /* PurpleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurpleView.m; sourceTree = "<group>"; };
+		607D10AA1BA0810D0023E025 /* RedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedView.h; sourceTree = "<group>"; };
+		607D10AB1BA0810D0023E025 /* RedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedView.m; sourceTree = "<group>"; };
+		607D10AC1BA0810D0023E025 /* YellowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YellowView.h; sourceTree = "<group>"; };
+		607D10AD1BA0810D0023E025 /* YellowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YellowView.m; sourceTree = "<group>"; };
+		6BAE65E1CA2D6A83F5E30C25 /* Pods-Colors-OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colors-OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-Colors-OSX/Pods-Colors-OSX.release.xcconfig"; sourceTree = "<group>"; };
 		BF6EF2411B54016B00AF5FE4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		F80321679CBE499FFA387688 /* Features.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Features.plist; sourceTree = "<group>"; };
 		F803243E8A66F29C3EA37B65 /* AppDelegateiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateiOS.m; sourceTree = "<group>"; };
@@ -53,6 +83,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		607D107D1BA080690023E025 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F52F57D8EED8D61A0F860877 /* libPods-Colors-OSX.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -60,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				5B90989D193A235E004C12B3 /* Colors-iOS */,
+				607D10811BA080690023E025 /* Colors-OSX */,
 				5B909896193A235E004C12B3 /* Frameworks */,
 				5B909895193A235E004C12B3 /* Products */,
 				C3D7AC360E9D2AD760817EA7 /* Pods */,
@@ -70,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				5B909894193A235E004C12B3 /* Colors-iOS.app */,
+				607D10801BA080690023E025 /* Colors-OSX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,6 +120,7 @@
 				5B909897193A235E004C12B3 /* Foundation.framework */,
 				5B90989B193A235E004C12B3 /* UIKit.framework */,
 				5F7C4D132FE24A06ACC52E5F /* libPods-Colors-iOS.a */,
+				0E16FB03237410B53C47E724 /* libPods-Colors-OSX.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,11 +153,52 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		607D10811BA080690023E025 /* Colors-OSX */ = {
+			isa = PBXGroup;
+			children = (
+				607D10A51BA0810D0023E025 /* ColoredViews */,
+				607D10841BA080690023E025 /* AppDelegate.h */,
+				607D10851BA080690023E025 /* AppDelegate.m */,
+				607D10891BA080690023E025 /* ViewController.h */,
+				607D108A1BA080690023E025 /* ViewController.m */,
+				607D108C1BA080690023E025 /* Images.xcassets */,
+				607D108E1BA080690023E025 /* Main.storyboard */,
+				607D10821BA080690023E025 /* Supporting Files */,
+			);
+			path = "Colors-OSX";
+			sourceTree = "<group>";
+		};
+		607D10821BA080690023E025 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				607D10831BA080690023E025 /* Info.plist */,
+				607D10871BA080690023E025 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		607D10A51BA0810D0023E025 /* ColoredViews */ = {
+			isa = PBXGroup;
+			children = (
+				607D10A61BA0810D0023E025 /* GreenView.h */,
+				607D10A71BA0810D0023E025 /* GreenView.m */,
+				607D10A81BA0810D0023E025 /* PurpleView.h */,
+				607D10A91BA0810D0023E025 /* PurpleView.m */,
+				607D10AA1BA0810D0023E025 /* RedView.h */,
+				607D10AB1BA0810D0023E025 /* RedView.m */,
+				607D10AC1BA0810D0023E025 /* YellowView.h */,
+				607D10AD1BA0810D0023E025 /* YellowView.m */,
+			);
+			path = ColoredViews;
+			sourceTree = "<group>";
+		};
 		C3D7AC360E9D2AD760817EA7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				2A0FA57A01F8129C4C31C5D8 /* Pods-Colors-iOS.debug.xcconfig */,
 				0D961C37058021E09DB92885 /* Pods-Colors-iOS.release.xcconfig */,
+				512D79FF0F6B21A750DE143B /* Pods-Colors-OSX.debug.xcconfig */,
+				6BAE65E1CA2D6A83F5E30C25 /* Pods-Colors-OSX.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -143,6 +225,25 @@
 			productReference = 5B909894193A235E004C12B3 /* Colors-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
+		607D107F1BA080690023E025 /* Colors-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607D109D1BA0806A0023E025 /* Build configuration list for PBXNativeTarget "Colors-OSX" */;
+			buildPhases = (
+				61D5D2E4AF96F0551F8C7B01 /* Check Pods Manifest.lock */,
+				607D107C1BA080690023E025 /* Sources */,
+				607D107D1BA080690023E025 /* Frameworks */,
+				607D107E1BA080690023E025 /* Resources */,
+				6E2188617C54AD98ADBC2A4D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Colors-OSX";
+			productName = "Colors-OSX";
+			productReference = 607D10801BA080690023E025 /* Colors-OSX.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -151,6 +252,11 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = MichaelEngland;
+				TargetAttributes = {
+					607D107F1BA080690023E025 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
 			};
 			buildConfigurationList = 5B90988F193A235E004C12B3 /* Build configuration list for PBXProject "Colors" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -166,6 +272,7 @@
 			projectRoot = "";
 			targets = (
 				5B909893193A235E004C12B3 /* Colors-iOS */,
+				607D107F1BA080690023E025 /* Colors-OSX */,
 			);
 		};
 /* End PBXProject section */
@@ -179,6 +286,15 @@
 				BF6EF23F1B54012D00AF5FE4 /* Main.storyboard in Resources */,
 				BF6EF2421B54016B00AF5FE4 /* Settings.bundle in Resources */,
 				5B9098B3193A235E004C12B3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607D107E1BA080690023E025 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607D108D1BA080690023E025 /* Images.xcassets in Resources */,
+				607D10901BA080690023E025 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +331,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		61D5D2E4AF96F0551F8C7B01 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6E2188617C54AD98ADBC2A4D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Colors-OSX/Pods-Colors-OSX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -229,6 +375,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		607D107C1BA080690023E025 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607D108B1BA080690023E025 /* ViewController.m in Sources */,
+				607D10881BA080690023E025 /* main.m in Sources */,
+				607D10B01BA0810D0023E025 /* RedView.m in Sources */,
+				607D10B11BA0810D0023E025 /* YellowView.m in Sources */,
+				607D10AF1BA0810D0023E025 /* PurpleView.m in Sources */,
+				607D10AE1BA0810D0023E025 /* GreenView.m in Sources */,
+				607D10861BA080690023E025 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -236,6 +396,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				5B9098AA193A235E004C12B3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		607D108E1BA080690023E025 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				607D108F1BA080690023E025 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -347,6 +515,51 @@
 			};
 			name = Release;
 		};
+		607D109E1BA0806A0023E025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 512D79FF0F6B21A750DE143B /* Pods-Colors-OSX.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Colors-OSX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		607D109F1BA0806A0023E025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BAE65E1CA2D6A83F5E30C25 /* Pods-Colors-OSX.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Colors-OSX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -364,6 +577,15 @@
 			buildConfigurations = (
 				5B9098CA193A235E004C12B3 /* Debug */,
 				5B9098CB193A235E004C12B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607D109D1BA0806A0023E025 /* Build configuration list for PBXNativeTarget "Colors-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607D109E1BA0806A0023E025 /* Debug */,
+				607D109F1BA0806A0023E025 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
