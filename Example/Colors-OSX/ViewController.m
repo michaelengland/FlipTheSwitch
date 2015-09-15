@@ -3,6 +3,7 @@
 #import "PurpleView.h"
 #import "YellowView.h"
 #import "GreenView.h"
+#import "FTSFlipTheSwitch+Features.h"
 
 
 typedef enum Colors {
@@ -55,7 +56,7 @@ typedef enum Colors {
         [self.leftColoredView removeConstraints:[self.leftColoredView constraints]];
     }
     
-    if (true) {
+    if ([FTSFlipTheSwitch isRedColorEnabled]) {
         self.leftColoredView = [self coloredViewForColor:Red];
         self.leftLabel.stringValue = @"The left view is red";
     } else {
@@ -73,7 +74,7 @@ typedef enum Colors {
         [self.rightColoredView removeConstraints:[self.rightColoredView constraints]];
     }
     
-    if (true) {
+    if ([FTSFlipTheSwitch isPurpleColorEnabled]) {
         self.rightColoredView = [self coloredViewForColor:Purple];
         self.rightLabel.stringValue = @"The right view is purple";
     } else {
@@ -125,10 +126,27 @@ typedef enum Colors {
     return coloredView;
 }
 
+- (IBAction)changeLeftColorButtonPressed:(NSButton *)sender {
+    [self toggleRedFeature];
+}
+
+- (void)toggleRedFeature
+{
+    if ([FTSFlipTheSwitch isRedColorEnabled]) {
+        [FTSFlipTheSwitch disableRedColor];
+    } else {
+        [FTSFlipTheSwitch enableRedColor];
+    }
+    [self setupView];
+}
+
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
 
     // Update the view, if already loaded.
 }
 
+- (IBAction)changeRightColorButtonPressed:(NSButton *)sender {
+    [self toggleRedFeature];
+}
 @end

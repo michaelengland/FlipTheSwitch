@@ -13,7 +13,6 @@
 		5B9098A4193A235E004C12B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9098A3193A235E004C12B3 /* main.m */; };
 		5B9098B1193A235E004C12B3 /* ViewControlleriOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9098B0193A235E004C12B3 /* ViewControlleriOS.m */; };
 		5B9098B3193A235E004C12B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9098B2193A235E004C12B3 /* Images.xcassets */; };
-		607A81D01B86249700F907AF /* FTSFlipTheSwitch+Features.m in Sources */ = {isa = PBXBuildFile; fileRef = 607A81CF1B86249700F907AF /* FTSFlipTheSwitch+Features.m */; };
 		607D10861BA080690023E025 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 607D10851BA080690023E025 /* AppDelegate.m */; };
 		607D10881BA080690023E025 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 607D10871BA080690023E025 /* main.m */; };
 		607D108B1BA080690023E025 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 607D108A1BA080690023E025 /* ViewController.m */; };
@@ -23,6 +22,10 @@
 		607D10AF1BA0810D0023E025 /* PurpleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 607D10A91BA0810D0023E025 /* PurpleView.m */; };
 		607D10B01BA0810D0023E025 /* RedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 607D10AB1BA0810D0023E025 /* RedView.m */; };
 		607D10B11BA0810D0023E025 /* YellowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 607D10AD1BA0810D0023E025 /* YellowView.m */; };
+		607D10CB1BA096030023E025 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 607D10C71BA096030023E025 /* Settings.bundle */; };
+		607D10CC1BA096030023E025 /* FTSFlipTheSwitch+Features.m in Sources */ = {isa = PBXBuildFile; fileRef = 607D10C91BA096030023E025 /* FTSFlipTheSwitch+Features.m */; };
+		607D10CD1BA096030023E025 /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = 607D10CA1BA096030023E025 /* Features.plist */; };
+		60F696841BA80F23007C35B7 /* FTSFlipTheSwitch+Features.m in Sources */ = {isa = PBXBuildFile; fileRef = 607A81CF1B86249700F907AF /* FTSFlipTheSwitch+Features.m */; };
 		BF6D40A71B54110400BB3CE3 /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = F80321679CBE499FFA387688 /* Features.plist */; };
 		BF6EF23F1B54012D00AF5FE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9098A9193A235E004C12B3 /* Main.storyboard */; };
 		BF6EF2421B54016B00AF5FE4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF6EF2411B54016B00AF5FE4 /* Settings.bundle */; };
@@ -65,6 +68,10 @@
 		607D10AB1BA0810D0023E025 /* RedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedView.m; sourceTree = "<group>"; };
 		607D10AC1BA0810D0023E025 /* YellowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YellowView.h; sourceTree = "<group>"; };
 		607D10AD1BA0810D0023E025 /* YellowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YellowView.m; sourceTree = "<group>"; };
+		607D10C71BA096030023E025 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		607D10C81BA096030023E025 /* FTSFlipTheSwitch+Features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTSFlipTheSwitch+Features.h"; sourceTree = "<group>"; };
+		607D10C91BA096030023E025 /* FTSFlipTheSwitch+Features.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTSFlipTheSwitch+Features.m"; sourceTree = "<group>"; };
+		607D10CA1BA096030023E025 /* Features.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Features.plist; sourceTree = "<group>"; };
 		6BAE65E1CA2D6A83F5E30C25 /* Pods-Colors-OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colors-OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-Colors-OSX/Pods-Colors-OSX.release.xcconfig"; sourceTree = "<group>"; };
 		BF6EF2411B54016B00AF5FE4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		F80321679CBE499FFA387688 /* Features.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Features.plist; sourceTree = "<group>"; };
@@ -156,6 +163,10 @@
 		607D10811BA080690023E025 /* Colors-OSX */ = {
 			isa = PBXGroup;
 			children = (
+				607D10C71BA096030023E025 /* Settings.bundle */,
+				607D10C81BA096030023E025 /* FTSFlipTheSwitch+Features.h */,
+				607D10C91BA096030023E025 /* FTSFlipTheSwitch+Features.m */,
+				607D10CA1BA096030023E025 /* Features.plist */,
 				607D10A51BA0810D0023E025 /* ColoredViews */,
 				607D10841BA080690023E025 /* AppDelegate.h */,
 				607D10851BA080690023E025 /* AppDelegate.m */,
@@ -294,7 +305,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				607D108D1BA080690023E025 /* Images.xcassets in Resources */,
+				607D10CB1BA096030023E025 /* Settings.bundle in Resources */,
 				607D10901BA080690023E025 /* Main.storyboard in Resources */,
+				607D10CD1BA096030023E025 /* Features.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +384,7 @@
 				5B9098B1193A235E004C12B3 /* ViewControlleriOS.m in Sources */,
 				5B9098A4193A235E004C12B3 /* main.m in Sources */,
 				F803204E3B632B5F0E19014F /* AppDelegateiOS.m in Sources */,
-				607A81D01B86249700F907AF /* FTSFlipTheSwitch+Features.m in Sources */,
+				60F696841BA80F23007C35B7 /* FTSFlipTheSwitch+Features.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +398,7 @@
 				607D10B11BA0810D0023E025 /* YellowView.m in Sources */,
 				607D10AF1BA0810D0023E025 /* PurpleView.m in Sources */,
 				607D10AE1BA0810D0023E025 /* GreenView.m in Sources */,
+				607D10CC1BA096030023E025 /* FTSFlipTheSwitch+Features.m in Sources */,
 				607D10861BA080690023E025 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

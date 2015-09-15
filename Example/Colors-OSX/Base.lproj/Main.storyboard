@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8173.3"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -697,26 +697,28 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2M7-ri-oAf">
-                                <rect key="frame" x="-2" y="0.0" width="61" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2M7-ri-oAf">
+                                <rect key="frame" x="18" y="127" width="61" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="left Label" id="3In-46-Rc5">
                                     <font key="font" metaFont="titleBar"/>
                                     <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nSG-Cr-G03">
-                                <rect key="frame" x="316" y="247" width="156" height="19"/>
-                                <buttonCell key="cell" type="roundRect" title="change right color" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Msr-9j-ozv">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nSG-Cr-G03">
+                                <rect key="frame" x="20" y="247" width="110" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="change left color" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Msr-9j-ozv">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="changeLeftColorButtonPressed:" target="XfG-lQ-9wD" id="ehW-Gb-tD5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="uic-t4-fQ3" firstAttribute="top" secondItem="nSG-Cr-G03" secondAttribute="bottom" constant="8" id="4RL-Y9-gIu"/>
                             <constraint firstAttribute="centerY" secondItem="6CR-mI-faG" secondAttribute="centerY" id="Fmm-ae-b9e"/>
-                            <constraint firstAttribute="trailing" secondItem="nSG-Cr-G03" secondAttribute="trailing" constant="8" id="NAe-RD-3qa"/>
                             <constraint firstItem="2M7-ri-oAf" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Qk6-q0-8RB"/>
                             <constraint firstAttribute="bottom" secondItem="uic-t4-fQ3" secondAttribute="bottom" id="TDt-Wn-K59"/>
                             <constraint firstItem="nSG-Cr-G03" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="4" id="bes-M5-XlL"/>
@@ -724,6 +726,7 @@
                             <constraint firstItem="uic-t4-fQ3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="brq-yv-b4V"/>
                             <constraint firstAttribute="trailing" secondItem="uic-t4-fQ3" secondAttribute="trailing" id="i6V-UB-AzU"/>
                             <constraint firstAttribute="trailing" secondItem="6CR-mI-faG" secondAttribute="trailing" constant="20" id="qXF-wF-XuC"/>
+                            <constraint firstItem="nSG-Cr-G03" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="zLf-as-cKa"/>
                         </constraints>
                     </view>
                     <connections>
