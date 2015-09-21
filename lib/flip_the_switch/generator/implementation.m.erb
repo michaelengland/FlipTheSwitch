@@ -1,26 +1,50 @@
 /* AUTO-GENERATED. DO NOT ALTER */
-#import "FlipTheSwitch+Features.h"
+#import "FTSFlipTheSwitch+Features.h"
 
-@implementation FlipTheSwitch (Features)
-<% for feature in feature_names %>
-+ (BOOL)is<%= feature.camelize %>Enabled
+@implementation FTSFlipTheSwitch (Features)
+
+<% all_features.each do |feature| -%>
++ (BOOL)is<%= feature.name.camelize %>Enabled
 {
-    return [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"<%= feature %>"];
+<% if feature.parent -%>
+    return [self is<%= feature.parent.name.camelize %>Enabled] &&
+        [[FTSFlipTheSwitch sharedInstance] isFeatureEnabled:[self <%= feature.name.camelize(:lower) %>Key]];
+<% else -%>
+    return [[FTSFlipTheSwitch sharedInstance] isFeatureEnabled:[self <%= feature.name.camelize(:lower) %>Key]];
+<% end -%>
 }
 
-+ (void)enable<%= feature.camelize %>
++ (void)enable<%= feature.name.camelize %>
 {
-    [[FlipTheSwitch sharedInstance] enableFeature:@"<%= feature %>"];
+    [[FTSFlipTheSwitch sharedInstance] enableFeature:[self <%= feature.name.camelize(:lower) %>Key]];
 }
 
-+ (void)disable<%= feature.camelize %>
++ (void)disable<%= feature.name.camelize %>
 {
-    [[FlipTheSwitch sharedInstance] disableFeature:@"<%= feature %>"];
+    [[FTSFlipTheSwitch sharedInstance] disableFeature:[self <%= feature.name.camelize(:lower) %>Key]];
 }
 
-+ (void)set<%= feature.camelize %>Enabled:(BOOL)enabled
++ (void)set<%= feature.name.camelize %>Enabled:(BOOL)enabled
 {
-    [[FlipTheSwitch sharedInstance] setFeature:@"<%= feature %>" enabled:enabled];
+    [[FTSFlipTheSwitch sharedInstance] setFeature:[self <%= feature.name.camelize(:lower) %>Key] enabled:enabled];
 }
-<% end %>
+
++ (void)reset<%= feature.name.camelize %>
+{
+    [[FTSFlipTheSwitch sharedInstance] resetFeature:[self <%= feature.name.camelize(:lower) %>Key]];
+}
+
++ (NSString *)<%= feature.name.camelize(:lower) %>Key
+{
+    return @"<%= feature.name %>";
+}
+
+<% end -%>
++ (void)resetAll
+{
+<% all_features.each do |feature| -%>
+    [self reset<%= feature.name.camelize %>];
+<% end -%>
+}
+
 @end

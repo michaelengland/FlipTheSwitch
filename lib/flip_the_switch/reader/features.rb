@@ -8,35 +8,30 @@ module FlipTheSwitch
         @environment = environment
       end
 
-      def feature_states
-        if valid_file?
-          environment_states
-        else
-          raise Error::InvalidFile.new(input_file)
-        end
+      def features
+        raise Error::InvalidFile.new(input_file) unless file_states.is_a?(Hash)
+        raise Error::InvalidEnvironment.new(environment) unless file_states.has_key?(environment)
+        raise Error::InvalidFile.new(input_file) unless file_states[environment].is_a?(Hash)
+
+        file_states[environment].map { |feature_name, feature_info|
+          feature_state(feature_name, feature_info)
+        }
       end
 
       private
       attr_reader :input, :environment
 
-      def valid_file?
-        file_states.is_a?(Hash) && file_states.all? { |environment, feature|
-          environment.is_a?(String) && valid_feature_hash?(feature)
-        }
-      end
+      def feature_state(feature_name, feature_info)
+        raise Error::InvalidFile.new(input_file) unless feature_info.is_a?(Hash)
 
-      def valid_feature_hash?(feature_hash)
-        feature_hash.is_a?(Hash) && feature_hash.all? { |feature, state|
-          feature.is_a?(String) && !!state == state
+        feature_info_dup = feature_info.dup
+        enabled = !!feature_info_dup.delete('enabled')
+        description = feature_info_dup.delete('description')
+        sub_features = feature_info_dup.map { |sub_feature_name, sub_feature_info|
+          feature_state(sub_feature_name, sub_feature_info)
         }
-      end
 
-      def environment_states
-        if file_states.has_key?(environment)
-          file_states[environment]
-        else
-          raise Error::InvalidEnvironment.new(environment)
-        end
+        Feature.new(feature_name, enabled, description, sub_features)
       end
 
       def file_states
