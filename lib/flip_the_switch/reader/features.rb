@@ -12,107 +12,155 @@ module FlipTheSwitch
       end
 
       def features
-        raise Error::InvalidFile.new(input) unless valid_file?
-        raise Error::InvalidEnvironment.new(environment) unless file_states.has_key?(environment)
-        raise Error::InvalidFile.new(input) unless file_states[environment].is_a?(Hash)
-
-        features = {}
-        if inherits?
-          features = merged_features
-        elsif
-          file_states[environment].map { |feature_name, feature_info|
-            if feature_name != INHERITANCE_INDICATOR
-              features[feature_name] = feature_info
-            end
-          }
-        end
-
-        features.map { |feature_name, feature_info|
-          feature_state(feature_name, feature_info)
-        }
+        raise Error::InvalidFile.new(input_file) unless valid_file?
+        environment_by_name_inherited[environment].features
       end
 
       private
       attr_reader :input, :environment
 
-      def inherits?
-        file_states[environment].has_key?(INHERITANCE_INDICATOR)
-      end
+      INHERITS_KEY = 'inherits_from'
+      ENABLED_KEY = 'enabled'
+      DESCRIPTION_KEY = 'description'
 
-      def merged_features
-        merged_features_tmp = parent_features
-        file_states[environment].map { |feature_name, feature_info|
-          if feature_name != INHERITANCE_INDICATOR
-            if merged_features_tmp.has_key?(feature_name)
-              # check if needs to be overwritten
-              feature_info.map { |key, value|
-                merged_features_tmp[feature_name][key] = value
-              }
-            elsif
-              merged_features_tmp[feature_name] = feature_info
-            end
+
+      def environment_by_name_inherited
+        raise Error::InvalidEnvironment.new(environment) unless environments_by_name.has_key?(environment)
+        environments_by_name.inject({}) { |inherited_hash, (env_name, env_info)|
+          if env_info.has_parent?
+            inherited_hash[env_name] = Environment.new(
+              env_name,
+              merge_features(environment_with_name(env_info.parent_name).features, env_info[:features]),
+              env_info.parent_name
+            )
+          else
+            inherited_hash[env_name] = env_info
           end
+          inherited_hash
         }
-        merged_features_tmp
       end
 
-      def parent_features
-        parent = file_states[environment][INHERITANCE_INDICATOR]
-        hash_for_env(parent)
+      def environment_with_name(name)
+        environments_by_name[name]
       end
 
-      def hash_for_env(env_label)
-        hash = {}
-        file_states[env_label].map { |feature_name, feature_info|
-          if feature_name != INHERITANCE_INDICATOR
-            hash[feature_name] = feature_info
-          end
+      def merge_features(parent_features, child_features)
+        parent_features.inject([]) { |merged_features, parent_feature|
+          merged_features.push(merge_feature(parent_feature, feature_with_name(child_features, parent_feature.name)))
         }
-        hash
       end
 
-      def feature_state(feature_name, feature_info)
-        raise Error::InvalidFile.new(input) unless feature_info.is_a?(Hash)
+      def merge_feature(parent_feature, child_feature)
+        if child_feature
+          Feature.new(parent_feature.name,
+            (child_feature.enabled != nil) ? child_feature.enabled : parent_feature.enabled,
+            child_feature.description ? child_feature.description : parent_feature.description,
+            child_feature.sub_features ? merge_sub_features(parent_feature.sub_features, child_feature.sub_features) : parent_feature.sub_features)
+        else
+          parent_feature
+        end
+      end
 
-        feature_info_dup = feature_info.dup
-        enabled = !!feature_info_dup.delete('enabled')
-        description = feature_info_dup.delete('description')
-        sub_features = feature_info_dup.map { |sub_feature_name, sub_feature_info|
-          feature_state(sub_feature_name, sub_feature_info)
+      def feature_with_name(features, name)
+        features.detect { |feature|
+          feature.name == name
         }
-        Feature.new(feature_name, enabled, description, sub_features)
       end
 
-      def file_states
-        @file_states ||=  JSON.parse(File.read(input))
+      def merge_sub_features(parent_feature_sub_features, child_feature_sub_features)
+        child_feature_sub_features.inject([]) { |merged_sub_features, child_sub_feature|
+          merged_sub_features.push(merge_feature(related_parents_sub_feature(parent_feature_sub_features, child_sub_feature.name), child_sub_feature))
+        }
       end
 
-      def valid_file?
-        JSON::Validator.validate(expected_schema, File.read(input)) && file_states.is_a?(Hash)
+      def related_parents_sub_feature(parent_feature_sub_features, sub_feature_name)
+        parent_feature_sub_features.detect { |parent_sub_feature|
+          parent_sub_feature.name == sub_feature_name
+        }
+      end
+
+      def environments_by_name
+        parse.inject({}) { |hash, env|
+          hash[env.name] = env
+          hash
+        }
+      end
+
+      def parse
+        @parse ||= json.map { |env_name, env_info|
+          parse_environment(env_name, env_info)
+        }
+      end
+
+      def parse_environment(name, info)
+        Environment.new(name, parse_environment_features(info), info[INHERITS_KEY])
+      end
+
+      def parse_environment_features(info)
+        info.select { |key, _|
+          key != INHERITS_KEY
+        }.map { |feature_name, feature_info|
+          parse_feature(feature_name, feature_info)
+        }
+      end
+
+      def parse_feature(name, info)
+        Feature.new(name, info.fetch(ENABLED_KEY), info[DESCRIPTION_KEY], parse_sub_features(info))
+      end
+
+      def parse_sub_features(info)
+        info.select { |key, _| ![ENABLED_KEY, DESCRIPTION_KEY].include?(key) }.map { |sub_name, sub_info|
+          parse_feature(sub_name, sub_info)
+        }
+      end
+
+      def json
+        JSON.parse(input_file)
+      end
+
+      def input_file
+        File.read(input)
       rescue SystemCallError => e
         raise Error::UnreadableFile.new(e)
       end
 
+      def valid_file?
+        JSON::Validator.validate(expected_schema, input_file)
+      end
+
       def expected_schema
-         {
-            "type" => "object",
-            "additionalProperties" => {
-                "type" => "object",
-                "additionalProperties" => {
-                    "properties" => {
-                        "enabled" => {
-                            "type" => "boolean"
-                        },
-                        "description" => {
-                            "type" => "string"
-                        }
+        {
+          type: :object,
+          additionalProperties: {
+            type: :object,
+            additionalProperties: {
+              properties: {
+                enabled: {
+                  type: :boolean
+                },
+                description: {
+                  type: :string
+                },
+                additionalProperties: {
+                  properties: {
+                    enabled: {
+                      type: :boolean
                     },
-                    "required" => [
-                        "enabled"
+                    description: {
+                      type: :string
+                    },
+                    required: [
+                      :enabled
                     ]
+                  }
                 }
+              },
+              required: [
+                :enabled
+              ]
             }
-         }
+          }
+        }
       end
     end
   end

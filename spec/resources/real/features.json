@@ -14,7 +14,10 @@
   "beta": {
     "inherits_from": "defaults",
     "enabled_feature": {
-      "enabled": true
+      "enabled": true,
+      "sub_feature": {
+        "enabled": true
+      }
     }
   }
 }

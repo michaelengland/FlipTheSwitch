@@ -3,7 +3,7 @@ require 'spec_helper'
 describe FlipTheSwitch::Reader::Features do
   subject(:reader) { described_class.new(input, environment) }
   let(:environment) { 'defaults' }
-  let(:input) { 'spec/resources/real' }
+  let(:input) { 'spec/resources/real/features.json' }
 
   context 'when given an valid environment' do
     context 'when reading a standard environment' do
@@ -24,7 +24,7 @@ describe FlipTheSwitch::Reader::Features do
       it 'reads the enabled/disabled states of the features for the environment' do
         expect(subject.features).to eql([
               FlipTheSwitch::Feature.new('enabled_feature', true, 'This feature is enabled', [
-                  FlipTheSwitch::Feature.new('sub_feature', false)
+                  FlipTheSwitch::Feature.new('sub_feature', true)
                 ]),
               FlipTheSwitch::Feature.new('disabled_feature', false)
             ])
@@ -53,7 +53,7 @@ describe FlipTheSwitch::Reader::Features do
   end
 
   context 'when input is an invalid file' do
-    let(:input) { 'spec/resources/invalid_type/features.yml' }
+    let(:input) { 'spec/resources/invalid_type/features.json' }
 
     specify do
       expect {
@@ -63,7 +63,7 @@ describe FlipTheSwitch::Reader::Features do
   end
 
   context 'when given a non-existent file' do
-    let(:input) { 'spec/resources/non-existent' }
+    let(:input) { 'spec/resources/non-existent/features.json' }
 
     specify do
       expect {
@@ -73,7 +73,7 @@ describe FlipTheSwitch::Reader::Features do
   end
 
   context 'when given an invalid file type' do
-    let(:input) { 'spec/resources/invalid_type' }
+    let(:input) { 'spec/resources/invalid_type/features.json' }
 
     specify do
       expect {
@@ -83,7 +83,7 @@ describe FlipTheSwitch::Reader::Features do
   end
 
   context 'when given an invalid file layout' do
-    let(:input) { 'spec/resources/invalid_layout' }
+    let(:input) { 'spec/resources/invalid_layout/features.json' }
 
     specify do
       expect {

@@ -23,7 +23,7 @@ describe FlipTheSwitch::Cli do
       let(:options) { [] }
 
       before do
-        FlipTheSwitch::Reader::Features.stub(:new).with(Dir.pwd, 'default').and_return(feature_reader)
+        FlipTheSwitch::Reader::Features.stub(:new).with(File.join(Dir.pwd, 'features.json'), 'default').and_return(feature_reader)
         generator_class.stub(:new).with(Dir.pwd, features_for_hash('something' => true)).and_return(generator)
       end
 
