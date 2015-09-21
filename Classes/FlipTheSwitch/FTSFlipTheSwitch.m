@@ -100,6 +100,13 @@ NSString *const FTSFeaturePlistNameKey = @"FTSFeaturePlistNameKey";
                                                                                enabled:[self isFeatureEnabled:feature]]];
 }
 
+- (void)resetAllFeatures
+{
+    for (NSString *featureName in [self plistEnabledFeatures]) {
+        [self resetFeature:featureName];
+    }
+}
+
 #pragma mark - Private
 
 - (NSString *)userKeyForFeature:(NSString *)feature

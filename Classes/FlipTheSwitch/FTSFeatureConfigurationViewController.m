@@ -31,6 +31,12 @@ static NSString * const FTSFeatureCellIdentifier = @"featureCell";
 }
 
 - (IBAction)resetFeatures:(UIButton *)sender {
+    [self resetFeatures];
+}
+
+- (void)resetFeatures{
+    [[FTSFlipTheSwitch sharedInstance] resetAllFeatures];
+    [self reloadData];
 }
 
 #pragma mark - UITableViewDataSource
