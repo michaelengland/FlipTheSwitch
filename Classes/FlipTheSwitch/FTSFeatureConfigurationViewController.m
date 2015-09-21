@@ -4,8 +4,10 @@
 
 static NSString * const FTSFeatureCellIdentifier = @"featureCell";
 
-@interface FTSFeatureConfigurationViewController () <FlipTheSwitchCellDelegate>
+@interface FTSFeatureConfigurationViewController () <UITableViewDelegate, UITableViewDataSource, FlipTheSwitchCellDelegate>
 @property (nonatomic) NSArray *dataSource;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation FTSFeatureConfigurationViewController
@@ -15,6 +17,9 @@ static NSString * const FTSFeatureCellIdentifier = @"featureCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     [self setupDataSource];
 }
 
@@ -25,10 +30,23 @@ static NSString * const FTSFeatureCellIdentifier = @"featureCell";
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)resetFeatures:(UIButton *)sender {
+}
+
 #pragma mark - UITableViewDataSource
+
+- (void)reloadData
+{
+    [self loadFeatureData];
+    [self.tableView reloadData];
+}
 
 - (void)setupDataSource
 {
+    [self loadFeatureData];
+}
+
+- (void)loadFeatureData{
     self.dataSource = [[FTSFlipTheSwitch sharedInstance] features];
 }
 

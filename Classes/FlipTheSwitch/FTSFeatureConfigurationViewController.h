@@ -1,5 +1,5 @@
 @import Foundation;
 @import UIKit;
 
-@interface FTSFeatureConfigurationViewController : UITableViewController
+@interface FTSFeatureConfigurationViewController : UIViewController
 @end
