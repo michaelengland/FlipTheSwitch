@@ -4,8 +4,6 @@ require 'json-schema'
 module FlipTheSwitch
   module Reader
     class Features
-      INHERITANCE_INDICATOR = 'inherits_from'
-
       def initialize(input, environment)
         @input = input
         @environment = environment
@@ -22,7 +20,6 @@ module FlipTheSwitch
       INHERITS_KEY = 'inherits_from'
       ENABLED_KEY = 'enabled'
       DESCRIPTION_KEY = 'description'
-
 
       def environment_by_name_inherited
         raise Error::InvalidEnvironment.new(environment) unless environments_by_name.has_key?(environment)
