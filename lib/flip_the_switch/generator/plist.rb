@@ -25,7 +25,11 @@ module FlipTheSwitch
       end
 
       def output_file
-        File.join(output, 'Features.plist')
+        if File.directory?(output)
+          File.join(output, 'Features.plist')
+        else
+          output
+        end
       end
     end
   end
