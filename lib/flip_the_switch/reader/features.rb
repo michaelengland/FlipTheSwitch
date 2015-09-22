@@ -41,7 +41,11 @@ module FlipTheSwitch
       end
 
       def input_file
-        File.join(input, 'features.yml')
+        if File.directory?(input)
+          File.join(input, 'features.yml')
+        else
+          input
+        end
       end
     end
   end
