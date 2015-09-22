@@ -2,14 +2,17 @@ require 'spec_helper'
 require 'fileutils'
 
 describe FlipTheSwitch::Generator::Settings do
-  subject(:settings) { described_class.new(output, feature_states) }
+  subject(:settings) { described_class.new(output, features) }
   let(:output) { 'spec/resources' }
   let(:settings_bundle) { File.join(output, 'Settings.bundle') }
-  let(:feature_states) { {'first_feature' => true, 'second_feature' => false} }
+  let(:features) { [
+    FlipTheSwitch::Feature.new('first_feature', true, nil),
+    FlipTheSwitch::Feature.new('second_feature', false, nil)
+  ] }
   let(:root_output_file) { File.read(File.join(settings_bundle, 'Root.plist')) }
   let(:features_output_file) { File.read(File.join(settings_bundle, 'Features.plist')) }
   let(:features_output_file) { File.read(File.join(settings_bundle, 'Features.plist')) }
-  let(:expected_features_file) { File.read('spec/resources/ExpectedSettingsFeatures.plist')}
+  let(:expected_features_file) { File.read('spec/resources/ExpectedSettingsFeatures.plist') }
 
   after do
     delete_settings_bundle_if_exists

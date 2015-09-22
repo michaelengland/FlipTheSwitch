@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>features_controller</key>
+	<dict>
+		<key>description</key>
+		<string>Enable feature switching UI</string>
+		<key>enabled</key>
+		<true/>
+	</dict>
+	<key>long_description_feature</key>
+	<dict>
+		<key>description</key>
+		<string>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother&#39;s keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.</string>
+		<key>enabled</key>
+		<false/>
+	</dict>
+	<key>no_description_feature</key>
+	<dict>
+		<key>enabled</key>
+		<false/>
+	</dict>
+	<key>purple_color</key>
+	<dict>
+		<key>description</key>
+		<string>The color purple</string>
+		<key>enabled</key>
+		<true/>
+	</dict>
+	<key>red_color</key>
+	<dict>
+		<key>description</key>
+		<string>The color red</string>
+		<key>enabled</key>
+		<false/>
+	</dict>
+</dict>
+</plist>

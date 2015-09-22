@@ -1,4 +1,13 @@
-target 'Colors-iOS' do
-  platform :ios, :deployment_target => 7.0
+def needed_pods
   pod 'FlipTheSwitch', :path => '../'
+end
+
+target 'Colors-iOS' do
+  platform :ios, :deployment_target => 8.0
+  needed_pods
+end
+
+target 'Colors-OSX' do
+  platform :osx, :deployment_target => 10.8
+  needed_pods
 end

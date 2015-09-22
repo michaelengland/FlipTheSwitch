@@ -1,11 +1,18 @@
 /* AUTO-GENERATED. DO NOT ALTER */
-#import <FlipTheSwitch/FlipTheSwitch.h>
+#import <FlipTheSwitch/FTSFlipTheSwitch.h>
 
-@interface FlipTheSwitch (Features)
-<% for feature in feature_names %>
-+ (BOOL)is<%= feature.camelize %>Enabled;
-+ (void)enable<%= feature.camelize %>;
-+ (void)disable<%= feature.camelize %>;
-+ (void)set<%= feature.camelize %>Enabled:(BOOL)enabled;
-<% end %>
+@interface FTSFlipTheSwitch (Features)
+<% all_features.each do |feature| -%>
+<% if feature.description -%>
+// <%= feature.description %>
+<% end -%>
++ (BOOL)is<%= feature.name.camelize %>Enabled;
++ (void)enable<%= feature.name.camelize %>;
++ (void)disable<%= feature.name.camelize %>;
++ (void)set<%= feature.name.camelize %>Enabled:(BOOL)enabled;
++ (void)reset<%= feature.name.camelize %>;
++ (NSString *)<%= feature.name.camelize(:lower) %>Key;
+
+<% end -%>
++ (void)resetAll;
 @end

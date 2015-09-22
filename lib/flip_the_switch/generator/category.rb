@@ -33,11 +33,11 @@ module FlipTheSwitch
       end
 
       def header_file
-        File.join(output, 'FlipTheSwitch+Features.h')
+        File.join(output, 'FTSFlipTheSwitch+Features.h')
       end
 
       def implementation_file
-        File.join(output, 'FlipTheSwitch+Features.m')
+        File.join(output, 'FTSFlipTheSwitch+Features.m')
       end
 
       def header
@@ -49,7 +49,7 @@ module FlipTheSwitch
       end
 
       def render(template)
-        ERB.new(template).result(binding)
+        ERB.new(template, nil, '-').result(binding)
       end
 
       def header_template
@@ -64,8 +64,16 @@ module FlipTheSwitch
         File.read(File.expand_path("../#{name}.erb", __FILE__))
       end
 
-      def feature_names
-        feature_states.keys.map(&:to_s)
+      def all_features
+        features.flat_map { |feature|
+          feature_and_sub_features(feature)
+        }
+      end
+
+      def feature_and_sub_features(feature)
+        [feature] + feature.sub_features.flat_map { |sub_feature|
+          feature_and_sub_features(sub_feature)
+        }
       end
     end
   end
