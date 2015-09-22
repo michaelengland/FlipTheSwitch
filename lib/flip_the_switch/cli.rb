@@ -56,7 +56,15 @@ module FlipTheSwitch
     end
 
     def feature_reader
-      Reader::Features.new(options['input'], options['environment'])
+      Reader::Features.new(input, options['environment'])
+    end
+
+    def input
+      if File.directory?(options['input'])
+        File.join(options['input'], 'features.json')
+      else
+        options['input']
+      end
     end
   end
 end

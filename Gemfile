@@ -14,4 +14,5 @@ group :development, :test do
   gem 'guard-bundler', '~> 2.0.0'
   gem 'guard-spork', '~> 1.5.1'
   gem 'guard-rspec', '~> 4.2.10'
+  gem 'json-schema', '2.5.1'
 end
