@@ -17,4 +17,5 @@ extern NSString *const FTSFeaturePlistNameKey;
 - (void)disableFeature:(NSString *)feature;
 - (void)setFeature:(NSString *)feature enabled:(BOOL)enabled;
 - (void)resetFeature:(NSString *)feature;
+- (void)resetAllFeatures;
 @end
