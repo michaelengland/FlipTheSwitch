@@ -11,7 +11,8 @@ module FlipTheSwitch
 
       def features
         raise Error::InvalidFile.new(input_file) unless valid_file?
-        environment_by_name_inherited[environment].features
+        raise Error::InvalidEnvironment.new(environment) unless environments_by_name.has_key?(environment)
+        inherited_environment(environment).features
       end
 
       private
@@ -21,37 +22,31 @@ module FlipTheSwitch
       ENABLED_KEY = 'enabled'
       DESCRIPTION_KEY = 'description'
 
-      def environment_by_name_inherited
-        raise Error::InvalidEnvironment.new(environment) unless environments_by_name.has_key?(environment)
-        environments_by_name.inject({}) { |inherited_hash, (env_name, env_info)|
-          if env_info.has_parent?
-            inherited_hash[env_name] = Environment.new(
-              env_name,
-              merge_features_recursively(env_info.name, env_info.features),
-              env_info.parent_name
-            )
-          else
-            inherited_hash[env_name] = env_info
-          end
-          inherited_hash
-        }
-      end
-
-      def environment_with_name(name)
-        environments_by_name[name]
-      end
-
-      def merge_features_recursively(env_name, env_features)
-        if environment_with_name(env_name).has_parent?
-          merge_features_recursively(environment_with_name(env_name).parent_name, merge_features(environment_parent(env_name), env_features))
+      def inherited_environment(env_name)
+        inherited_env = environments_by_name[env_name]
+        if inherited_env.has_parent?
+          merge_environments(inherited_env, inherited_environment(inherited_env.parent_name))
         else
-          env_features
+          inherited_env
         end
       end
 
-      def merge_features(parent, child_features)
-        parent.features.inject([]) { |merged_features, parent_feature|
-          merged_features.push(merge_feature(parent_feature, feature_with_name(child_features, parent_feature.name)))
+      def merge_environments(overriding_env, parent_env)
+        Environment.new(
+          overriding_env.name,
+          merge_features(parent_env.features, overriding_env.features),
+          overriding_env.parent_name
+        )
+      end
+
+      def merge_features(parent_features, overriding_features)
+        parent_features.inject([]) { |merged_features, parent_feature|
+          overriding_feature = overriding_features.detect { |feature| feature.name == parent_feature.name }
+          if overriding_feature
+            merged_features.push(merge_feature(parent_feature, overriding_feature))
+          else
+            merged_features.push(parent_feature)
+          end
         }
       end
 
@@ -102,7 +97,7 @@ module FlipTheSwitch
       end
 
       def environment_parent(env_name)
-        environment_with_name(environment_with_name(env_name).parent_name)
+        environments_by_name[environments_by_name[env_name].parent_name]
       end
 
       def parse
