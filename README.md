@@ -92,13 +92,27 @@ e.g:
 @end
 ```
 
-The features, along with their default enabled/disabled state, are read from a `features.yml` file. e.g.:
+The features, along with their default enabled/disabled state, are read from a `features.json` file. e.g.:
 
-```yaml
-default:
-  awesome_feature:
-    enabled: true
-    description: 'Makes this project awesome'
+```json
+{
+	"default": {
+		"awesome_feature": {
+			"enabled": true,	
+			"description": "Makes this project awesome",	
+			"sub_feature": {
+				"enabled": true,
+				"description": "Makes this project even more awesome"		
+			}
+		}
+	},
+	"beta": {
+		"awesome_feature": {
+			"enabled": false
+		}
+	}
+}    
+    
 ```
 
 In order to avoid typing in the same options all the time, you can create a `.flip.yml` file for the default options, e.g.:
