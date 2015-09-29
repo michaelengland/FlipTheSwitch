@@ -6,8 +6,8 @@
 <% all_features.each do |feature| -%>
 + (BOOL)is<%= feature.name.camelize %>Enabled
 {
-<% if feature.parent -%>
-    return [self is<%= feature.parent.name.camelize %>Enabled] &&
+<% if feature.has_parent? -%>
+    return [self is<%= feature.parent_name.camelize %>Enabled] &&
         [[FTSFlipTheSwitch sharedInstance] isFeatureEnabled:[self <%= feature.name.camelize(:lower) %>Key]];
 <% else -%>
     return [[FTSFlipTheSwitch sharedInstance] isFeatureEnabled:[self <%= feature.name.camelize(:lower) %>Key]];

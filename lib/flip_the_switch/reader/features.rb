@@ -27,7 +27,7 @@ module FlipTheSwitch
           if env_info.has_parent?
             inherited_hash[env_name] = Environment.new(
               env_name,
-              merge_features(environment_with_name(env_info.parent_name).features, env_info[:features]),
+              merge_features_recursively(env_info.name, env_info.features),
               env_info.parent_name
             )
           else
@@ -41,8 +41,16 @@ module FlipTheSwitch
         environments_by_name[name]
       end
 
-      def merge_features(parent_features, child_features)
-        parent_features.inject([]) { |merged_features, parent_feature|
+      def merge_features_recursively(env_name, env_features)
+        if environment_with_name(env_name).has_parent?
+          merge_features_recursively(environment_with_name(env_name).parent_name, merge_features(environment_parent(env_name), env_features))
+        else
+          env_features
+        end
+      end
+
+      def merge_features(parent, child_features)
+        parent.features.inject([]) { |merged_features, parent_feature|
           merged_features.push(merge_feature(parent_feature, feature_with_name(child_features, parent_feature.name)))
         }
       end
@@ -52,9 +60,19 @@ module FlipTheSwitch
           Feature.new(parent_feature.name,
             (child_feature.enabled != nil) ? child_feature.enabled : parent_feature.enabled,
             child_feature.description ? child_feature.description : parent_feature.description,
-            child_feature.sub_features ? merge_sub_features(parent_feature.sub_features, child_feature.sub_features) : parent_feature.sub_features)
+            sub_features(child_feature, parent_feature),
+            child_feature.parent_name
+          )
         else
           parent_feature
+        end
+      end
+
+      def sub_features(child_feature, parent_feature)
+        if !child_feature.sub_features.empty?
+          merge_sub_features(parent_feature.sub_features, child_feature.sub_features)
+        else
+          parent_feature.sub_features
         end
       end
 
@@ -83,6 +101,10 @@ module FlipTheSwitch
         }
       end
 
+      def environment_parent(env_name)
+        environment_with_name(environment_with_name(env_name).parent_name)
+      end
+
       def parse
         @parse ||= json.map { |env_name, env_info|
           parse_environment(env_name, env_info)
@@ -97,17 +119,17 @@ module FlipTheSwitch
         info.select { |key, _|
           key != INHERITS_KEY
         }.map { |feature_name, feature_info|
-          parse_feature(feature_name, feature_info)
+          parse_feature(feature_name, feature_info, nil)
         }
       end
 
-      def parse_feature(name, info)
-        Feature.new(name, info.fetch(ENABLED_KEY), info[DESCRIPTION_KEY], parse_sub_features(info))
+      def parse_feature(name, info, parent_name)
+        Feature.new(name, info.fetch(ENABLED_KEY), info[DESCRIPTION_KEY], parse_sub_features(info, name), parent_name)
       end
 
-      def parse_sub_features(info)
+      def parse_sub_features(info, parent_name)
         info.select { |key, _| ![ENABLED_KEY, DESCRIPTION_KEY].include?(key) }.map { |sub_name, sub_info|
-          parse_feature(sub_name, sub_info)
+          parse_feature(sub_name, sub_info, parent_name)
         }
       end
 
