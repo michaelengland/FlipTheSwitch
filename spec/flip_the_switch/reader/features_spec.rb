@@ -9,8 +9,8 @@ describe FlipTheSwitch::Reader::Features do
     context 'when reading a standard environment' do
       it 'reads the enabled/disabled states of the features for the environment' do
         expect(subject.features).to eql([
-              FlipTheSwitch::Feature.new('enabled_feature', false, 'This feature is enabled', [
-                  FlipTheSwitch::Feature.new('sub_feature', false)
+              FlipTheSwitch::Feature.new('enabled_feature', true, 'This feature is enabled', [
+                  FlipTheSwitch::Feature.new('sub_feature', false, nil, [], 'enabled_feature')
                 ]),
               FlipTheSwitch::Feature.new('disabled_feature', false)
             ])
@@ -19,12 +19,25 @@ describe FlipTheSwitch::Reader::Features do
 
 
     context 'when reading an inherited environment' do
+      let(:environment) { 'alpha' }
+
+      it 'reads the enabled/disabled states of the features for the environment' do
+        expect(subject.features).to eql([
+              FlipTheSwitch::Feature.new('enabled_feature', false, 'This feature is enabled', [
+                  FlipTheSwitch::Feature.new('sub_feature', false, nil, [], 'enabled_feature')
+                ]),
+              FlipTheSwitch::Feature.new('disabled_feature', false)
+            ])
+      end
+    end
+
+    context 'when reading an double inherited environment' do
       let(:environment) { 'beta' }
 
       it 'reads the enabled/disabled states of the features for the environment' do
         expect(subject.features).to eql([
               FlipTheSwitch::Feature.new('enabled_feature', true, 'This feature is enabled', [
-                  FlipTheSwitch::Feature.new('sub_feature', true)
+                  FlipTheSwitch::Feature.new('sub_feature', false, nil, [], 'enabled_feature')
                 ]),
               FlipTheSwitch::Feature.new('disabled_feature', false)
             ])
