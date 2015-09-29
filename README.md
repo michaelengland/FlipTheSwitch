@@ -135,6 +135,7 @@ Add `gem 'flip_the_switch'` to your Gemfile
 
   - [Michael England](https://github.com/michaelengland) @ [SoundCloud](https://github.com/soundcloud)
   - [Rob Siwek](https://github.com/nerdsRob) @ [SoundCloud](https://github.com/soundcloud)
+  - [Kristina Roddewig](https://github.com/FrauR) @ [SoundCloud](https://github.com/soundcloud)
 
 ## License
 
