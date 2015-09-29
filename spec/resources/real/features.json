@@ -17,14 +17,13 @@
       "enabled": false
     }
   },
+  "intermediate": {
+    "inherits_from": "alpha"
+  },
   "beta": {
-    "inherits_from": "alpha",
+    "inherits_from": "intermediate",
     "enabled_feature": {
       "enabled": true
     }
   }
 }
-
-
-
-
