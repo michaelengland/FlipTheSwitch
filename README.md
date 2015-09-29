@@ -19,6 +19,8 @@ How can we get the benefits of working on `master` branch, while still not worry
 
 ## Introducing FlipTheSwitch
 
+### Auto-Generated Files:
+
 With 'FTSFlipTheSwitch', we can choose different code paths at runtime:
 
 ```objective-c
@@ -64,6 +66,26 @@ The features can defaulted to enabled/disabled via a plist file `Features.plist`
 </plist>
 
 ```
+
+### Configuration Screen
+
+[Screenshot of configuration screen](...)
+
+* shows all features, their description texts and enabled state
+* easily switching features on and off
+* reset all feature back to the original setting from the plist (based on the json)
+
+
+### Platform Support
+
+* iOS
+	* example project
+	* full test coverage
+	* configuration screen
+* Mac OSX
+	* example project
+	* full test coverage
+
 
 ## Command-Line-Interface
 
@@ -111,8 +133,7 @@ The features, along with their default enabled/disabled state, are read from a `
 			"enabled": false
 		}
 	}
-}    
-    
+}
 ```
 
 In order to avoid typing in the same options all the time, you can create a `.flip.yml` file for the default options, e.g.:
