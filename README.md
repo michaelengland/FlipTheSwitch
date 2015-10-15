@@ -114,7 +114,7 @@ e.g:
 @end
 ```
 
-The features, along with their default enabled/disabled state, are read from a `features.json` file. e.g.:
+The features and subfeatures, along with their default enabled/disabled state, are read from a `features.json` file. e.g.:
 
 ```json
 {
@@ -158,6 +158,7 @@ Add `gem 'flip_the_switch'` to your Gemfile
   - [Michael England](https://github.com/michaelengland) @ [SoundCloud](https://github.com/soundcloud)
   - [Rob Siwek](https://github.com/nerdsRob) @ [SoundCloud](https://github.com/soundcloud)
   - [Kristina Roddewig](https://github.com/FrauR) @ [SoundCloud](https://github.com/soundcloud)
+  - [Vincent Garrigues](https://github.com/garriguv) @ [SoundCloud](https://github.com/soundcloud)
 
 ## License
 
