@@ -1,3 +1,13 @@
+# 1.0.0 / 2015-10-15
+
+*  [ENHANCEMENT] Using JSON instead of YAML for  features 
+*  [ENHANCEMENT] #37 Add Mac OSX Example Project
+*  [FEATURE] #36 Possibility to reset all features button (according to original plist at once)
+*  [FEATURE] #24 Adding reset to defaults functionality
+*  [FEATURE] #22 Adding support for subfeature
+*  [FEATURE] #21 Notifications on Feature Status
+*  [FEATURE] #20 Possibility to add description for feature flags
+
 # 0.4.0 / 2014-07-16
 
  * [FEATURE] #17 Use environments for feature states

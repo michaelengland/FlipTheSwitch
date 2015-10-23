@@ -4,7 +4,7 @@ A feature switching/toggling/flipping library  for ObjectiveC.
 
 # flip_the_switch [![Build Status](https://travis-ci.org/michaelengland/FlipTheSwitch.svg?branch=master)](https://travis-ci.org/michaelengland/FlipTheSwitch) [![Code Climate](https://codeclimate.com/github/michaelengland/FlipTheSwitch.png)](https://codeclimate.com/github/michaelengland/FlipTheSwitch) [![Code Climate](https://codeclimate.com/github/michaelengland/FlipTheSwitch/coverage.png)](https://codeclimate.com/github/michaelengland/FlipTheSwitch) [![Gem Version](https://badge.fury.io/rb/flip_the_switch.svg)](http://badge.fury.io/rb/flip_the_switch)
 
-A gem command line tool for generating the `Features.plist` & `FlipTheSwitch+Features.{h,m}` categories to help with the corresponding Pod.
+A gem command line tool for generating the `Features.plist` & `FTSFlipTheSwitch+Features.{h,m}` categories to help with the corresponding Pod.
 
 ## The Problem
 
@@ -19,24 +19,26 @@ How can we get the benefits of working on `master` branch, while still not worry
 
 ## Introducing FlipTheSwitch
 
-With FlipTheSwitch, we can choose different code paths at runtime:
+### Auto-Generated Files:
+
+With 'FTSFlipTheSwitch', we can choose different code paths at runtime:
 
 ```objective-c
-self.newFeatureButton.hidden = [[FlipTheSwitch sharedInstance] isFeatureEnabled:@"new_feature"];
+self.newFeatureButton.hidden = [[FTSFlipTheSwitch sharedInstance] isFeatureEnabled:@"new_feature"];
 ```
 
 The features can be enabled/disabled at runtime:
 
 ```objective-c
-[[FlipTheSwitch sharedInstance] enableFeature:@"new_feature"];
+[[FTSFlipTheSwitch sharedInstance] enableFeature:@"new_feature"];
 ```
 
 ```objective-c
-[[FlipTheSwitch sharedInstance] disableFeature:@"new_feature"];
+[[FTSFlipTheSwitch sharedInstance] disableFeature:@"new_feature"];
 ```
 
 ```objective-c
-[[FlipTheSwitch sharedInstance] setFeature:@"new_feature" enabled:YES];
+[[FTSFlipTheSwitch sharedInstance] setFeature:@"new_feature" enabled:YES];
 ```
 
 All enabled features will persist between app loads through `NSUserDefaults`.
@@ -45,16 +47,72 @@ The features can defaulted to enabled/disabled via a plist file `Features.plist`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>enabled_feature</key>
-    <true/>
-    <key>disabled_feature</key>
-    <false/>
+	<key>disabled_feature</key>
+	<dict>
+		<key>description</key>
+		<string>is disabled description</string>
+		<key>enabled</key>
+		<false/>
+	</dict>
+	<key>enabled_feature</key>
+	<dict>
+		<key>enabled</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
+
 ```
+
+### Subfeatures
+
+You can add as many subfeatures to a feature recursively. Resulting in a plist as e.g. :
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>description</key>
+		<string>is disabled description</string>
+		<key>enabled</key>
+		<false/>
+		<key>subfeature</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+		</dict>
+	</dict>
+</plist>
+```
+
+### Configuration Screen
+
+![Screenshot of configuration screen](images/feature_configuration_screen.png)
+
+* shows all features, their description texts and enabled state
+* easily switching features on and off
+* reset all feature back to the original setting from the plist (based on the json)
+
+### Notifications
+
+When a feature status changes, you can find out about it by listening for the notification titled `FTSFeatureStatusChangedNotification`, which contains:
+
+* `FTSFeatureStatusChangedNotificationFeatureKey` - the key of the feature being enabled/disabled
+* `FTSFeatureStatusChangedNotificationEnabledKey` - the `NSNumber` of whether the feature was enabled or disabled
+
+### Plattform Support
+
+* iOS 
+	* example project
+	* full test coverage
+	* configuration screen
+* Mac OSX 
+	* example project
+	* full test coverage
 
 ## Command-Line-Interface
 
@@ -62,30 +120,50 @@ If you install the gem, you will be able to use the Command-Line-Interface.
 
 The CLI consists of 2 commands:
 
- - `plist` - creates a `Features.plist` file for enabled/disabled features like that mentioned above.
+ - `plist` - creates a `Features.plist` file for enabled/disabled features including their description (optional) like that mentioned above.
  - `settings` - creates a `Settings.bundle` used by the OS settings. These can then be used to enable/disable the features at runtime.
- - `category` - creates `FlipTheSwitch+Features.{h,m}` files for features, thus giving compile-time checks for adding/removal of new features.
+ - `category` - creates `FTSFlipTheSwitch+Features.{h,m}` files for features, thus giving compile-time checks for adding/removal of new features.
 e.g:
 
 ```objective-c
 /* AUTO-GENERATED. DO NOT ALTER */
-#import <FlipTheSwitch/FlipTheSwitch.h>
+#import <FlipTheSwitch/FTSFlipTheSwitch.h>
 
-@interface FlipTheSwitch (Features)
+@interface FTSFlipTheSwitch (Features)
 
 + (BOOL)isAwesomeFeatureEnabled;
 + (void)enableAwesomeFeature;
 + (void)disableAwesomeFeature;
 + (void)setAwesomeFeatureEnabled:(BOOL)enabled;
++ (void)resetAwesomeFeatureController;
++ (NSString *)awesomeFeatureControllerKey;
 
 @end
 ```
 
-The features, along with their default enabled/disabled state, are read from a `features.yml` file. e.g.:
+### Define Features and subfeatures
 
-```yaml
-default:
-  awesome_feature: Yes
+The features and subfeatures, along with their default enabled/disabled state, are read from a `features.json` file. e.g.:
+
+```json
+{
+	"default": {
+		"awesome_feature": {
+			"enabled": true,	
+			"description": "Makes this project awesome",
+			"sub_feature": {
+				"enabled": true,
+				"description": "Makes this project even more awesome"		
+			}
+		}
+	},
+	"beta": {
+		"awesome_feature": {
+			"enabled": false
+		}
+	}
+}    
+    
 ```
 
 In order to avoid typing in the same options all the time, you can create a `.flip.yml` file for the default options, e.g.:
@@ -108,6 +186,8 @@ Add `gem 'flip_the_switch'` to your Gemfile
 
   - [Michael England](https://github.com/michaelengland) @ [SoundCloud](https://github.com/soundcloud)
   - [Rob Siwek](https://github.com/nerdsRob) @ [SoundCloud](https://github.com/soundcloud)
+  - [Kristina Roddewig](https://github.com/FrauR) @ [SoundCloud](https://github.com/soundcloud)
+  - [Vincent Garrigues](https://github.com/garriguv) @ [SoundCloud](https://github.com/soundcloud)
 
 ## License
 
