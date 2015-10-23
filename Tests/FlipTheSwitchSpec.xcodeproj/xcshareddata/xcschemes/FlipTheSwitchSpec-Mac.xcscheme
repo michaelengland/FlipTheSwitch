@@ -48,13 +48,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "SPECTA_REPORTER_CLASS"
-            value = "GcovTestObserver"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5B9DCEAA193A869B00C63F9F"
+            BuildableName = "FlipTheSwitchSpec-Mac.xctest"
+            BlueprintName = "FlipTheSwitchSpec-Mac"
+            ReferencedContainer = "container:FlipTheSwitchSpec.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

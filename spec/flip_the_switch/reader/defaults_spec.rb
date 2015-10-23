@@ -14,8 +14,6 @@ describe FlipTheSwitch::Reader::Defaults do
         File.write(defaults_file, YAML.dump({
             input: 'input',
             environment: 'environment',
-            enabled: 'enabled',
-            disabled: 'disabled',
             category_output: 'category_output',
             plist_output: 'plist_output',
             settings_output: 'settings_output'
@@ -28,14 +26,6 @@ describe FlipTheSwitch::Reader::Defaults do
 
       it 'returns file environment default' do
         expect(subject.defaults[:environment]).to eql('environment')
-      end
-
-      it 'returns file enabled default' do
-        expect(subject.defaults[:enabled]).to eql('enabled')
-      end
-
-      it 'returns file disabled default' do
-        expect(subject.defaults[:disabled]).to eql('disabled')
       end
 
       it 'returns file category output default' do
@@ -71,14 +61,6 @@ describe FlipTheSwitch::Reader::Defaults do
 
     it 'returns base environment default' do
       expect(subject.defaults[:environment]).to eql('default')
-    end
-
-    it 'returns base enabled default' do
-      expect(subject.defaults[:enabled]).to eql('')
-    end
-
-    it 'returns base disabled default' do
-      expect(subject.defaults[:disabled]).to eql('')
     end
 
     it 'returns base category output default' do

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'FlipTheSwitch'
-  s.version = '0.4.0'
+  s.version = '0.5.0'
   s.summary = 'A simple library to help enabling/disabling features on iOS/Mac applications.'
   s.authors = {
       'Michael England' => 'mg.england@gmail.com',
@@ -10,7 +10,9 @@ Pod::Spec.new do |s|
 
   s.license = {:type => 'MIT', :file => 'LICENSE'}
   s.source = {:git => 'git@github.com:michaelengland/FlipTheSwitch.git', :tag => s.version.to_s}
-  s.source_files = 'Classes/FlipTheSwitch/*.{h,m}'
+  s.ios.source_files = 'Classes/FlipTheSwitch/**/*.{h,m}'
+  s.osx.source_files = 'Classes/FlipTheSwitch/Shared/*.{h,m}'
+  s.ios.resource_bundles = { 'FlipTheSwitch' => 'Resources/FlipTheSwitch/*.storyboard' }
   s.public_header_files = 'Classes/FlipTheSwitch/*.h'
   s.requires_arc = true
 end

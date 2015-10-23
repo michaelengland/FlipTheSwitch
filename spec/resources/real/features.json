@@ -1,0 +1,29 @@
+{
+  "defaults": {
+    "enabled_feature": {
+      "enabled": true,
+      "description": "This feature is enabled",
+      "sub_feature": {
+        "enabled": false
+      }
+    },
+    "disabled_feature": {
+      "enabled": false
+    }
+  },
+  "alpha": {
+    "inherits_from": "defaults",
+    "enabled_feature": {
+      "enabled": false
+    }
+  },
+  "intermediate": {
+    "inherits_from": "alpha"
+  },
+  "beta": {
+    "inherits_from": "intermediate",
+    "enabled_feature": {
+      "enabled": true
+    }
+  }
+}

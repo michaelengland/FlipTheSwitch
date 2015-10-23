@@ -1,9 +1,11 @@
 require 'spec_helper'
 
 describe FlipTheSwitch::Generator::Category do
-  subject(:category) { described_class.new(output, feature_states) }
-  let(:output) { 'spec/resources' }
-  let(:feature_states) { {'first_feature' => true, 'second_feature' => false} }
+  subject(:category) { described_class.new(output, features) }
+  let(:output) { 'tmp' }
+  let(:first_feature) { FlipTheSwitch::Feature.new('first_feature', true, 'This is the first feature', [second_feature]) }
+  let(:second_feature) { FlipTheSwitch::Feature.new('second_feature', false, nil, [], 'first_feature') }
+  let(:features) { [first_feature] }
   let(:expected_header_file) { File.read('spec/resources/expected_header.h') }
   let(:expected_implementation_file) { File.read('spec/resources/expected_implementation.m') }
 
@@ -12,16 +14,16 @@ describe FlipTheSwitch::Generator::Category do
     delete_implementation_if_exists
   end
 
-  it 'writes a FlipTheSwitch+Features.h file with the category header' do
+  it 'writes a FTSFlipTheSwitch+Features.h file with the category header' do
     subject.generate
 
-    expect(File.read(output_name_with('h'))).to eql(expected_header_file)
+    expect(output_with('h')).to eql(expected_header_file)
   end
 
-  it 'writes a FlipTheSwitch+Features.m file with the category implementation' do
+  it 'writes a FTSFlipTheSwitch+Features.m file with the category implementation' do
     subject.generate
 
-    expect(File.read(output_name_with('m'))).to eql(expected_implementation_file)
+    expect(output_with('m')).to eql(expected_implementation_file)
   end
 
   private
@@ -38,7 +40,11 @@ describe FlipTheSwitch::Generator::Category do
     File.delete(output_name_with(suffix)) if File.exists?(output_name_with(suffix))
   end
 
+  def output_with(suffix)
+    File.read(output_name_with(suffix))
+  end
+
   def output_name_with(suffix)
-    "#{output}/FlipTheSwitch+Features.#{suffix}"
+    "#{output}/FTSFlipTheSwitch+Features.#{suffix}"
   end
 end
