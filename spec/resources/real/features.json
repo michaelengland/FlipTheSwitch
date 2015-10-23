@@ -4,7 +4,10 @@
       "enabled": true,
       "description": "This feature is enabled",
       "sub_feature": {
-        "enabled": false
+        "enabled": false,
+        "sub_sub_feature": {
+          "enabled": false
+        }
       }
     },
     "disabled_feature": {

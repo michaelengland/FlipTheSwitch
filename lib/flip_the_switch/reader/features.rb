@@ -51,16 +51,12 @@ module FlipTheSwitch
       end
 
       def merge_feature(parent_feature, child_feature)
-        if child_feature
-          Feature.new(parent_feature.name,
-            (child_feature.enabled != nil) ? child_feature.enabled : parent_feature.enabled,
-            child_feature.description ? child_feature.description : parent_feature.description,
-            sub_features(child_feature, parent_feature),
-            child_feature.parent_name
-          )
-        else
-          parent_feature
-        end
+        Feature.new(parent_feature.name,
+          (child_feature.enabled != nil) ? child_feature.enabled : parent_feature.enabled,
+          child_feature.description ? child_feature.description : parent_feature.description,
+          sub_features(child_feature, parent_feature),
+          child_feature.parent_name
+        )
       end
 
       def sub_features(child_feature, parent_feature)
@@ -69,12 +65,6 @@ module FlipTheSwitch
         else
           parent_feature.sub_features
         end
-      end
-
-      def feature_with_name(features, name)
-        features.detect { |feature|
-          feature.name == name
-        }
       end
 
       def merge_sub_features(parent_feature_sub_features, child_feature_sub_features)
@@ -94,10 +84,6 @@ module FlipTheSwitch
           hash[env.name] = env
           hash
         }
-      end
-
-      def environment_parent(env_name)
-        environments_by_name[environments_by_name[env_name].parent_name]
       end
 
       def parse

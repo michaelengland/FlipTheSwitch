@@ -10,7 +10,9 @@ describe FlipTheSwitch::Reader::Features do
       it 'reads the enabled/disabled states of the features for the environment' do
         expect(subject.features).to eql([
               FlipTheSwitch::Feature.new('enabled_feature', true, 'This feature is enabled', [
-                  FlipTheSwitch::Feature.new('sub_feature', false, nil, [], 'enabled_feature')
+                  FlipTheSwitch::Feature.new('sub_feature', false, nil, [
+                      FlipTheSwitch::Feature.new('sub_sub_feature', false, nil, [], 'sub_feature')
+                    ], 'enabled_feature')
                 ]),
               FlipTheSwitch::Feature.new('disabled_feature', false)
             ])
@@ -24,7 +26,9 @@ describe FlipTheSwitch::Reader::Features do
       it 'reads the enabled/disabled states of the features for the environment' do
         expect(subject.features).to eql([
               FlipTheSwitch::Feature.new('enabled_feature', false, 'This feature is enabled', [
-                  FlipTheSwitch::Feature.new('sub_feature', false, nil, [], 'enabled_feature')
+                  FlipTheSwitch::Feature.new('sub_feature', false, nil, [
+                      FlipTheSwitch::Feature.new('sub_sub_feature', false, nil, [], 'sub_feature')
+                    ], 'enabled_feature')
                 ]),
               FlipTheSwitch::Feature.new('disabled_feature', false)
             ])
@@ -37,7 +41,9 @@ describe FlipTheSwitch::Reader::Features do
       it 'reads the enabled/disabled states of the features for the environment' do
         expect(subject.features).to eql([
               FlipTheSwitch::Feature.new('enabled_feature', true, 'This feature is enabled', [
-                  FlipTheSwitch::Feature.new('sub_feature', false, nil, [], 'enabled_feature')
+                  FlipTheSwitch::Feature.new('sub_feature', false, nil, [
+                      FlipTheSwitch::Feature.new('sub_sub_feature', false, nil, [], 'sub_feature')
+                    ], 'enabled_feature')
                 ]),
               FlipTheSwitch::Feature.new('disabled_feature', false)
             ])
