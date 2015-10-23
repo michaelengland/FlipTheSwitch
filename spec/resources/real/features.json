@@ -26,7 +26,13 @@
   "beta": {
     "inherits_from": "intermediate",
     "enabled_feature": {
-      "enabled": true
+      "enabled": true,
+      "sub_feature": {
+        "enabled": false,
+        "sub_sub_feature": {
+          "enabled": false
+        }
+      }
     }
   }
 }
