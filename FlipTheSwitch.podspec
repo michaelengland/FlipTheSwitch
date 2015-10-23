@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/michaelengland/FlipTheSwitch'
 
   s.license = {:type => 'MIT', :file => 'LICENSE'}
-  s.source = {:git => 'git@github.com:michaelengland/FlipTheSwitch.git', :tag => s.version.to_s}
+  s.source = {:git => 'https://github.com/michaelengland/FlipTheSwitch.git', :tag => s.version.to_s}
   s.osx.source_files = 'Classes/FlipTheSwitch/Shared/*.{h,m}'
   s.osx.public_header_files = 'Classes/FlipTheSwitch/Shared/*.h'
   s.osx.deployment_target = '10.8'
