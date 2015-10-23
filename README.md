@@ -91,7 +91,7 @@ You can add as many subfeatures to a feature recursively. Resulting in a plist a
 
 ### Configuration Screen
 
-![Screenshot of configuration screen](configuration.png)
+![Screenshot of configuration screen](images/feature_configuration_screen.png)
 
 * shows all features, their description texts and enabled state
 * easily switching features on and off
