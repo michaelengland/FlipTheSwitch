@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'activesupport', '~> 3.2'
   s.add_dependency 'thor', '~> 0.19'
   s.add_dependency 'plist', '~> 3.1'
-  s.add_dependency 'json-schema'
+  s.add_dependency 'json-schema', '~> 2.5'
 
   s.files = `git ls-files`.split($\)
   s.executables = s.files.grep(%r{^bin/}).map { |f| File.basename(f) }
