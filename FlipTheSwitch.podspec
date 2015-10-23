@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
   s.ios.source_files = 'Classes/FlipTheSwitch/**/*.{h,m}'
   s.osx.source_files = 'Classes/FlipTheSwitch/Shared/*.{h,m}'
   s.ios.resource_bundles = { 'FlipTheSwitch' => 'Resources/FlipTheSwitch/*.storyboard' }
-  s.public_header_files = 'Classes/FlipTheSwitch/*.h'
+  s.ios.deployment_target = '7.0'
+  s.public_header_files = 'Classes/FlipTheSwitch/**/*.h'
   s.requires_arc = true
 end
