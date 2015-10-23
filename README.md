@@ -67,14 +67,42 @@ The features can defaulted to enabled/disabled via a plist file `Features.plist`
 
 ```
 
+### Subfeatures
+
+You can add as many subfeatures to a feature recursively. Resulting in a plist as e.g. :
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>description</key>
+		<string>is disabled description</string>
+		<key>enabled</key>
+		<false/>
+		<key>subfeature</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+		</dict>
+	</dict>
+</plist>
+```
+
 ### Configuration Screen
 
-[Screenshot of configuration screen](...)
+![Screenshot of configuration screen](configuration.png)
 
 * shows all features, their description texts and enabled state
 * easily switching features on and off
 * reset all feature back to the original setting from the plist (based on the json)
 
+### Notifications
+
+When a feature status changes, you can find out about it by listening for the notification titled `FTSFeatureStatusChangedNotification`, which contains:
+
+* `FTSFeatureStatusChangedNotificationFeatureKey` - the key of the feature being enabled/disabled
+* `FTSFeatureStatusChangedNotificationEnabledKey` - the `NSNumber` of whether the feature was enabled or disabled
 
 ### Plattform Support
 
@@ -85,7 +113,6 @@ The features can defaulted to enabled/disabled via a plist file `Features.plist`
 * Mac OSX 
 	* example project
 	* full test coverage
-
 
 ## Command-Line-Interface
 
@@ -114,6 +141,8 @@ e.g:
 @end
 ```
 
+### Define Features and subfeatures
+
 The features and subfeatures, along with their default enabled/disabled state, are read from a `features.json` file. e.g.:
 
 ```json
@@ -121,7 +150,7 @@ The features and subfeatures, along with their default enabled/disabled state, a
 	"default": {
 		"awesome_feature": {
 			"enabled": true,	
-			"description": "Makes this project awesome",	
+			"description": "Makes this project awesome",
 			"sub_feature": {
 				"enabled": true,
 				"description": "Makes this project even more awesome"		
