@@ -9,8 +9,8 @@ module FlipTheSwitch
     end
 
     public
-    class_option :input, type: :string, aliases: '-i', default: defaults[:input], desc: 'Filename or directory containing features.yml file to read'
-    class_option :environment, type: :string, aliases: '-n', default: defaults[:environment], desc: 'Name of environment to read from in features.yml file'
+    class_option :input, type: :string, aliases: '-i', default: defaults[:input], desc: 'Filename or directory containing features.json file to read'
+    class_option :environment, type: :string, aliases: '-n', default: defaults[:environment], desc: 'Name of environment to read from features.json file'
 
     desc 'plist', 'Auto-generates a Features.plist file for enabled/disabled features'
     method_option :output, type: :string, aliases: '-o', default: defaults[:plist_output], desc: 'Filename or directory in which Features.plist file will be created'
