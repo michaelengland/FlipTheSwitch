@@ -1,5 +1,4 @@
 require 'flip_the_switch/generator/base'
-require 'active_support/inflector'
 require 'erb'
 
 module FlipTheSwitch
@@ -29,7 +28,9 @@ module FlipTheSwitch
       end
 
       def delete_file(file)
-        File.delete(file) if File.exists?(file)
+        if File.exists?(file)
+          File.delete(file)
+        end
       end
 
       def header_file
@@ -74,6 +75,20 @@ module FlipTheSwitch
         [feature] + feature.sub_features.flat_map { |sub_feature|
           feature_and_sub_features(sub_feature)
         }
+      end
+
+      def lower_camelize(string)
+        str = camelize(string)
+        if str.empty?
+          ''
+        else
+          str[0] = str[0].downcase
+          str
+        end
+      end
+
+      def camelize(string)
+        string.split('_').each {|s| s.capitalize! }.join('')
       end
     end
   end

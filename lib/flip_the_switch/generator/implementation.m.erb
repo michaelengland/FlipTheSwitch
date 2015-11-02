@@ -4,37 +4,37 @@
 @implementation FTSFlipTheSwitch (Features)
 
 <% all_features.each do |feature| -%>
-+ (BOOL)is<%= feature.name.camelize %>Enabled
++ (BOOL)is<%= camelize(feature.name) %>Enabled
 {
 <% if feature.has_parent? -%>
-    return [self is<%= feature.parent_name.camelize %>Enabled] &&
-        [[FTSFlipTheSwitch sharedInstance] isFeatureEnabled:[self <%= feature.name.camelize(:lower) %>Key]];
+    return [self is<%= camelize(feature.parent_name) %>Enabled] &&
+        [[FTSFlipTheSwitch sharedInstance] isFeatureEnabled:[self <%= lower_camelize(feature.name) %>Key]];
 <% else -%>
-    return [[FTSFlipTheSwitch sharedInstance] isFeatureEnabled:[self <%= feature.name.camelize(:lower) %>Key]];
+    return [[FTSFlipTheSwitch sharedInstance] isFeatureEnabled:[self <%= lower_camelize(feature.name) %>Key]];
 <% end -%>
 }
 
-+ (void)enable<%= feature.name.camelize %>
++ (void)enable<%= camelize(feature.name) %>
 {
-    [[FTSFlipTheSwitch sharedInstance] enableFeature:[self <%= feature.name.camelize(:lower) %>Key]];
+    [[FTSFlipTheSwitch sharedInstance] enableFeature:[self <%= lower_camelize(feature.name) %>Key]];
 }
 
-+ (void)disable<%= feature.name.camelize %>
++ (void)disable<%= camelize(feature.name) %>
 {
-    [[FTSFlipTheSwitch sharedInstance] disableFeature:[self <%= feature.name.camelize(:lower) %>Key]];
+    [[FTSFlipTheSwitch sharedInstance] disableFeature:[self <%= lower_camelize(feature.name) %>Key]];
 }
 
-+ (void)set<%= feature.name.camelize %>Enabled:(BOOL)enabled
++ (void)set<%= camelize(feature.name) %>Enabled:(BOOL)enabled
 {
-    [[FTSFlipTheSwitch sharedInstance] setFeature:[self <%= feature.name.camelize(:lower) %>Key] enabled:enabled];
+    [[FTSFlipTheSwitch sharedInstance] setFeature:[self <%= lower_camelize(feature.name) %>Key] enabled:enabled];
 }
 
-+ (void)reset<%= feature.name.camelize %>
++ (void)reset<%= camelize(feature.name) %>
 {
-    [[FTSFlipTheSwitch sharedInstance] resetFeature:[self <%= feature.name.camelize(:lower) %>Key]];
+    [[FTSFlipTheSwitch sharedInstance] resetFeature:[self <%= lower_camelize(feature.name) %>Key]];
 }
 
-+ (NSString *)<%= feature.name.camelize(:lower) %>Key
++ (NSString *)<%= lower_camelize(feature.name) %>Key
 {
     return @"<%= feature.name %>";
 }
@@ -43,7 +43,7 @@
 + (void)resetAll
 {
 <% all_features.each do |feature| -%>
-    [self reset<%= feature.name.camelize %>];
+    [self reset<%= camelize(feature.name) %>];
 <% end -%>
 }
 

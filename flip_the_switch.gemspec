@@ -7,7 +7,6 @@ Gem::Specification.new do |s|
   s.version = '1.0.0'
   s.license = 'MIT'
 
-  s.add_dependency 'activesupport', '~> 3.2'
   s.add_dependency 'thor', '~> 0.19'
   s.add_dependency 'plist', '~> 3.1'
   s.add_dependency 'json-schema', '~> 2.5'
