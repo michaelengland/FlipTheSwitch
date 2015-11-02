@@ -15,6 +15,12 @@
 #########################
 
 #####
+# Coverage
+*.gcda
+*.gcno
+coverage/
+
+#####
 # Guard
 Guardfile
 
