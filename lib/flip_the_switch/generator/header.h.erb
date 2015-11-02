@@ -6,12 +6,12 @@
 <% if feature.description -%>
 // <%= feature.description %>
 <% end -%>
-+ (BOOL)is<%= feature.name.camelize %>Enabled;
-+ (void)enable<%= feature.name.camelize %>;
-+ (void)disable<%= feature.name.camelize %>;
-+ (void)set<%= feature.name.camelize %>Enabled:(BOOL)enabled;
-+ (void)reset<%= feature.name.camelize %>;
-+ (NSString *)<%= feature.name.camelize(:lower) %>Key;
++ (BOOL)is<%= camelize(feature.name) %>Enabled;
++ (void)enable<%= camelize(feature.name) %>;
++ (void)disable<%= camelize(feature.name) %>;
++ (void)set<%= camelize(feature.name) %>Enabled:(BOOL)enabled;
++ (void)reset<%= camelize(feature.name) %>;
++ (NSString *)<%= lower_camelize(feature.name) %>Key;
 
 <% end -%>
 + (void)resetAll;
