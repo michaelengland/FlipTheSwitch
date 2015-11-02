@@ -158,6 +158,7 @@ The features and subfeatures, along with their default enabled/disabled state, a
 		}
 	},
 	"beta": {
+		"inherits_from": "default",
 		"awesome_feature": {
 			"enabled": false
 		}
