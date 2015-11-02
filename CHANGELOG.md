@@ -1,3 +1,8 @@
+# 1.0.1 / 2015-11-02
+
+ * [ENHANCEMENT] Improve Readme/Cli usage
+ * [ENHANCEMENT] Remove activesupport dependency (helps with cocoapods support)
+
 # 1.0.0 / 2015-10-15
 
 *  [ENHANCEMENT] Using JSON instead of YAML for  features 

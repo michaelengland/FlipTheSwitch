@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'FlipTheSwitch'
-  s.version = '1.0.0'
+  s.version = '1.0.1'
   s.summary = 'A simple library to help enabling/disabling features on iOS/Mac applications.'
   s.authors = {
       'Michael England' => 'mg.england@gmail.com',
