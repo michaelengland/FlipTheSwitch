@@ -1,5 +1,4 @@
 require 'flip_the_switch/generator/base'
-require 'active_support/core_ext/hash/indifferent_access'
 require 'plist'
 
 module FlipTheSwitch
@@ -55,54 +54,54 @@ module FlipTheSwitch
       end
 
       def root
-        current_plist.with_indifferent_access.merge(PreferenceSpecifiers: root_preferences)
+        current_plist.merge('PreferenceSpecifiers' => root_preferences)
       end
 
       def root_preferences
         existing_root_preferences.delete_if { |root_preference|
-          root_preference[:Title] == 'Features'
+          root_preference['Title'] == 'Features'
         } + feature_root_preferences
       end
 
       def existing_root_preferences
-        current_plist.with_indifferent_access[:PreferenceSpecifiers] || []
+        current_plist['PreferenceSpecifiers'] || []
       end
 
       def feature_root_preferences
         [
-            {
-                Title: 'Features',
-                Type: 'PSGroupSpecifier'
-            },
-            {
-                File: 'Features',
-                Title: 'Features',
-                Type: 'PSChildPaneSpecifier'
-            }
+          {
+            'Title' => 'Features',
+            'Type' => 'PSGroupSpecifier'
+          },
+          {
+            'File' => 'Features',
+            'Title' => 'Features',
+            'Type' => 'PSChildPaneSpecifier'
+          }
         ]
       end
 
       def feature_properties
-        {PreferenceSpecifiers: feature_toggles}
+        {'PreferenceSpecifiers' => feature_toggles}
       end
 
       def feature_toggles
         features.map { |feature|
           {
-              Type: 'PSToggleSwitchSpecifier',
-              Title: feature.name,
-              Key: "FTS_FEATURE_#{feature.name}",
-              DefaultValue: feature.enabled
+            'Type' => 'PSToggleSwitchSpecifier',
+            'Title' => feature.name,
+            'Key' => "FTS_FEATURE_#{feature.name}",
+            'DefaultValue' => feature.enabled
           }
         }
       end
 
       def current_plist
         @current_plist ||= if File.exists?(root_plist)
-                             ::Plist::parse_xml(root_plist)
-                           else
-                             {}
-                           end
+          ::Plist::parse_xml(root_plist)
+        else
+          {}
+        end
       end
 
       def root_plist
