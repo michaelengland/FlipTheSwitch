@@ -29,6 +29,11 @@ Guardfile
 .coveralls.yml
 
 #####
+# Bundle
+.bundle
+vendor/
+
+#####
 # Cocoapods
 Pods/
 
