@@ -14,5 +14,13 @@
 		<key>enabled</key>
 		<true/>
 	</dict>
+	<key>disabled_subfeature</key>
+	<dict>
+		<key>description</key>
+		<string>subfeature</string>
+		<key>enabled</key>
+		<false/>
+	</dict>
+
 </dict>
 </plist>
