@@ -9,6 +9,13 @@
 		<key>enabled</key>
 		<false/>
 	</dict>
+	<key>disabled_subfeature</key>
+	<dict>
+		<key>description</key>
+		<string>subfeature</string>
+		<key>enabled</key>
+		<false/>
+	</dict>
 	<key>enabled_feature</key>
 	<dict>
 		<key>enabled</key>

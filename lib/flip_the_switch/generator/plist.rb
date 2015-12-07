@@ -11,7 +11,7 @@ module FlipTheSwitch
       private
 
       def feature_states
-        features.inject({}) do |states, feature|
+        all_features.inject({}) do |states, feature|
           states.merge(feature.name => feature_hash(feature))
         end
       end
