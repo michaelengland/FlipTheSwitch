@@ -9,11 +9,6 @@
 		<key>enabled</key>
 		<false/>
 	</dict>
-	<key>enabled_feature</key>
-	<dict>
-		<key>enabled</key>
-		<true/>
-	</dict>
 	<key>disabled_subfeature</key>
 	<dict>
 		<key>description</key>
@@ -21,6 +16,10 @@
 		<key>enabled</key>
 		<false/>
 	</dict>
-
+	<key>enabled_feature</key>
+	<dict>
+		<key>enabled</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
