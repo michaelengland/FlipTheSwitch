@@ -1,3 +1,7 @@
+# 1.0.1 / 2015-12-07
+
+# [BUGFIX] Generate all subfeatures as well as features in plist #44
+
 # 1.0.1 / 2015-11-02
 
  * [ENHANCEMENT] Improve Readme/Cli usage
