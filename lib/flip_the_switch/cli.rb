@@ -27,7 +27,7 @@ module FlipTheSwitch
     end
 
     desc 'settings', 'Auto-generates settings.bundle files for enabling/disabling features from iOS settings menu'
-    method_option :output, type: :string, aliases: '-o', default: defaults['settings_output'], desc: 'Location of the directory in which FlipTheSwitch+Features.{h,m} files will be created'
+    method_option :output, type: :string, aliases: '-o', default: defaults['settings_output'], desc: 'Location of the directory in which the Settings.bundle will be modified'
 
     def settings
       settings_generator.generate
