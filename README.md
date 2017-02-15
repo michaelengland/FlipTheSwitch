@@ -185,8 +185,8 @@ Add `gem 'flip_the_switch'` to your Gemfile
 
 ## Authors
 
-  - [Michael England](https://github.com/michaelengland) @ [SoundCloud](https://github.com/soundcloud)
-  - [Rob Siwek](https://github.com/nerdsRob) @ [SoundCloud](https://github.com/soundcloud)
+  - [Michael England](https://github.com/michaelengland) @ [SoundCloud](https://github.com/soundcloud), [Issuu](https://github.com/issuu)
+  - [Rob Siwek](https://github.com/nerdsRob) @ [SoundCloud](https://github.com/soundcloud), [Issuu](https://github.com/issuu)
   - [Kristina Roddewig](https://github.com/FrauR) @ [SoundCloud](https://github.com/soundcloud)
   - [Vincent Garrigues](https://github.com/garriguv) @ [SoundCloud](https://github.com/soundcloud)
 
