@@ -11,7 +11,8 @@
       }
     },
     "disabled_feature": {
-      "enabled": false
+      "enabled": false,
+      "description": "This feature is disabled"
     }
   },
   "alpha": {

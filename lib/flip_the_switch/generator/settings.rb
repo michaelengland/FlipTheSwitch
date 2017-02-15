@@ -89,11 +89,15 @@ module FlipTheSwitch
         features.map { |feature|
           {
             'Type' => 'PSToggleSwitchSpecifier',
-            'Title' => feature.name,
+            'Title' => feature_title(feature),
             'Key' => "FTS_FEATURE_#{feature.name}",
             'DefaultValue' => feature.enabled
           }
         }
+      end
+
+      def feature_title(feature)
+          feature.name.gsub('_', ' ').capitalize
       end
 
       def current_plist

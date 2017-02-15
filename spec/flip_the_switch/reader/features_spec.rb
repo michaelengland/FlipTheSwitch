@@ -14,7 +14,7 @@ describe FlipTheSwitch::Reader::Features do
                       FlipTheSwitch::Feature.new('sub_sub_feature', false, nil, [], 'sub_feature')
                     ], 'enabled_feature')
                 ]),
-              FlipTheSwitch::Feature.new('disabled_feature', false)
+              FlipTheSwitch::Feature.new('disabled_feature', false, 'This feature is disabled')
             ])
       end
     end
@@ -30,7 +30,7 @@ describe FlipTheSwitch::Reader::Features do
                       FlipTheSwitch::Feature.new('sub_sub_feature', false, nil, [], 'sub_feature')
                     ], 'enabled_feature')
                 ]),
-              FlipTheSwitch::Feature.new('disabled_feature', false)
+              FlipTheSwitch::Feature.new('disabled_feature', false, 'This feature is disabled')
             ])
       end
     end
@@ -45,7 +45,7 @@ describe FlipTheSwitch::Reader::Features do
                       FlipTheSwitch::Feature.new('sub_sub_feature', false, nil, [], 'sub_feature')
                     ], 'enabled_feature')
                 ]),
-              FlipTheSwitch::Feature.new('disabled_feature', false)
+              FlipTheSwitch::Feature.new('disabled_feature', false, 'This feature is disabled')
             ])
       end
     end
