@@ -1,3 +1,7 @@
+# 1.0.3 / 2017-02-15
+
+# [ENHANCEMENT] Format feature toggle title
+
 # 1.0.1 / 2015-12-07
 
 # [BUGFIX] Generate all subfeatures as well as features in plist #44
